@@ -1,0 +1,608 @@
+COUNTRY,Numeric_co,COL,ROW,,Region,SuperRegion,RFF_iso_code
+Afghanistan,4,4,1,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,8,8,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,12,12,1,1,North Africa / Middle East,North Africa & Middle East,DZA
+American Samoa,16,16,1,1,Oceania,"Southeast Asia, East Asia, Oceania",ASM
+Andorra,20,20,1,1,"Europe, Western",High Income,
+Angola,24,24,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Anguilla,660,660,1,1,,,
+Antarctica,10,10,1,1,,,
+Antigua and Barbuda,28,28,1,1,Caribbean,Latin America and Caribbean,
+Argentina,32,32,1,1,"Latin America, Southern",High Income,ARG
+Armenia,51,51,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Aruba,533,533,1,1,"Europe, Western",High Income,ABW
+Australia,36,36,1,1,Australasia,High Income,AUS
+Austria,40,40,1,1,"Europe, Western",High Income,AUT
+Azerbaijan,31,31,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,44,44,1,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,48,48,1,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,50,50,1,1,"Asia, South",South Asia,BGD
+Barbados,52,52,1,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,112,112,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,56,56,1,1,"Europe, Western",High Income,BEL
+Belize,84,84,1,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,204,204,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bermuda,60,60,1,1,Caribbean,Latin America and Caribbean,
+Bhutan,64,64,1,1,"Asia, South",South Asia,BTN
+Bolivia,68,68,1,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia and Herzegovina,70,70,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Botswana,72,72,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Bouvet Island,74,74,1,1,,,
+Brazil,76,76,1,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+British Indian Ocean Territory,86,86,1,1,,,
+British Virgin Islands,92,92,1,1,,,
+Brunei Darussalam,96,96,1,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,100,100,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,854,854,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,108,108,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cabo Verde,132,132,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Cambodia,116,116,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,120,120,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,124,124,1,1,"North America, High Income",High Income,CAN
+Cayman Islands,136,136,1,1,,,
+Central African Republic,140,140,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Chad,148,148,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Channel Islands,830,830,1,1,"Europe, Western",High Income,
+Chile,152,152,1,1,"Latin America, Southern",High Income,CHL
+China,156,156,1,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+"China, Hong Kong SAR",344,344,1,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+"China, Macao SAR",446,446,1,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+"China, Taiwan Province of China",158,158,1,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Christmas Island,162,162,1,1,,,
+Cocos Islands,166,166,1,1,,,
+Colombia,170,170,1,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,174,174,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Congo,178,178,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Congo DRC,180,180,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Cook Islands,184,184,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,188,188,1,1,"Latin America, Central",Latin America and Caribbean,CRI
+Cote d'Ivoire,384,384,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Croatia,191,191,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,192,192,1,1,Caribbean,Latin America and Caribbean,CUB
+Curacao,531,531,1,1,"Europe, Western",High Income,
+Cyprus,196,196,1,1,"Europe, Western",High Income,CYP
+Czech Republic,203,203,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Denmark,208,208,1,1,"Europe, Western",High Income,DNK
+Djibouti,262,262,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,212,212,1,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,214,214,1,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,218,218,1,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,818,818,1,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,222,222,1,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,226,226,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,232,232,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,233,233,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Eswatini,748,748,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Ethiopia,231,231,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Falkland Islands,238,238,1,1,,,
+Faroe Islands,234,234,1,1,,,
+Fiji,242,242,1,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Finland,246,246,1,1,"Europe, Western",High Income,FIN
+France,250,250,1,1,"Europe, Western",High Income,FRA
+French Guiana,254,254,1,1,"Europe, Western",High Income,
+French Polynesia,258,258,1,1,"Europe, Western",High Income,PYF
+Gabon,266,266,1,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,270,270,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,268,268,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,276,276,1,1,"Europe, Western",High Income,DEU
+Ghana,288,288,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Gibraltar,292,292,1,1,,,
+Greece,300,300,1,1,"Europe, Western",High Income,GRC
+Greenland,304,304,1,1,"North America, High Income",High Income,
+Grenada,308,308,1,1,Caribbean,Latin America and Caribbean,
+Guadeloupe,312,312,1,1,"Europe, Western",High Income,
+Guam,316,316,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Guatemala,320,320,1,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,324,324,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,624,624,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,328,328,1,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,332,332,1,1,Caribbean,Latin America and Caribbean,HTI
+Heard Island and McDonald Islands,334,334,1,1,,,
+Honduras,340,340,1,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,348,348,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,352,352,1,1,"Europe, Western",High Income,ISL
+India,356,356,1,1,"Asia, South",South Asia,IND
+Indonesia,360,360,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Iran,364,364,1,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,368,368,1,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,372,372,1,1,"Europe, Western",High Income,IRL
+Isle of Man,833,833,1,1,,,
+Israel,376,376,1,1,"Europe, Western",High Income,ISR
+Italy,380,380,1,1,"Europe, Western",High Income,ITA
+Jamaica,388,388,1,1,Caribbean,Latin America and Caribbean,JAM
+Japan,392,392,1,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,400,400,1,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,398,398,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,404,404,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,296,296,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,414,414,1,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,417,417,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Laos,418,418,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,428,428,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,422,422,1,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,426,426,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,430,430,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libya,434,434,1,1,North Africa / Middle East,North Africa & Middle East,LBY
+Liechtenstein,438,438,1,1,,,
+Lithuania,440,440,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,442,442,1,1,"Europe, Western",High Income,LUX
+Madagascar,450,450,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,454,454,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,458,458,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,462,462,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,466,466,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,470,470,1,1,"Europe, Western",High Income,MLT
+Marshall Islands,584,584,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Martinique,474,474,1,1,"Europe, Western",High Income,
+Mauritania,478,478,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,480,480,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mayotte,175,175,1,1,"Europe, Western",High Income,
+Mexico,484,484,1,1,"Latin America, Central",Latin America and Caribbean,MEX
+Micronesia,583,583,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Moldova,498,498,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Monaco,492,492,1,1,"Europe, Western",High Income,
+Mongolia,496,496,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Montenegro,499,499,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Montserrat,500,500,1,1,,,
+Morocco,504,504,1,1,North Africa / Middle East,North Africa & Middle East,MAR
+Mozambique,508,508,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,104,104,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,516,516,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,520,520,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,524,524,1,1,"Asia, South",South Asia,NPL
+Netherlands,528,528,1,1,"Europe, Western",High Income,NLD
+New Caledonia,540,540,1,1,"Europe, Western",High Income,NCL
+New Zealand,554,554,1,1,Australasia,High Income,NZL
+Nicaragua,558,558,1,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,562,562,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,566,566,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,570,570,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norfolk Island,574,574,1,1,,,
+North Korea,408,408,1,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+North Macedonia,807,807,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Northern Mariana Islands,580,580,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,578,578,1,1,"Europe, Western",High Income,NOR
+Oman,512,512,1,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,586,586,1,1,"Asia, South",South Asia,PAK
+Palau,585,585,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Palestinian Territory,275,275,1,1,North Africa / Middle East,North Africa & Middle East,PSE
+Panama,591,591,1,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,598,598,1,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,600,600,1,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,604,604,1,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,608,608,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Pitcairn,612,612,1,1,,,
+Poland,616,616,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,620,620,1,1,"Europe, Western",High Income,PRT
+Puerto Rico,630,630,1,1,Caribbean,Latin America and Caribbean,PRI
+Qatar,634,634,1,1,North Africa / Middle East,North Africa & Middle East,QAT
+Reunion,638,638,1,1,"Europe, Western",High Income,
+Romania,642,642,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Federation,643,643,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,646,646,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+Saint Barthelemy,652,652,1,1,,,
+Saint Helena,654,654,1,1,,,
+Saint Kitts and Nevis,659,659,1,1,Caribbean,Latin America and Caribbean,
+Saint Lucia,662,662,1,1,Caribbean,Latin America and Caribbean,LCA
+Saint Martin,663,663,1,1,,,
+Saint Pierre and Miquelon,666,666,1,1,,,
+Saint Vincent and the Grenadines,670,670,1,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,882,882,1,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,674,674,1,1,"Europe, Western",High Income,
+Sao Tome and Principe,678,678,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,682,682,1,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,686,686,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia,688,688,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,690,690,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,694,694,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,702,702,1,1,"Asia Pacific, High Income",High Income,SGP
+Sint Maarten,534,534,1,1,,,
+Slovakia,703,703,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,705,705,1,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,90,90,1,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,706,706,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,710,710,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+South Georgia and South Sandwich Islands,239,239,1,1,,,
+South Korea,410,410,1,1,"Asia Pacific, High Income",High Income,KOR
+South Sudan,728,728,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Spain,724,724,1,1,"Europe, Western",High Income,ESP
+Sri Lanka,144,144,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,729,729,1,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,740,740,1,1,Caribbean,Latin America and Caribbean,SUR
+Svalbard,744,744,1,1,,,
+Sweden,752,752,1,1,"Europe, Western",High Income,SWE
+Switzerland,756,756,1,1,"Europe, Western",High Income,CHE
+Syria,760,760,1,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,762,762,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Tanzania,834,834,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+Thailand,764,764,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Timor-Leste,626,626,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,768,768,1,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tokelau,772,772,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Tonga,776,776,1,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad and Tobago,780,780,1,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,788,788,1,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,792,792,1,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,795,795,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Turks and Caicos Islands,796,796,1,1,,,
+Tuvalu,798,798,1,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,800,800,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,804,804,1,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,784,784,1,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,826,826,1,1,"Europe, Western",High Income,GBR
+United States,840,840,1,1,"North America, High Income",High Income,USA
+United States Minor Outlying Islands,581,581,1,1,"North America, High Income",High Income,
+Uruguay,858,858,1,1,"Latin America, Southern",High Income,URY
+US Virgin Islands,850,850,1,1,Caribbean,Latin America and Caribbean,
+Uzbekistan,860,860,1,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,548,548,1,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Vatican City,336,336,1,1,,,
+Venezuela,862,862,1,1,"Latin America, Central",Latin America and Caribbean,VEN
+Vietnam,704,704,1,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Wallis and Futuna,876,876,1,1,,,
+Western Sahara,732,732,1,1,North Africa / Middle East,North Africa & Middle East,
+Yemen,887,887,1,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,894,894,1,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,716,716,1,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
