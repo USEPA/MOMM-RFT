@@ -35,7 +35,7 @@ options(scipen = 9999999)
 ##########################
 ##############  data paths
 ##########################
-
+setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
 inputpath = file.path('input','RFF','pop_income')
 momm_rft_input_path = file.path('input','RFF','rft_inputs')
 

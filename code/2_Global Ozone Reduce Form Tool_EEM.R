@@ -47,6 +47,7 @@
     #Outputs<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Results/Reduced Form Tool/Outputs/"
     #SocioEcon.GDP<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Data/Mortality/rffsps_v5/pop_income/"
     #EEM
+    setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
     Inputs       <- file.path('input')
     Outputs       <- file.path('output','rft')
     
@@ -97,7 +98,7 @@
     #  calculated in 'Summarizing Results.R', extracted & matched with country ID here
     
     ## Country Index Key ##
-    countries<-read.csv(file.path(Inputs,"Final Country Grid Col_Row Index_eem.csv"))[,c(1,3:4,6,8)]
+    countries<-read.csv(file.path(Inputs,"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8)]
     # Description: The row and column indices of each country (for BenMAP 0.5x0.5 grid)
       
     ## Baseline Mortality Data (for 1000 RFF scenario) ## ???
@@ -187,6 +188,7 @@
           Trajectory=SampleID$x[as.integer(Scenario)]
         }
       }
+    #Trajectory <- Trajectory[1:10]
     #UsrModel = InputVars$Value[(InputVars$Input=="GCM Model")]
     
     #set up prog bar foreach loops
@@ -209,7 +211,7 @@
     #VSL=as.numeric(InputVars$Value[InputVars$Input=="VSL"]) #in $2011 USD, 2020 income levels
     #Elasticity=as.numeric(InputVars$Value[InputVars$Input=="Income Elasticity"])
     
-    base_vsl = 9.52e6 #in 2020 $
+    base_vsl = 9.33e6 #in 2020 $
     Elasticity = 1
     
     #do calculations for all GCMS & years
@@ -236,14 +238,37 @@
       
 #### Begin loop for RFF Scenarios choice ####
     
-#length(Trajectory)
-Results<- foreach(itrial = 1:length(Trajectory),.combine=rbind,
-                  .packages=c('purrr','dplyr','utils','pbmcapply')) %do% { #dopar takes longer to run than do
+    ###### Set Up Cluster ######
+    ### Parallel filter and writing of feather files
+    ### Detect cores and get number of cores
+    parallel::detectCores()
+    n.cores    <- parallel::detectCores() - 1
+    #n.cores    <- 5
+    n.cores
+    
+    ### Make cluster
+    my.cluster <- parallel::makeCluster(n.cores, type = "PSOCK")
+    
+    ### Register cluster to be used by %dopar%
+    ### Check if cluster is registered (optional)
+    ### Check how many workers are available? (optional)
+    doParallel::registerDoParallel(cl = my.cluster); foreach::getDoParRegistered(); foreach::getDoParWorkers()
+    
+    ###### Run RFT ######
+    # Start the clock!
+    ptm   <- proc.time(); time1 <- Sys.time()
+    ### Took about 3.31 hours
+    
+    ## start parallel
+    startFile = 9703
+
+  Results<- foreach(itrial = startFile:length(Trajectory),.combine=rbind,
+                  .packages=c('purrr','dplyr','utils','pbmcapply','arrow','tidyverse')) %dopar% { #dopar takes longer to run than do
     
   ## Begin Analysis ##
     #loop through the trajectories (or scenarios)
     # Read in mortality, population, and gdp data for the given trial
-    pop_gdp_file <- read_feather(file.path(Inputs,"RFF","rft_inputs",paste0('rffsp_pop_gdp_',itrial,'.feather')))
+    pop_gdp_file <- file.path(Inputs,"RFF","rft_inputs",paste0('rffsp_pop_gdp_',itrial,'.feather')) %>% read_feather
     pop_gdp_data <- right_join(countries,pop_gdp_file, by= c("RFF_iso_code"="Country"),multiple='all')
     pop_gdp_data <- pop_gdp_data %>% 
       select(COL,Year,pop,gdp) %>%
@@ -294,6 +319,7 @@ Results<- foreach(itrial = 1:length(Trajectory),.combine=rbind,
       #X  = resp * Pulse2
       #so, X = TE * Pulse2/Pulse1
     #These do not include cessation lags
+    ### THIS NEEDS TO BE UPDATED TO RESP. * DELTA CH4 (NOT INCLUDING BKG)
     Analysis <- Analysis %>%
       mutate(scalar_PE  = MortRatio * PopRatio * ((AvgResponse * PulseMethane)/(AvgResponse * CloudMethane)),
              physical_impacts = Inverse.PE * scalar_PE,
@@ -440,68 +466,75 @@ Results<- foreach(itrial = 1:length(Trajectory),.combine=rbind,
         write_parquet(file.path(Outputs,paste0('damages_',itrial,'_momm_rft.parquet')))
       
       
-  if(length(Trajectory)!=1){
-    setTxtProgressBar(pb,(a-1)*length(Trajectory)+itrial)
-  }  
+  #if(length(Trajectory)!=1){
+  #  setTxtProgressBar(pb,(a-1)*length(Trajectory)+itrial)
+  #}  
         
   #return(Analysis)
 
 }#End Scenario Loop
+  
+  ### stop the clock\
+  time2 <- Sys.time(); time2 - time1
+  proc.time() - ptm
+  ###### Finish #####
+  ### stop cluster
+  parallel::stopCluster(cl = my.cluster)
 
 #### Post-Loop Processing ####
     
     #Do Post-Processing Elsewhere#
     
     
- ## export results csv if running just one scenario
-  if(Scenario!="All"){
-    
-    write.csv(Results,paste0(Outputs,"Excess Respiratory Mortality_RFF ",Scenario,"_",Year,".csv"),
-              row.names=FALSE,na="")
- }else{
-
- #Otherwise, process all 10,000 runs
-  ## Calculate distributional statistics include mean, 2.5th percentile, 97.5th percentile, min, and max ##
-   #summarize results by country
-    Ctry.stats<- Results %>%
-                  group_by(Column,Row,COUNTRY,`Ozone Response`,Year) %>%
-                  summarize(Mean=mean(`Excess Mortality`),
-                            Min=min(`Excess Mortality`),
-                            Max=max(`Excess Mortality`),
-                            P2_5=mean(`Pct 2_5`),
-                            P97_5=mean(`Pct 97_5`),
-                            `Valuation ($2020 Undisc)`=mean(`Valuation ($2020 Undisc)`),
-                            `Valuation ($2020;3% Disc)`=mean(`Valuation ($2020;3% Disc)`),
-                            `Valuation ($2020;7% Disc)`=mean(`Valuation ($2020;7% Disc)`),
-                            `Valuation ($2020;1.5% RamsDisc)`=mean(`Valuation ($2020;1.5% RamsDisc)`),
-                            `Valuation ($2020;2% RamsDisc)`=mean(`Valuation ($2020;2% RamsDisc)`),
-                            `Valuation ($2020;2.5% RamsDisc)`=mean(`Valuation ($2020;2.5% RamsDisc)`),
-                            `Valuation ($2020;3% RamsDisc)`=mean(`Valuation ($2020;3% RamsDisc)`),
-                            .groups="keep")
-    
-    #export
-      write.csv(Ctry.stats,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Ctry_",Year,".csv"),
-                row.names = FALSE, na="")
-      
-  #summarize results at global level
-    Global.tot<- Ctry.stats %>%
-                    group_by(Year)%>%
-                    summarize(Mean=sum(Mean),
-                              P2_5=sum(P2_5),
-                              P97_5=sum(P97_5),
-                              `Valuation ($2020 Undisc)`=sum(`Valuation ($2020 Undisc)`),
-                              `Valuation ($2020;3% Disc)`=sum(`Valuation ($2020;3% Disc)`),
-                              `Valuation ($2020;7% Disc)`=sum(`Valuation ($2020;7% Disc)`),
-                              `Valuation ($2020;1.5% RamsDisc)`=sum(`Valuation ($2020;1.5% RamsDisc)`),
-                              `Valuation ($2020;2% RamsDisc)`=sum(`Valuation ($2020;2% RamsDisc)`),
-                              `Valuation ($2020;2.5% RamsDisc)`=sum(`Valuation ($2020;2.5% RamsDisc)`),
-                              `Valuation ($2020;3% RamsDisc)`=sum(`Valuation ($2020;3% RamsDisc)`),
-                              .groups="keep")
-
-    #export summary results
-      write.csv(Global.tot,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Global_",Year,".csv"),
-              row.names = FALSE, na="")
-  }#End Post-Processing
- print(paste0(Year," - Global and Country Summaries Exported"))
-#}#End Year Loop     
+#  ## export results csv if running just one scenario
+#   if(Scenario!="All"){
+#     
+#     write.csv(Results,paste0(Outputs,"Excess Respiratory Mortality_RFF ",Scenario,"_",Year,".csv"),
+#               row.names=FALSE,na="")
+#  }else{
+# 
+#  #Otherwise, process all 10,000 runs
+#   ## Calculate distributional statistics include mean, 2.5th percentile, 97.5th percentile, min, and max ##
+#    #summarize results by country
+#     Ctry.stats<- Results %>%
+#                   group_by(Column,Row,COUNTRY,`Ozone Response`,Year) %>%
+#                   summarize(Mean=mean(`Excess Mortality`),
+#                             Min=min(`Excess Mortality`),
+#                             Max=max(`Excess Mortality`),
+#                             P2_5=mean(`Pct 2_5`),
+#                             P97_5=mean(`Pct 97_5`),
+#                             `Valuation ($2020 Undisc)`=mean(`Valuation ($2020 Undisc)`),
+#                             `Valuation ($2020;3% Disc)`=mean(`Valuation ($2020;3% Disc)`),
+#                             `Valuation ($2020;7% Disc)`=mean(`Valuation ($2020;7% Disc)`),
+#                             `Valuation ($2020;1.5% RamsDisc)`=mean(`Valuation ($2020;1.5% RamsDisc)`),
+#                             `Valuation ($2020;2% RamsDisc)`=mean(`Valuation ($2020;2% RamsDisc)`),
+#                             `Valuation ($2020;2.5% RamsDisc)`=mean(`Valuation ($2020;2.5% RamsDisc)`),
+#                             `Valuation ($2020;3% RamsDisc)`=mean(`Valuation ($2020;3% RamsDisc)`),
+#                             .groups="keep")
+#     
+#     #export
+#       write.csv(Ctry.stats,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Ctry_",Year,".csv"),
+#                 row.names = FALSE, na="")
+#       
+#   #summarize results at global level
+#     Global.tot<- Ctry.stats %>%
+#                     group_by(Year)%>%
+#                     summarize(Mean=sum(Mean),
+#                               P2_5=sum(P2_5),
+#                               P97_5=sum(P97_5),
+#                               `Valuation ($2020 Undisc)`=sum(`Valuation ($2020 Undisc)`),
+#                               `Valuation ($2020;3% Disc)`=sum(`Valuation ($2020;3% Disc)`),
+#                               `Valuation ($2020;7% Disc)`=sum(`Valuation ($2020;7% Disc)`),
+#                               `Valuation ($2020;1.5% RamsDisc)`=sum(`Valuation ($2020;1.5% RamsDisc)`),
+#                               `Valuation ($2020;2% RamsDisc)`=sum(`Valuation ($2020;2% RamsDisc)`),
+#                               `Valuation ($2020;2.5% RamsDisc)`=sum(`Valuation ($2020;2.5% RamsDisc)`),
+#                               `Valuation ($2020;3% RamsDisc)`=sum(`Valuation ($2020;3% RamsDisc)`),
+#                               .groups="keep")
+# 
+#     #export summary results
+#       write.csv(Global.tot,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Global_",Year,".csv"),
+#               row.names = FALSE, na="")
+#   }#End Post-Processing
+#  print(paste0(Year," - Global and Country Summaries Exported"))
+# #}#End Year Loop     
     

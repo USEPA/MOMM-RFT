@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+./input/rft_inputs/*
+./output/rft/*
+./output/damages*
+./output/npd_country*
+./output/npd_full_streams*
