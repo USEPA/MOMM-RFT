@@ -57,7 +57,6 @@ read_momm_rft =
 
 
 for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
-#for (COUNTRY in c(41:42)) { #nrow(countries)) {
   damages = 
     list.files(Inputs, full.names = T) %>% 
     map_df(~read_momm_rft(., MODEL))
@@ -68,20 +67,16 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   #damages are calculated as a function of GDP (growth is corrected for damages)
   damages  <- damages %>%
     group_by(Model,trial,LocID) %>% #LocID
-    mutate(#damages.pct        = 1 - (1/(1+(damages/gdp))),     #fraction of GDP that are damages
+    mutate(damages.pct        = 1 - (1/(1+(damages/gdp))),     #fraction of GDP that are damages
       damages_wlag.pct        = 1 - (1/(1+(damages_wlag/gdp))),
-      #damages.pct.2_5        = 1 - (1/(1+(damages_2_5/gdp))),
-      #damages.pct.97_5       = 1 - (1/(1+(damages_97_5/gdp))),
-      #ypc                     = ((1-damages.pct) * gdp)/pop,   #gdp per capita, with gdp reduced by % of damages
+      ypc                     = ((1-damages.pct) * gdp)/pop,   #gdp per capita, with gdp reduced by % of damages
       ypc_wlag                = ((1-damages_wlag.pct) * gdp)/pop,
-      #base.ypc                = case_when(ModelYear == YEAR ~ ypc, T ~ 0),
-      #base.ypc                = max(base.ypc),                 #base year gdp/cap ## TO-DO, clunky way to ensure that the base ypc for discrete time discount factor can be used in the discounting function, fix later
+      base.ypc                = case_when(ModelYear == YEAR ~ ypc, T ~ 0),
+      base.ypc                = max(base.ypc),                 #base year gdp/cap ## TO-DO, clunky way to ensure that the base ypc for discrete time discount factor can be used in the discounting function, fix later
       base.ypc_wlag           = case_when(ModelYear == YEAR ~ ypc_wlag, T ~ 0),
       base.ypc_wlag           = max(base.ypc_wlag),                 #base year gdp/cap ## TO-DO, clunky way to ensure that the base ypc for discrete time discount factor can be used in the discounting function, fix later
-      #damages.marginal        = (gdp * damages.pct) / PULSE,   #calculate the damages as a % of GDP and divide by pulse size (for $/tonne CH4)
+      damages.marginal        = (gdp * damages.pct) / PULSE,   #calculate the damages as a % of GDP and divide by pulse size (for $/tonne CH4)
       damages_wlag.marginal   = (gdp * damages_wlag.pct) / PULSE,
-      #damages_wlag.marginal.2_5   = damages_wlag.delta.2_5 / 275e6,
-      #damages.marginal.97_5  = damages.delta.97_5 / 275e6
       ) %>%  
   select(-c(contains('pct'))) %>%
   ungroup()
@@ -92,7 +87,6 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
                rho  = c(exp(0.000091496)-1, exp(0.001972641)-1, exp(0.004618785)-1, exp(0.007702711)-1, 0.02, 0.03), ## under discrete time, need to transform the rho that was calibrated using continuous time 
                #rho = c(0.000091496, 0.001972641, 0.004618785, 0.007702711, 0.02, 0.03),
                eta  = c(1.016010261, 1.244459020, 1.421158057, 1.567899395, 0, 0))
-  #rate_name = c('1pnt5Ram','2Ram','2pnt5Ram','3Ram','2CDR','3CDR')
 
   
   for (COUNTRY in 1:nrow(countries)) {
@@ -117,6 +111,8 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
     rho  = rates$rho[[RATE]]
     eta  = rates$eta[[RATE]]
   
+    ## code calculates a stochastic Ramsey discount factor due to the discrete time nature of the results
+    ## More info in Rennert et al., 2022
     ## get streams of discounted damages and net present damages
     data = 
       bind_rows(
@@ -124,32 +120,23 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
         damages %>%
           filter(LocID == countries$LocID[COUNTRY]) %>%
           group_by(trial,Model,LocID) %>% #LocID
-          mutate(discount.rate               = rate,
-               #discount.factor1             = case_when(grepl("Ramsey", rate) ~ (1/(1+rho + eta*growth)),
-               #                                          T ~ 1/(1+rho)^(ModelYear-emissions.year)),
-               #discount.factor               = case_when(grepl("Ramsey", rate) ~ (base.ypc/ypc)^eta/(1+rho)^(ModelYear-YEAR),
-               #                                        T ~ 1/(1+rho)^(ModelYear-YEAR)),
-               discount.factor_wlag          = case_when(grepl("Ramsey", rate) ~ (base.ypc_wlag/ypc_wlag)^eta/(1+rho)^(ModelYear-YEAR),
+          mutate(discount.rate                   = rate,
+               discount.factor                   = case_when(grepl("Ramsey", rate) ~ (base.ypc/ypc)^eta/(1+rho)^(ModelYear-YEAR),
                                                        T ~ 1/(1+rho)^(ModelYear-YEAR)),
-               #damages.marginal.discounted   = damages.marginal * discount.factor,
+               discount.factor_wlag              = case_when(grepl("Ramsey", rate) ~ (base.ypc_wlag/ypc_wlag)^eta/(1+rho)^(ModelYear-YEAR),
+                                                       T ~ 1/(1+rho)^(ModelYear-YEAR)),
+               damages.marginal.discounted       = damages.marginal * discount.factor,
                damages.marginal.discounted_wlag  = damages_wlag.marginal * discount.factor_wlag,
                #damages.marginal.discounted  = case_when(is.na(discount.factor) ~ damages.marginal,
-               #                                          TRUE ~ damages.marginal * discount.factor),
-               #npd                          = sum(damages.marginal.discounted, na.rm = F),
-               npd_wlag                     = sum(damages.marginal.discounted_wlag, na.rm = F)) %>%
-               #damages.marginal.2_5.discounted  = case_when(is.na(discount.factor) ~ damages.marginal.2_5,
-              #                                              TRUE ~ damages.marginal.2_5 * discount.factor),
-              # npd.2_5                       = sum(damages.marginal.2_5.discounted, na.rm = F),
-              # damages.marginal.97_5.discounted  = case_when(is.na(discount.factor) ~ damages.marginal.97_5,
-               #                                              TRUE ~ damages.marginal.97_5 * discount.factor),
-               #npd.97_5                       = sum(damages.marginal.97_5.discounted, na.rm = F)) %>%
+               #                                           TRUE ~ damages.marginal * discount.factor),
+               npd                               = sum(damages.marginal.discounted, na.rm = F),
+               npd_wlag                          = sum(damages.marginal.discounted_wlag, na.rm = F)) %>%
         ungroup()
     )
   
 
   ## export full streams
  data %>%
-#    #mutate(LocID = countries$COL[COUNTRY]) %>%
     write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
 #     write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_',MODEL,'.parquet')))
 }
@@ -159,17 +146,14 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
       means,
       data %>%
         group_by(Model,LocID,discount.rate) %>% #calculate statistics for each country and discount rate
-        summarise(#mean_npd      = mean(npd),
-                  #npd_2.5       = quantile(npd, .025, na.rm = T), #these uncertainties are socioeconomic uncertainties (not BenMAP)
-                  #npd_97.5      = quantile(npd, .975, na.rm = T),
-                  #median        = median(npd, na.rm = T),
+        summarise(mean_npd      = mean(npd),
+                  npd_2.5       = quantile(npd, .025, na.rm = T), #these uncertainties are socioeconomic uncertainties (not BenMAP)
+                  npd_97.5      = quantile(npd, .975, na.rm = T),
+                  median        = median(npd, na.rm = T),
                   mean_npd_wlag = mean(npd_wlag),
                   npd_2.5_wlag  = quantile(npd_wlag, .025, na.rm = T),
                   npd_97.5_wlag = quantile(npd_wlag, .975, na.rm = T),
                   median_wlag   = median(npd_wlag, na.rm = T),
-                  #`std. err.` = sd(npd, na.rm = T),
-                  #min         = min(npd, na.rm = T),
-                  #max         = max(npd),
                 .groups = 'drop')
   )
 
@@ -226,12 +210,12 @@ read_results =
   function(x){
     ttemp <- 
       read_parquet(x) %>%
-      filter(ModelYear == 2020) %>% #all npd years are the same
-      select(LocID,trial,discount.rate,npd_wlag)
+      filter(ModelYear == 2020) #%>% #all npd years are the same
+      #select(LocID,trial,discount.rate,npd,npd_wlag)
   }
 
 
-  #for (COUNTRY in c(41:42)) { #nrow(countries)) {
+#for (COUNTRY in c(41:42)) { #nrow(countries)) {
 Results_comb = 
     list.files(Outputs, pattern = "full_streams_rff_MMM",full.names = T) %>% 
     map_df(~read_results(.))
@@ -250,26 +234,21 @@ glob_means = tibble()
         group_by(discount.rate, trial) %>% #group by rate and trial and then sum across all countries
         summarise(
           npd_wlag = sum(npd_wlag),
+          npd      = sum(npd),
           .groups = 'keep') %>%
           ungroup() %>%
         group_by(discount.rate) %>%      #next, group by discount rate to calculate stats across all trials
-        summarise(#mean_npd      = mean(npd),
-#                  npd_2.5       = quantile(npd, .025, na.rm = T), #these are the socioeconomic stats (not BenMAP)
-#                  npd_97.5      = quantile(npd, .975, na.rm = T),
-#                  median        = median(npd, na.rm = T),
+        summarise(mean_npd      = mean(npd),
+                  npd_2.5       = quantile(npd, .025, na.rm = T), #these are the socioeconomic stats (not BenMAP)
+                  npd_97.5      = quantile(npd, .975, na.rm = T),
+                  median        = median(npd, na.rm = T),
                   mean_npd_wlag = mean(npd_wlag),
                   npd_2.5_wlag  = quantile(npd_wlag, .025, na.rm = T),
                   npd_97.5_wlag = quantile(npd_wlag, .975, na.rm = T),
                   median_wlag   = median(npd_wlag, na.rm = T),
-#                  #`std. err.` = sd(npd, na.rm = T),
-#                  #min         = min(npd, na.rm = T),
-#                  #max         = max(npd),
                 .groups = 'keep')
   )
 # #
 #  #write data
   glob_means %>%
     write_csv(file.path(Outputs,paste0('npd_global_rff_means_',MODEL,'.csv')))
-
-#1. Read in npd_full_streams_rff_MMM_x.csv files, bind,
-#then sum across countries and calculate stats
