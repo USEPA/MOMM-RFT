@@ -31,11 +31,9 @@
     library(foreach) #to do parallel processing in loop
     library(purrr)  #for general data manipulation
     library(utils)
-    #ibrary(pbmcapply) #adds ETA to progress bar
     library(arrow)
   
   #working directories
-    #setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
     Inputs  <- file.path('input')
     Outputs <- file.path('output','rft')
     

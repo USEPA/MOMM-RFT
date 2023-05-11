@@ -224,16 +224,16 @@ ggsave(plot = p1, filename =
 ####### Respiratory Mortality Rate & Population #############
 
 #IF Data on ratios of respiratory to total mortality rates
-IFsFactors<-read.csv(file.path(inputs,'IFP',"adjustment_factors.csv"))  
-IFsCountry<-read.csv(file.path(inputs,'IFP',"country_codes.csv"))
+IFsFactors<-read.csv(file.path(inputs3,'IFP',"adjustment_factors.csv"))  
+IFsCountry<-read.csv(file.path(inputs3,'IFP',"country_codes.csv"))
   names(IFsCountry)[1] <- 'RegionName2'
-IFsCtryCross<-read.csv(file.path(inputs,'IFP',"country_crosswalk.csv"))
+IFsCtryCross<-read.csv(file.path(inputs3,'IFP',"country_crosswalk.csv"))
 IFsFactors<-left_join(IFsFactors,IFsCountry,by=c("Region"="RegionNum"))
 IFsFactors<-left_join(IFsFactors,IFsCtryCross,by=c("RegionName2"="IFsName"),multiple='all')
   names(IFsFactors)<-c("X","Years","Region","RFF_Age_range","final_AF",
                        "RegionName","LocID","RFFName","Notes")
 IFsFactors<-IFsFactors[,2:8]
-Cross.year<-read_xlsx(file.path(inputs,'IFP','Crosswalk RFF Mort Year.xlsx'))
+Cross.year<-read_xlsx(file.path(inputs3,'IFP','Crosswalk RFF Mort Year.xlsx'))
 mean.pop<-read.csv(file.path(inputs,'RFF',"rff_pop_means.csv"))
 #subset for relevant years (<2100)
 mean.pop<-mean.pop[(mean.pop$Year<=2100),]
