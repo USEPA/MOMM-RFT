@@ -15,6 +15,7 @@
 ##    total respiratory-mortality counts, BenMAP confidence intervals, and the
 ##    population-weighted O3/CH4 response, globally and by country for each model
 ##    and the calculated MMM
+##    Output data are used in the MOMM-RFT and are also saved in the RFT input/BenMAP folder
 ## Written by: Industrial Economics, Inc., Updated by EPA OAP
 ## last updated: May 2023
 ## 
@@ -31,9 +32,10 @@ library(scales)
 library(arrow)
 
 ## 1. set directories
-  resultspath = file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')  
+  resultspath = file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs') 
+  rft_inputpath = file.path(getwd(),'input','BenMAP')
   cntryxwalkpath = file.path('input')
-  aqspath = file.path(getwd(),'analysis','Manuscript','BenMAP','Inputs','Aq Surfaces', 'Intermediate')
+  aqspath = file.path(getwd(),'analysis','Manuscript','BenMAP','Inputs','AQ Surfaces', 'Intermediate')
   BenMapinputs = file.path(getwd(),'analysis','Manuscript','BenMAP','Inputs')
   #Plots <- file.path(getwd(), 'analysis','Manuscript','BenMAP','Ouptuts','Plots')
 
@@ -345,12 +347,16 @@ library(arrow)
                                      by=c("column"="COL"))
   FormattedResults.Ctry<-FormattedResults.Ctry[,c(1,20,21,22,3,15,17:19,4:14)]
     
-  #export summary table
+  #export summary table (to two locations)
   write.csv(FormattedResults.Ctry,paste0(resultspath,"/Country Results Summary by Model & Year.csv"),row.names=F,na="")
+  write.csv(FormattedResults.Ctry,paste0(rft_inputpath,"/Country Results Summary by Model & Year.csv"),row.names=F,na="")
   
   #export interpolated results by country with ozone response
   write.csv(Interp.ByCtry,paste0(resultspath,"/Country Results Interpolated 2020-2100 by Model.csv"),
                               row.names=FALSE,na="")
+  write.csv(Interp.ByCtry,paste0(rft_inputpath,"/Country Results Interpolated 2020-2100 by Model.csv"),
+            row.names=FALSE,na="")
+  
 
 ## Have a nice day!    
     

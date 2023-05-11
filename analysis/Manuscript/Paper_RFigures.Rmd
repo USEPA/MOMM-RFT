@@ -646,31 +646,27 @@ ggsave(plot = p1_bounds, filename =
 ```
 
 
+##Figure S5
+
+global maps of respiratory mortality, absolute total (by model)
 ```{r, countrymap}
 
-#should these be per capita?
-# add per capita code
-
-## FIgure 2b and adapted to S5
+## Figure 2b and adapted to S5
 
 #map of country mortality results
-MODEL = 'HadGEM'
+MODEL = 'MMM'
 
-Plots <-file.path(getwd(),'Results','Global BenMAP WebTool')
-
-countryResults <- read.csv(paste0(Plots,"/Country Results Summary by Model & Year_eem.csv"))
+Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
+input <- file.path(getwd(),'input','BenMAP')
+countryResults <- read.csv(paste0(input,"/Country Results Summary by Model & Year.csv"))
 
 country_total <- countryResults %>%
   select(c('COUNTRY','Region','SuperRegion','Model','TotalResults','TotalPct2_5','TotalPct97_5')) %>%
   filter(Model == MODEL) %>%
   rename(region = COUNTRY) #%>%
 
-#plot by super region?
-  
-#need to sum all country results
 
-
-#map data
+# load map data and align country names
 worldData <- map_data("world")
 #correct region names
 worldData["region"][worldData["region"] == "Russia"] <- "Russian Federation"
@@ -702,10 +698,6 @@ MergedData$TotalResults[MergedData$TotalResults ==0] <- NA
 p5 <- ggplot() +
   geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = TotalResults),
                color = 'black',linewidth=0.15)+
-  
-#  scale_fill_binned("Total Deaths",
-#                    breaks= c(0,100,1000,10000,80000),
-#                    guide= guide_colorsteps(even.steps = FALSE))+
   scale_fill_fermenter("Total Deaths",
                        n.breaks=9,
                         type = 'seq',
@@ -734,61 +726,54 @@ p5 <- ggplot() +
   guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
   coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
 
-# Map of the world:
-#p5<- map('world',col="grey", fill=TRUE, bg="white", lwd=0.05, mar=rep(0,4),border=0, ylim=c(-80,80) )
-
 p5
 ggsave(plot = p5, filename = 
-         file.path(Plots,'Plots',paste0('Total_MortMap_',MODEL,'.png')),width = 9,height = 5)
+         file.path(Plots,paste0('Total_MortMap_',MODEL,'.png')),width = 9,height = 5)
 ```
 
+## Figures 2b and SXX
 
+global maps of respiratory mortality, per capita (in 2020)
+as well as maps of 2020 population, mortality rate, and average O3/CH4 response
 ```{r, countrymap_percapita}
 
-#should these be per capita?
-# add per capita code
-
-## Figure 2b and adapted to S5
 
 #map of country mortality results
 MODEL = 'MMM'
 
-Plots <-file.path(getwd(),'Results','Global BenMAP WebTool')
+Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
+input <- file.path(getwd(),'input')
+countryResults <- read.csv(paste0(input,'/BenMAP',"/Country Results Summary by Model & Year.csv"))
 
-countryResults <- read.csv(paste0(Plots,"/Country Results Summary by Model & Year_eem.csv"))
 country_2020 <- countryResults %>%
   select(c('COUNTRY','Region','SuperRegion','Model','AvgResponse','X2020')) %>%
   filter(Model == MODEL) %>%
   rename(region = COUNTRY) #%>%
 
 #read in population
-inputs <- file.path("Code","InputData","Creating RFF Lookup Tables")
-mean.pop<-read.csv(file.path(inputs,"rff_pop_means.csv")) #this dataset includes all countries (rff-sp does not)
+socio_inputs <- file.path('input','RFF','lookup_tables')
+mean.pop<-read.csv(file.path(socio_inputs,"rff_pop_means.csv")) #this data set includes all countries (rff-sp does not)
 mean.pop <- mean.pop %>%
   filter(Year ==2020) %>%
   mutate(mean_pop = mean_pop *1000) %>% #convert to ppl counts
   group_by(LocID) %>%
   summarise_at(.vars = c('mean_pop'), sum) 
 
-inputs3 <- file.path("Code","InputData","Tool Inputs")
-Ctry.Name<-read.csv(file.path(inputs3,'Final Country Grid Col_Row Index_EEM.csv'))
+#inputs3 <- file.path("Code","InputData","Tool Inputs")
+Ctry.Name<-read.csv(file.path(input,'Final Country Grid Col_Row Index.csv'))
 
 mean.pop <- mean.pop %>% left_join(Ctry.Name, by = c('LocID'='COL')) %>%
   select(-c('Region','SuperRegion'))
 country_plot1 <- country_2020 %>% left_join(mean.pop, by =c('region'='COUNTRY')) %>%
   mutate(death_percap = 1e5*X2020/mean_pop) #absolute deaths per 100K
 
-#read in mort data (created in the mortality timeseries chunk)
+#read in mort data (created in the mortality timeseries chunk above)
 mort_rate <- resp_mort_means_noage %>% 
   filter(Min.Year ==2020)
 country_plot <- country_plot1 %>% left_join(mort_rate, by ='LocID')
 
-#plot by super region?
-  
-#need to sum all country results
 
-
-#map data
+# read in map data and align country names
 worldData <- map_data("world")
 #correct region names
 worldData["region"][worldData["region"] == "Russia"] <- "Russian Federation"
@@ -824,15 +809,10 @@ MergedData <- MergedData %>%
          rel_MeanMortalityRate = MeanMortalityRate/mean(MeanMortalityRate, na.rm=TRUE))
 
 
-#chloropleth of world
-# Percapita deaths
+#chloropleth of world Per capita deaths
 p5 <- ggplot() +
   geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = death_percap),
                color = 'black',linewidth=0.15)+
-#  scale_fill_gradientn(
-#   colors=c("red","white","blue"),
-#   values=rescale(c(-1,0,1)),
-#   limits=c(-1,1))+
   scale_fill_fermenter("Deaths Per Capita",
                        n.breaks=10.5,
                         type = 'seq',
@@ -843,34 +823,15 @@ p5 <- ggplot() +
                        limits=c(#0,
                                 min(MergedData$death_percap, na.rm=TRUE),
                                 0.3),
-                                #max(MergedData$death_percap, na.rm=TRUE)),
-                       #midpoint=1,
-                       #breaks= c(0,100,1000,5000,10000,20000,40000,60000,100000),
-                       #breaks= c(0,100,1000,10000,100000),
-                       #n.breaks = 6,
-                       #label=scales::comma)+#,
                        labels = c('Minimum',rep('',8),'Maximum'))+
-                       #guide =  guide_colorbar(nbin=10))+
-
-                       #guides() (fill= guide_colorbar(even.steps) = FALSE
-  #scale_fill_continuous(name="Total Mortality (deaths per 100K)",
-  #                      low="darkblue",
-  #                      high="lightblue",
-  #                      limits=c(0,70),
-  #                      na.value='gray')+
   theme_void()+
   theme(legend.position = 'right')+
   theme(legend.key.height = unit(0.5,'cm'),
         legend.spacing.y = unit(.5,'cm'),
         legend.text = element_text(size=12),
         legend.title = element_text(size=13))+
-  #ggtitle('Total Deaths Per 100K')+
-  #theme(plot.title = element_text(size = 20))+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
   coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
-
-# Map of the world:
-#p5<- map('world',col="grey", fill=TRUE, bg="white", lwd=0.05, mar=rep(0,4),border=0, ylim=c(-80,80) )
 
 p5
 
@@ -973,6 +934,7 @@ ggsave(plot = p5, filename =
          file.path(Plots,'Plots',paste0('Relative_2020_DeathsPerCapMaps_',MODEL,'.png')),width = 9,height = 5)
 p5
 ```
+
 
 
 ```{r, damagesbar}
