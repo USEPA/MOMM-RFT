@@ -1,31 +1,24 @@
-#### Purpose: To adjust the Global Ozone health effects impact generated in BenCloud####
+### Title: 2_Global Ozone Reduce Form Tool_EEM.R                                     ##
+### Purpose: To adjust the Global Ozone health effects impact generated in BenCloud  ####
 ### Created by: Melanie Jackson, IEc 
 ### Adapted by: E. McDuffie (EPA)
 ### Date Created: 3/15/2023      
-### Last Edited: 4/12/2023
+### Last Edited: 4/24/2023
 ##      Inputs:                                                                       ##
-##        -_Simulation Inputs.xlsx                                                    ##
 ##        -Country Results Interpolated 2020-2100 by Model.csv                        ##
 ##        -All Trajectory Mortality Ratios_through 2100.rds (parts 1&2)               ##
 ##        -All Trajectory Population Ratios_through 2100.rds (parts 1&2)              ##
-##        -RFF Country GDPperCap_interpolated through 2100.rds (23 parts)             ##
-##        -RFF Global GDP Per Capita_through 2100.csv                                 ##
-##        -Global 2100 Population Rank Order.xlsx                                     ##
 ##        -sampled_pop_trajectory_numbers.csv                                         ##
-##        -Discount Rates w_20yr Cessation Lags.xlsx                                  ##
-##        -Country Ozone Response.csv                                                 ##
-##        -BenMAP Inflation Indexed to 2015.xlsx                                      ##
-##        -Discount Rates w_20yr Cessation Lags.xlsx                                  ##
 ##        -Final Country Grid Col_Row Index.csv                                       ##
-##        -Ramsey Discounting.xlsx                                                    ##
 ##     Outputs:
 ##        - output/rft/
-## Units: Code adjusts all $ values for $2020, Ramsey discounted $ is PV to 2020      ##
+## Units: Code adjusts all $ values for $2020                                         ##
 ########################################################################################
 
 #### Read in necessary packages, set working paths, set constant variables  ####
   #clean up space before loop
   rm(list = ls()); gc()
+  
   #necessary packages
     packs<-c("dplyr","tidyverse","readxl","purrr","foreach","utils","pbmcapply")
     for (package in packs) { #Installs packages if not yet installed
@@ -38,188 +31,157 @@
     library(foreach) #to do parallel processing in loop
     library(purrr)  #for general data manipulation
     library(utils)
-    library(pbmcapply) #adds ETA to progress bar
+    #ibrary(pbmcapply) #adds ETA to progress bar
     library(arrow)
   
   #working directories
-    #Inputs<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Results/Reduced Form Tool/Tool Inputs/"
-    #LookupTbls<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Results/Reduced Form Tool/RFF Lookup Tables/"
-    #Outputs<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Results/Reduced Form Tool/Outputs/"
-    #SocioEcon.GDP<-"J:/share/OAQPS 2021/BenMAP FollowOn (TO 6)/Task 2.2 BenMAP Cloud Tool/2.2.4 Climate and International Analyses/Data/Mortality/rffsps_v5/pop_income/"
-    #EEM
-    setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
-    Inputs       <- file.path('input')
-    Outputs       <- file.path('output','rft')
+    #setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
+    Inputs  <- file.path('input')
+    Outputs <- file.path('output','rft')
     
+   
+########
+##### Define constants 
+#######
     
   #constant variables (These are the conditions run through the BenMAP WebTool)
-    CloudPulse=275
-    CloudMethBase=1834
-    methane_mmt_to_ppbv = 1/2.75 #2.75 mT change = 1 ppb change (Prather et al., 2012 conversion factor used in IPCC AR5)
-    CloudMethPulse=CloudMethBase+(CloudPulse*methane_mmt_to_ppbv) 
-    MethaneLifetime=11.8 #the methane lifetime suggested is referred to as "perturbation" lifetime, the perturbation lifetime is 11.8 years according to the AR6 assessment. 
-    BaseYear=2020
-    gdp_2011_to_2020 = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
+  CloudMethPulse_Mmt  = 275   # (Mmt) original CH4 pulse size used in BenMAP simulations
+  CloudMethBase_ppbv  = 1834  # (ppbv) original CH4 baseline used in BenMAP simulations
+  methane_mmt_to_ppbv = 1/2.75 #ppbv/mt conversion (Prather et al., 2012 conversion factor used in IPCC AR5)
+  CloudMethPulse_ppbv = CloudMethBase_ppbv+(CloudMethPulse_Mmt*methane_mmt_to_ppbv) # methane pulse (in ppbv) used in BenMAP simulations
+  MethaneLifetime     = 11.8 # (years) methane perturbation lifetime  according to the AR6 assessment. 
+  BaseYear            = 2020 # year of CH4 pulse used in BenMAP simulations
+  gdp_2011_to_2020    = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
                       #last access: March 30, 2023
+  base_vsl            = 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
+  Elasticity          = 1  # income elasticity
+  Years               <- c(2020:2100) # set simulation years
+  lags                = c(6, 2.5, 2.5, 2.5, 2.5, 4/15, 4/15, 4/15, 4/15,4/15, 4/15, 4/15, 4/15, 
+                          4/15, 4/15, 4/15, 4/15, 4/15, 4/15, 4/15)/20
+                      # These are EPA standard 20 year cessation lags (%) for particulate matter and
+                      # represent the time delay between the year of exposure and distribution of attributable
+                      # deaths over the next 20 years
+  
+########
+##### Read in Original BenMAP Simulation Data ####
+########
     
-  #ARE WE DOING DISCOUNTING IN THIS MODULE??
-  #constants for Ramsey discounting
-    #RamseyInput<-read_xlsx(paste0(Inputs,"Ramsey Discounting.xlsx"))
-    #  names(RamseyInput)<-c("Discount Rate","1.5pct","2pct","2.5pct","3pct")
-    #Rams1.5.rho<- RamseyInput$`1.5pct`[1]
-    #Rams1.5.eta<-RamseyInput$`1.5pct`[2]
-    #Rams2.rho<- RamseyInput$`2pct`[1] #don't need 2%
-    #Rams2.eta<-RamseyInput$`2pct`[2]
-    #Rams2.5.rho<- RamseyInput$`2.5pct`[1]
-    #Rams2.5.eta<-RamseyInput$`2.5pct`[2]
-    #Rams3.rho<- RamseyInput$`3pct`[1]
-    #Rams3.eta<-RamseyInput$`3pct`[2]
-    
-    ## discount rates (From FrEDI NPD paper - 3/30/2023)
-  #  rates = tibble(rate = c('1.5% Ramsey', '2.0% Ramsey', '2.5% Ramsey', '3.0% Ramsey', '2.0% CDR', '3.0% CDR'),
-  #                 rho  = c(exp(0.000091496)-1, exp(0.001972641)-1, exp(0.004618785)-1, exp(0.007702711)-1, 0.02, 0.03), ## under discrete time, need to transform the rho that was calibrated using continuous time 
-  #                 eta  = c(1.016010261, 1.244459020, 1.421158057, 1.567899395, 0, 0))
-    
-    
-#### Read in Input Data ####
-  #Lookup Tables
-    
-    ## O3-Methane Mortality & Responses ##
-    CloudResults<-read.csv(file.path(Inputs,"BenMAP","Country Results Interpolated 2020-2100 by Model_eem.csv"))
+    ## 1) Original BenMAP O3-Methane Mortality 
+    CloudResults <- read.csv(file.path(Inputs,"BenMAP","Country Results Interpolated 2020-2100 by Model_eem.csv"))
+    CloudResults$LocID  <- CloudResults$column #rename
     # Description: Timeseries of mean and 95th percentile interpolated CH4-O3 mortality 
     #  results from BenMAP for each model (from 'Summarizing Results.R')
-    #OzoneResponse<-read.csv(file.path(Inputs,"Country Ozone Response.csv"))
-    #  names(OzoneResponse)[1]<-"LocID"  #change cntry_cl to LocID to join tables
-    OzoneResponse<-read.csv(file.path(Inputs,"BenMAP","Country Results Summary by Model & Year_eem.csv"))
-      OzoneResponse <- OzoneResponse %>%
-        select(c("column","COUNTRY",'Region','SuperRegion','Model','AvgResponse'))
-      names(OzoneResponse)[1]<-"LocID" 
-    # Description: Average O3-CH4 response (pptv O3/ppbv CH4), by country. Values 
+    
+    ## 2) Original O3-CH4 Response data by country (O3 pptv/CH4 ppbv), derived from CCAC simualtions
+#    OzoneResponse   <- read.csv(file.path(Inputs,"BenMAP","Country Results Summary by Model & Year_eem.csv"))
+#      OzoneResponse <- OzoneResponse %>%
+#        select(c("column","COUNTRY",'Region','SuperRegion','Model','AvgResponse'))
+#      names(OzoneResponse)[1] <- "LocID" 
+#      names(OzoneResponse)[6] <- "CloudAvgResponse" 
+    # Description: Average O3-CH4 response (pptv O3/ppbv CH4), by country (from CCAC). Values 
     #  calculated in 'Summarizing Results.R', extracted & matched with country ID here
+    # We now calculate the ozone-methane response at NOx levels = 1 (i.e., those used in BenMAP), using the
+    # equations from the CCAC report. We re-calculate the responses so that the *change* in NOx relative
+    # to the NOx=1 case is appropriately captured in the RFT
     
+    ## 3) Create a copy of the BenMAP cloud results & combine with the Ozone Response Data
+     # CloudResults_rft        <- CloudResults
+    #  CloudResults_rft$LocID  <- CloudResults_rft$column #rename
+    #  #calculate cloud standard deviation (N = 10,000 monte carlo runs; CI = 95% -> Z=1.96x2 = 3.92)
+    #  #CloudResults_rft$Std.Dev<-(CloudResults_rft$Inverse.97_5 - CloudResults_rft$Inverse.2_5)/3.92
+    #  CloudResults_rft        <- left_join(CloudResults_rft,OzoneResponse,by=c("LocID","Model"))
+
     ## Country Index Key ##
-    countries<-read.csv(file.path(Inputs,"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8)]
-    # Description: The row and column indices of each country (for BenMAP 0.5x0.5 grid)
+    countries <- read.csv(file.path(Inputs,"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8,9)]
+    # Description: The country name and LocID crosswalk (for BenMAP 0.5x0.5 grid)
       
-    ## Baseline Mortality Data (for 1000 RFF scenario) ## ???
-    mort.files<-list.files(file.path(Inputs,"RFF","lookup_tables"),pattern = "All Trajectory Resp Mortality Ratios_AllAges_through 2100_")
-      All.mort<-lapply(file.path(file.path(Inputs,"RFF","lookup_tables"),mort.files), readRDS)
-      MortRatios<-do.call(rbind,All.mort)
-      names(MortRatios)[5]<-"MortRatio"  #change Ratios to MortRatio so differs from pop column name
-      rm(mort.files,All.mort)
-    # Description: Interpolated timeseries of ratios of respiratory mortality for 
-    # all countries in 1000 RFF scenarios relative to the average respiratory mortality.
-    # These data are already corrected with Int'l Futures respiratory to all-cause ratio
-    #  A single file of all 1,000 scenarios for each country is too large for repo, so get a list of the
-    #  input mort ratio files, read in all files, and then combine into an array
-      
-        
-    ## Socioeconmic Data (for 1000 RFF scenarios) ###
-    pop.files<-list.files(file.path(Inputs,"RFF","lookup_tables"),pattern = "All Trajectory Population Ratios_AllAges_through 2100_")
-      All.pop<-lapply(file.path(file.path(Inputs,"RFF","lookup_tables"),pop.files), readRDS)
-      PopRatios<-do.call(rbind,All.pop)
-      names(PopRatios)[4]<-"PopRatio"  #change Ratios to PopRatio so differs from mort column name
-      rm(pop.files,All.pop)
-    # Description: Timeseries of the ratio of population relative to the year 2020, by country, for 
-    #  1,000 RFF scenarios. A sinlge file of all 1,000 scenarios for each country is too large for repo,
-    #  so get a list of the population ratio files, read in all files, and then combine into an array
-    #Global2100Rank<-read.csv(file.path(Inputs,"Global 2100 Population Rank Order.csv"))
-    # Description: A list of the total 2100 population in each of the 1000 RFF scenarios, and 
-    #  their rank order relative to each other. This is used to calculate which of the RFF
-    #  scenarios are the xth percentile, if the user wants to run the tool for a certain percentile
-    SampleID<-read.csv(file.path(Inputs,"sampled_pop_trajectory_numbers.csv"))
-    # Description: Cross-walk between mortality and RFF trajectory & trial #s
     
-    #Add a flag for distributing deaths using cessation lag or not
-    cessation_flag =1
-    lags = c(6, 2.5, 2.5, 2.5, 2.5, 4/15, 4/15, 4/15, 4/15,4/15, 4/15, 4/15, 4/15, 
-             4/15, 4/15, 4/15, 4/15, 4/15, 4/15, 4/15)/20
+
+########
+##### Set User-Defined Scenario Inputs
+#######
     
-    #CessationLags<-read_xlsx(file.path(Inputs,"Discount Rates w_20yr Cessation Lags.xlsx"))
-    #  CessationFracts<-CessationLags[1:20,1:2]
-    #  CessationFracts<-as.data.frame(lapply(CessationFracts,as.numeric))
-    # Description: ??
-    #EEM - set as constant parameter instead
-    #Inflators<-read_xlsx(paste0(Inputs,"BenMAP Inflation Indexed to 2015.xlsx"),sheet = "Data") #We should set this as a parameter instead
-    #  Inf.to.2020<-Inflators$AllGoodsIndex[(Inflators$Year==2020)]/Inflators$AllGoodsIndex[(Inflators$Year==2011)]
-    # GlobalGDP<-read.csv(file.path(LookupTbls,"RFF Global GDP Per Capita_through 2100.csv"))
-    # # Description: ?? (GDP per capita for each GDP/Pop trajectory pair?)
-    # Ctry.GDP.Files<-list.files(file.path(LookupTbls,"Split GDP Files/"),pattern = ".rds")
-    #   All.Ctry.GDP<-lapply(file.path(LookupTbls,"Split GDP Files",Ctry.GDP.Files), readRDS)
-    #   Ctry.GDP<-do.call(rbind,All.Ctry.GDP)
-    #   rm(Ctry.GDP.Files,All.Ctry.GDP)
-    #   BaseGDP<-Ctry.GDP[(Ctry.GDP$Year==BaseYear & Ctry.GDP$LocID==840),c('RunID','GDP.PerCapita')]
-    # Description: Time series of GDP Per Capita for each country for each of the 1000 GDP/Pop trajectory pairs
-    #   These values are used to adjust VSL in the base valuation calculations but are not
-    #   used in the Ramsey discounting calculations. A single file is too large so
-    #   get a list of input files, read them in, and then combine into an array
-      
-    #Note: we may want to change this to be able to loop through a select set of separate GDP and population scenarios
-      
-      
-#### **Set External variables from input file ####
-  #Read in Input Scenario variables and set years for run
-    InputVars<-read_xlsx(file.path(Inputs,"_Simulation Inputs_eem.xlsx"),sheet="Input Variables")
-    InputVars<-InputVars[!is.na(InputVars$Input),]
-      
-    year.var=InputVars$Value[(InputVars$Input=="Control Year")]
-    #Years=ifelse(year.var=="All",list(c(2020:2100)),
-    #             ifelse(year.var=="Every 5 Years",list(seq(2020,2100,5)),
-    #              ifelse(year.var=="Every 10 Years",list(seq(2020,2100,10)),
-    #               ifelse(year.var=="Same as Web Analysis",list(c(seq(2020,2040,5),seq(2050,2100,10))),
-    #             InputVars$Value[InputVars$Input=="Control Year"]))))
-    #  Years<-unlist(Years)
-    Years <- c(2020:2100)
-      
-    Scenario=InputVars$Value[(InputVars$Input=="RFF Scenario")]
-      #determine Mortality/population trajectory from the sample ID of the scenario 
-        #(if a percentile is specific pull from 2100 population rank)
-        #row num is run num which is scenario num
-        #if running a percentile, identify percentiles and search within global 2100 rank
-      if(substr(Scenario,nchar(Scenario),nchar(Scenario))=="e"){
-        percentile=as.numeric(substr(Scenario,1,nchar(Scenario)-13))
-        Trajectory=Global2100Rank$Trajectory[(Global2100Rank$Order==percentile*10)]
-      }else{
-        #if running all scenarios identify 'all' and create list of all RFF run #s (10,000)
-        if(Scenario=="All"){
-          Trajectory=SampleID$x
-          #otherwise, for single RFF run, just search for trajectory based on runID/sampleID
-        }else{
-          Trajectory=SampleID$x[as.integer(Scenario)]
-        }
-      }
-    #Trajectory <- Trajectory[1:10]
-    #UsrModel = InputVars$Value[(InputVars$Input=="GCM Model")]
-    
-    #set up prog bar foreach loops
-    num_ticks<-length(Trajectory)
-    pb<-progressBar(min=0,max=length(Trajectory),style="ETA")
-    
+  # User-Defined Methane Pulse Data
+  Usr_MethanePulse_Mmt = 275
+  Usr_MethBase_ppbv    = 1834
+  Usr_MethPulse_ppbv   = Usr_MethBase_ppbv+(Usr_MethanePulse_Mmt*methane_mmt_to_ppbv)
   
-    #Create methane trajectory (same for all scenarios)
+  # Specify Population, Mortality, GDP data
+  # The tool is currently set up to use data from the RFF-SPs
+  # The user is asked to specify a specific RFF-SP trajectory Number, OR
+  # specify 'ALL' to calculate the mortality estimates for all 10,000 trajectories
+  RFF_TrajNumber = 'mean'   #Options: numerical value 1-10000, or 'All', or 'mean'
+  
+  #NOx emissions
+  NOx_scalar = 1          #Options: numerical values > 0 (e.g., 50% = 0.5, 150% = 1.5)
+  # this value represents the proportion of NOx emissions in each country relative
+  # to NOx emission in the original CCAC simulations
+  
+  # Implement cessation lags (1 = yes, 0 = no)
+  cessation_flag = 1
+  
+  #homogeneous methane-ozone response
+  homogeneous =1
+  # if set to 1, the ozone response will be set to the global (non-weighted) average (4.8 pptv/ppbv)
+  
+  
+##########
+###### Pre-Processing Steps
+#########
+  
+  # 1) Load in cross walk between public RFF and underlying mortality trajectories
+    SampleID <- read.csv(file.path(Inputs,"sampled_pop_trajectory_numbers.csv"))
+    # Description: Cross-walk between mortality and RFF trajectory & trial #s
+  
+  # 2) Set the trajectory numbers for the user-defined scenario
+    if (RFF_TrajNumber == 'All') {
+      Trajectory = SampleID$x
+    } else if (RFF_TrajNumber == 'mean') {
+      Trajectory =1 #will trigger mean data in main loop
+    } else {
+      Trajectory = SampleID$x[as.integer(RFF_TrajNumber)]
+    }
+  
+  
+  # 3) Calculate delta methane timeseries for original BenMAP and user-defined projections
+    Usr_MethaneProj               <- data.frame(Years)
+    Usr_MethaneProj$PulseMethane  <- (Usr_MethPulse_ppbv-Usr_MethBase_ppbv)*exp((BaseYear-Usr_MethaneProj$Years)/MethaneLifetime) #+Usr_MethBase_ppbv
+    CloudMethaneProj              <- data.frame(Years)
+    CloudMethaneProj$CloudMethane <- (CloudMethPulse_ppbv-CloudMethBase_ppbv)*exp((BaseYear-CloudMethaneProj$Years)/MethaneLifetime) #+CloudMethBase_ppbv
+  
+  
+  # 4) Read in pre-process mortality ratios
+    mort.files <- list.files(file.path(Inputs,"RFF","lookup_tables"),pattern = "All Trajectory Resp Mortality Ratios_AllAges_through 2100_")
+    All.mort   <- lapply(file.path(file.path(Inputs,"RFF","lookup_tables"),mort.files), readRDS)
+    MortRatios <- do.call(rbind,All.mort)
+    names(MortRatios)[5]<-"MortRatio"  #change Ratios to MortRatio so differs from pop column name
+    rm(mort.files,All.mort)
+    # Description: Interpolated timeseries of ratios of respiratory mortality for 
+    # all countries in 1000 RFF scenarios relative to the average respiratory mortality (used in BenMAP run)
+    # These data are already corrected with Int'l Futures respiratory to all-cause mortality ratio
+  
+  # 5) Read in pre-process RFF population ratios
+    pop.files <- list.files(file.path(Inputs,"RFF","lookup_tables"),pattern = "All Trajectory Population Ratios_AllAges_through 2100_")
+    All.pop   <- lapply(file.path(file.path(Inputs,"RFF","lookup_tables"),pop.files), readRDS)
+    PopRatios <- do.call(rbind,All.pop)
+    names(PopRatios)[4]<-"PopRatio"  #change Ratios to PopRatio so differs from mort column name
+    rm(pop.files,All.pop)
+    # Description: Interpolated timeseries of the ratios of population for all 
+    # countries in 1000 RFF scenarios relative to the average population (used in BenMAP run).
     
-    #first calculate the methane trajectory of the custom pulse size and of the pulse that was put through BenMAP
-    Pulse=as.numeric(InputVars$Value[(InputVars$Input=="Methane Emissions Pulse")])
-    MethBase=as.numeric(InputVars$Value[(InputVars$Input=="Methane Baseline Concentration")])
-    MethPulse=MethBase+(Pulse*methane_mmt_to_ppbv)
-    MethaneProj<-data.frame(Years)
-    MethaneProj$PulseMethane<-(MethPulse-MethBase)*exp((BaseYear-MethaneProj$Years)/MethaneLifetime)+MethBase
-    CloudMethaneProj <-data.frame(Years)
-    CloudMethaneProj$CloudMethane<-(CloudMethPulse-CloudMethBase)*exp((BaseYear-CloudMethaneProj$Years)/MethaneLifetime)+CloudMethBase
     
-    #User Defined reference VSL & income elasticity
-    #VSL=as.numeric(InputVars$Value[InputVars$Input=="VSL"]) #in $2011 USD, 2020 income levels
-    #Elasticity=as.numeric(InputVars$Value[InputVars$Input=="Income Elasticity"])
-    
-    base_vsl = 9.33e6 #in 2020 $
-    Elasticity = 1
-    
-    #do calculations for all GCMS & years
-    CloudResults.yr <- CloudResults
-    CloudResults.yr$LocID<-CloudResults.yr$column
-    #calculate cloud standard deviation (N = 10,000 monte carlo runs; CI = 95% -> Z=1.96x2 = 3.92)
-    CloudResults.yr$Std.Dev<-(CloudResults.yr$Inverse.97_5 - CloudResults.yr$Inverse.2_5)/3.92
-    CloudResults.yr<-left_join(CloudResults.yr,OzoneResponse,by=c("LocID","Model"))
+    # 6) Read in the ozone-response NOx sensitivity data (from CCAC simulations)
+    response_nox_sensitivity <- read_csv(file.path(Inputs, 'CCAC',"Country_ozone_response_nox_sensitivity.csv"),
+                                         col_types = cols())
+    response_nox_sensitivity <- response_nox_sensitivity %>%
+      #right_join(countries,by='COL') #%>%
+      right_join(CloudResults, by=c('COL'='LocID','Model'),multiple='all') %>% #expand to all years & include all countries
+      mutate(CloudAvgResponse = -1000*(slope * log(NOx_Mt) + intercept)/556, #re-calculate the O3 response that corresponds to original NOx levels.  
+             NOx_Mt           = NOx_Mt * NOx_scalar,                         #this could also be a timeseries of scalars
+             Usr_AvgResponse  = -1000*(slope * log(NOx_Mt) + intercept)/556) %>% #pptv O3 /ppbv CH4
+              # O3 change = slope * ln(NOx) + intercept -->
+              # O3 change per ppbv CH4 = O3 change / CCAC CH4 pulse
+      select(COL,Country,Region,SuperRegion,Model,ModelYear,CloudAvgResponse,Usr_AvgResponse)
     
     #pre-process mean pop data file (the same for each RFF scenario)
     #This was used in the BenMAP WebTool (summed over all ages for each country)
@@ -236,14 +198,16 @@
 #      mutate(MeanPop = MeanPop *1000) %>% #convert from 1000s to counts
 #      select(-c("meanpop"))
       
-#### Begin loop for RFF Scenarios choice ####
+########
+##### Begin loop through Specified SocioEconomic Scenarios ####
+########    
     
     ###### Set Up Cluster ######
     ### Parallel filter and writing of feather files
     ### Detect cores and get number of cores
     parallel::detectCores()
     n.cores    <- parallel::detectCores() - 1
-    #n.cores    <- 5
+    n.cores    <- 5
     n.cores
     
     ### Make cluster
@@ -257,71 +221,104 @@
     ###### Run RFT ######
     # Start the clock!
     ptm   <- proc.time(); time1 <- Sys.time()
-    ### Took about 3.31 hours
     
-    ## start parallel
-    startFile = 9703
+    ## start parallel (use this to specify the start file [if simulation is disrupted])
+    startFile = 1
 
-  Results<- foreach(itrial = startFile:length(Trajectory),.combine=rbind,
-                  .packages=c('purrr','dplyr','utils','pbmcapply','arrow','tidyverse')) %dopar% { #dopar takes longer to run than do
+  ####
+  ##Begin Analysis ##
+  ####
+  #loop through the trajectories (or scenarios)
+  Results <- foreach(itrial = startFile:length(Trajectory),.combine=rbind,
+                  .packages=c('purrr','dplyr','utils','arrow','tidyverse')) %dopar% { #dopar takes longer to run than do
     
-  ## Begin Analysis ##
-    #loop through the trajectories (or scenarios)
-    # Read in mortality, population, and gdp data for the given trial
-    pop_gdp_file <- file.path(Inputs,"RFF","rft_inputs",paste0('rffsp_pop_gdp_',itrial,'.feather')) %>% read_feather
-    pop_gdp_data <- right_join(countries,pop_gdp_file, by= c("RFF_iso_code"="Country"),multiple='all')
-    pop_gdp_data <- pop_gdp_data %>% 
-      select(COL,Year,pop,gdp) %>%
-      mutate(gdp_per_cap = gdp/pop) %>%
-      group_by_at(.vars = c('COL')) %>% 
-      #interpolate between 5 year intervals
-      complete(Year=min(Year):max(Year))%>%
-      mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:2100)$y,
-             pop = approx(x=Year,y=pop,xout=2020:2100)$y,
-             gdp = approx(x=Year,y=gdp,xout=2020:2100)$y)
     
-    #Join together the BenMAP cloud output, as well as the relevant population,
+    # 1) Read in mortality, population, and gdp data for the given trial
+    if (RFF_TrajNumber == 'mean') {
+      pop_gdp_file <- read_parquet(file.path(Inputs,"RFF","rft_inputs", 'rffsp_pop_gdp_all_trials.parquet'))
+      pop_gdp_data <- pop_gdp_file %>%
+        mutate(gdp_per_cap = gdp/pop) %>%
+        group_by_at(.vars = c('Year','Country')) %>% #sum across trials for each country
+        summarise_at(.vars = c('gdp_per_cap','pop','gdp'), mean) %>%
+        ungroup() %>%
+        #interpolate between 5 year intervals
+        group_by(Country) %>%
+        complete(Year=min(Year):max(Year))%>%
+        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:2100)$y,
+               pop = approx(x=Year,y=pop,xout=2020:2100)$y,
+               gdp = approx(x=Year,y=gdp,xout=2020:2100)$y)
+      pop_gdp_data <- right_join(countries,pop_gdp_data, by= c("RFF_iso_code"="Country"),multiple='all') %>%
+        select(COL,Year,pop,gdp,gdp_per_cap)
+      
+    } else {
+      pop_gdp_file <- file.path(Inputs,"RFF","rft_inputs",paste0('rffsp_pop_gdp_',itrial,'.feather')) %>% read_feather #generated with "1_build_inputs_for_momm_rft.R"
+      pop_gdp_data <- right_join(countries,pop_gdp_file, by= c("RFF_iso_code"="Country"),multiple='all')
+      pop_gdp_data <- pop_gdp_data %>% 
+        select(COL,Year,pop,gdp) %>%
+        mutate(gdp_per_cap = gdp/pop) %>%
+        group_by_at(.vars = c('COL')) %>% 
+        #interpolate between 5 year intervals
+        complete(Year=min(Year):max(Year))%>%
+        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:2100)$y,
+              pop = approx(x=Year,y=pop,xout=2020:2100)$y,
+              gdp = approx(x=Year,y=gdp,xout=2020:2100)$y)
+    
+    }
+                    
+    # 2) Join together the original BenMAP cloud output, as well as the relevant population,
     # GDP, methane, and baseline mortality data. 
     # Because the underlying age specific background respiratory mortality data
     # were calculated elsewhere and are not published with the RFF trajectories, we
     # use the pre-processed ratios here. 
-    # Bcakground mortality and population (and GDP) are inherently linked. Therefore, 
+    # Background mortality and population (and GDP) are inherently linked. Therefore, 
     # this RFT can only do calculations for specific RFF scenarios (not any custom 
     # socioeconomic scalar). To make this tool more flexible in the future to be 
     # able to take in other background mortality data, we would need to calculate the 
     # mean mortality data used in the cloud here (not currently done)
-    Analysis <- left_join(CloudResults.yr,pop_gdp_data,by=c("LocID"="COL","ModelYear"="Year"))
-    Analysis <- Analysis %>%
-      left_join(MortRatios[MortRatios$Trajectory==Trajectory[itrial],],by=c("LocID","ModelYear"="Year")) %>%
-      select(-c("Period","Trajectory","point_estimate","pct_2_5","pct_97_5","PointEstimate","row"))
-    #Analysis$MortRatio = 1
-    # There is data for more countries in the ratio files (derived from age specific data) 
-    # rather than the RFF files. Therefore, use the pre-calculated population ratios
-    # instead of calculating the ratio here
-    Analysis <- Analysis %>%
-      left_join(PopRatios[PopRatios$Trajectory==Trajectory[itrial],],by=c("LocID","ModelYear"="Year")) %>%
-      select(-c('Trajectory'))
-    #Analysis <- Analysis %>% 
-    #  left_join(mean_pop, by=c("ModelYear"="Year","LocID")) %>%
-    #  mutate(PopRatio = pop/MeanPop) %>%
-    #  rename(CloudPop = MeanPop)
-    #Analysis$PopRatio = 1
-    #join all relevant data into dataframe for ease of calculation later
-    Analysis <- Analysis %>%
-      left_join(MethaneProj, by=c("ModelYear"="Years"), multiple='all') %>%
+   Analysis <- left_join(CloudResults,pop_gdp_data,by=c("LocID"="COL","ModelYear"="Year")) %>%
+        left_join(MortRatios[MortRatios$Trajectory==Trajectory[itrial],],by=c("LocID","ModelYear"="Year")) %>%
+        left_join(PopRatios[PopRatios$Trajectory==Trajectory[itrial],],by=c("LocID","ModelYear"="Year")) %>%
+        select(-c("Period","Trajectory.x","Trajectory.y","point_estimate","pct_2_5","pct_97_5","PointEstimate","row"))
+      
+   if (RFF_TrajNumber == 'mean') {
+     Analysis$MortRatio = 1
+     Analysis$PopRatio  = 1 #use the same mortality and population data as used in BenMAP
+    }
+  
+   
+   # join with methane delta timeseries data 
+   Analysis <- Analysis %>%
+      left_join(Usr_MethaneProj, by=c("ModelYear"="Years"), multiple='all') %>%
       left_join(CloudMethaneProj, by=c("ModelYear"="Years"), multiple='all')
     
 
-    #calculate proportion Point Estimates & percentiles assuming 
-      # newPE = origPE * MortRatio * PopRatio * (new Control / old Control)
+  # Combine data with the updated O3 Response data
+   # the country borders and averaging between BenMAP & CCAC data are slightly 
+   # different for the non-MMM models, so set the User O3 response to the BenMAP
+   # response to ensure that the RFT can reproduce BenMAP results with NOx scalar = 1
+   Analysis <- Analysis %>% 
+     left_join(response_nox_sensitivity, by = c("LocID"='COL','Model','ModelYear')) #%>%
+     #select(-c('column','SuperRegion')) 
+     
+   if (NOx_scalar==1 ){
+      Analysis <- Analysis %>%
+        mutate(Usr_AvgResponse = CloudAvgResponse) 
+   }
+   
+   if (homogeneous ==1){
+     Analysis <- Analysis %>%
+       mutate(Usr_AvgResponse = 3.2) 
+   }
+   
+    #calculate the new mortality value & 95% confidence interval (concentration response function error from BenMAP) 
+      # newPE = origPE * MortRatio * PopRatio * (O3 response * methane pulse / cloud O3 response * cloud methane pulse)
       # Ratio of the methane control values captures differences in methane base, pulse, and lifetime
       #TE = resp * Pulse1
       #X  = resp * Pulse2
       #so, X = TE * Pulse2/Pulse1
     #These do not include cessation lags
-    ### THIS NEEDS TO BE UPDATED TO RESP. * DELTA CH4 (NOT INCLUDING BKG)
     Analysis <- Analysis %>%
-      mutate(scalar_PE  = MortRatio * PopRatio * ((AvgResponse * PulseMethane)/(AvgResponse * CloudMethane)),
+      mutate(scalar_PE  = MortRatio * PopRatio * ((Usr_AvgResponse * PulseMethane)/(CloudAvgResponse * CloudMethane)),
              physical_impacts = Inverse.PE * scalar_PE,
              physical_impacts_2_5 = Inverse.2_5 * scalar_PE,
              physical_impacts_97_5 = Inverse.97_5 * scalar_PE)
@@ -397,11 +394,13 @@
     }
       
       
-    ### VALUATION STEP ###
+  ######
+  ####VALUATION STEP ###
+  #####
       #Valuation of annual (non-discounted impacts)
       #1. Calculate reference vsl
       usa_base_income <- Analysis %>%
-        filter(COUNTRY == 'United States', 
+        filter(LocID == 840,           #USA 
                ModelYear == 2020) %>%
         select(Model, gdp_per_cap) %>%
         rename(base_income = gdp_per_cap)%>%
@@ -413,7 +412,7 @@
       
       # 3. calculate regional VSL & assign to countries with missing vsl data
       VSLResults.Reg <- Analysis %>%
-        filter(Model == 'MMM') %>%
+        filter(Model == 'MMM') %>% #is the same across all GCMs
         group_by_at(.vars = c('Region','ModelYear')) %>%
         summarise_at(.vars= c('gdp','pop'), sum, na.rm=TRUE) %>%
         mutate(region_gdp_per_cap = gdp/pop) %>%
@@ -451,26 +450,29 @@
       #cleanup/format results and column names
       
       if (cessation_flag ==1) {
-        Analysis <- Analysis[,c("Model","ModelYear","COUNTRY","LocID",'Region','SuperRegion',"pop","gdp",
-                                "AvgResponse","physical_impacts","physical_impacts_2_5","physical_impacts_97_5",
+        Analysis <- Analysis[,c("Model","ModelYear","Country","LocID",'Region','SuperRegion',"pop","gdp",
+                                "CloudAvgResponse","Usr_AvgResponse","physical_impacts","physical_impacts_2_5","physical_impacts_97_5",
                                 "physical_impacts_wlag","physical_impacts_wlag_2_5","physical_impacts_wlag_97_5",
                                 "annual_impacts","annual_impacts_2_5","annual_impacts_97_5",
                                 "annual_impacts_wlag","annual_impacts_wlag_2_5","annual_impacts_wlag_97_5","trial")]
       } else {
-        Analysis <- Analysis[,c("Model","ModelYear","COUNTRY","LocID",'Region','SuperRegion',"pop","gdp",
-                                "AvgResponse","physical_impacts","physical_impacts_2_5","physical_impacts_97_5",
+        Analysis <- Analysis[,c("Model","ModelYear","Country","LocID",'Region','SuperRegion',"pop","gdp",
+                                "CloudAvgResponse","Usr_AvgResponse","physical_impacts","physical_impacts_2_5","physical_impacts_97_5",
                                 "annual_impacts","annual_impacts_2_5","annual_impacts_97_5","trial")]
       }
       
-      Analysis %>% 
-        write_parquet(file.path(Outputs,paste0('damages_',itrial,'_momm_rft.parquet')))
+      if (RFF_TrajNumber == 'mean' ) {
+        if (homogeneous ==1) {
+          Analysis %>% 
+            write_parquet(file.path(Outputs,paste0('damages_homo_mean_NOx_',NOx_scalar,'_momm_rft.parquet')))
+        } else {
+          write_parquet(file.path(Outputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')))
+        }
+      } else {
+        Analysis %>% 
+          write_parquet(file.path(Outputs,paste0('damages_',itrial,'_NOx_',NOx_scalar,'_momm_rft.parquet')))
+      }
       
-      
-  #if(length(Trajectory)!=1){
-  #  setTxtProgressBar(pb,(a-1)*length(Trajectory)+itrial)
-  #}  
-        
-  #return(Analysis)
 
 }#End Scenario Loop
   
@@ -481,60 +483,5 @@
   ### stop cluster
   parallel::stopCluster(cl = my.cluster)
 
-#### Post-Loop Processing ####
-    
-    #Do Post-Processing Elsewhere#
-    
-    
-#  ## export results csv if running just one scenario
-#   if(Scenario!="All"){
-#     
-#     write.csv(Results,paste0(Outputs,"Excess Respiratory Mortality_RFF ",Scenario,"_",Year,".csv"),
-#               row.names=FALSE,na="")
-#  }else{
-# 
-#  #Otherwise, process all 10,000 runs
-#   ## Calculate distributional statistics include mean, 2.5th percentile, 97.5th percentile, min, and max ##
-#    #summarize results by country
-#     Ctry.stats<- Results %>%
-#                   group_by(Column,Row,COUNTRY,`Ozone Response`,Year) %>%
-#                   summarize(Mean=mean(`Excess Mortality`),
-#                             Min=min(`Excess Mortality`),
-#                             Max=max(`Excess Mortality`),
-#                             P2_5=mean(`Pct 2_5`),
-#                             P97_5=mean(`Pct 97_5`),
-#                             `Valuation ($2020 Undisc)`=mean(`Valuation ($2020 Undisc)`),
-#                             `Valuation ($2020;3% Disc)`=mean(`Valuation ($2020;3% Disc)`),
-#                             `Valuation ($2020;7% Disc)`=mean(`Valuation ($2020;7% Disc)`),
-#                             `Valuation ($2020;1.5% RamsDisc)`=mean(`Valuation ($2020;1.5% RamsDisc)`),
-#                             `Valuation ($2020;2% RamsDisc)`=mean(`Valuation ($2020;2% RamsDisc)`),
-#                             `Valuation ($2020;2.5% RamsDisc)`=mean(`Valuation ($2020;2.5% RamsDisc)`),
-#                             `Valuation ($2020;3% RamsDisc)`=mean(`Valuation ($2020;3% RamsDisc)`),
-#                             .groups="keep")
-#     
-#     #export
-#       write.csv(Ctry.stats,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Ctry_",Year,".csv"),
-#                 row.names = FALSE, na="")
-#       
-#   #summarize results at global level
-#     Global.tot<- Ctry.stats %>%
-#                     group_by(Year)%>%
-#                     summarize(Mean=sum(Mean),
-#                               P2_5=sum(P2_5),
-#                               P97_5=sum(P97_5),
-#                               `Valuation ($2020 Undisc)`=sum(`Valuation ($2020 Undisc)`),
-#                               `Valuation ($2020;3% Disc)`=sum(`Valuation ($2020;3% Disc)`),
-#                               `Valuation ($2020;7% Disc)`=sum(`Valuation ($2020;7% Disc)`),
-#                               `Valuation ($2020;1.5% RamsDisc)`=sum(`Valuation ($2020;1.5% RamsDisc)`),
-#                               `Valuation ($2020;2% RamsDisc)`=sum(`Valuation ($2020;2% RamsDisc)`),
-#                               `Valuation ($2020;2.5% RamsDisc)`=sum(`Valuation ($2020;2.5% RamsDisc)`),
-#                               `Valuation ($2020;3% RamsDisc)`=sum(`Valuation ($2020;3% RamsDisc)`),
-#                               .groups="keep")
-# 
-#     #export summary results
-#       write.csv(Global.tot,paste0(Outputs,"Excess Respiratory Mortality_Summary All RFF Scenarios_Global_",Year,".csv"),
-#               row.names = FALSE, na="")
-#   }#End Post-Processing
-#  print(paste0(Year," - Global and Country Summaries Exported"))
-# #}#End Year Loop     
+# Discounting of annual damages done in Code file #3    
     

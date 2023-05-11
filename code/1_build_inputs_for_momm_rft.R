@@ -35,7 +35,7 @@ options(scipen = 9999999)
 ##########################
 ##############  data paths
 ##########################
-setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
+#setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
 inputpath = file.path('input','RFF','pop_income')
 momm_rft_input_path = file.path('input','RFF','rft_inputs')
 
@@ -57,7 +57,7 @@ c_iteration  <- inputpath %>% list.files(pattern = "\\.feather") %>%
   (function(x){sub("rffsp_pop_income_run_", "", x)}) %>%
   as.numeric %>% sort; 
 c_iteration %>% length
-#c_iteration = c(1,2)
+c_iteration = c(1,2)
 
 
 rffsp <- 
@@ -97,4 +97,35 @@ rffsp <-
     write_parquet(momm_rft_input_path %>% file.path("rffsp_pop_gdp_all_trials.parquet"))
   
 
+### Process NOx Baseline Timeseries and NOx sensitivity equations
+  # (for each model)
+  
+models = c('CESM2','GFDL','GISS','HadGEM','MIROC','MMM')
+Results<-list()
+
+for (imodel in 1:length(models)) {
+  CCAC_temp <- read_excel(file.path('input','CH4_O3_v4_resp.xlsx'),
+                        sheet = paste0(models[imodel],"_results"))
+  print(models[imodel])
+  if (models[imodel] == 'MMM'){
+    CCAC_temp <- CCAC_temp[-1,c(1,3,16,19)]
+  } else {
+    CCAC_temp <- CCAC_temp[-1,c(1,3,34,37)]
+  }
+  colnames(CCAC_temp) = c('Country',"NOx_Mt","slope","intercept")
+  CCAC_temp$Model = models[imodel]
+  
+  Results[[imodel]] <- CCAC_temp
+  
+}
+All.results <- bind_rows(Results)
+
+#now join with country crosswalk and fill in missing countries
+countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6:9)]
+
+Results2 <- right_join(All.results, countries, by = c("Country"="CCAC_country"),multiple='all')
+
+Results2 %>% 
+  write_csv(file.path("input","CCAC","Country_ozone_response_nox_sensitivity.csv"))
+#then read in the file to the reduced form code, add input for NOx absolute emissions or scaling factor, then calculate the new response in the numerator of the RFT equation
 

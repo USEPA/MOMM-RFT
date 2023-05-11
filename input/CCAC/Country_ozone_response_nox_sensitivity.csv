@@ -1,0 +1,1306 @@
+Country,NOx_Mt,slope,intercept,Model,COUNTRY,COL,ROW,Region,SuperRegion,RFF_iso_code
+Afghanistan,0.54020618398852005,-0.37301282744542991,-4.5337519752623594,CESM2,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.71646854684912309,-6.01599009338039,CESM2,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.64583087492049929,-4.0986550344335289,CESM2,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.27464657420131089,-4.8544515750931527,CESM2,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-0.37323871967614708,-2.7560630005075293,CESM2,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.60369572284934137,-5.7710935709775466,CESM2,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.25952383620552882,-1.7892466168192915,CESM2,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.34583672233504636,-4.6576510924396199,CESM2,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.35570707788521166,-2.0653195242558682,CESM2,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.49103460448998015,-3.920631981385104,CESM2,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.21720487637297548,-3.7129630974855612,CESM2,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-1.2032574352857168,-7.5854883886030677,CESM2,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.80316651917676629,-5.9101467493702273,CESM2,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.49774925007029813,-3.14971067313029,CESM2,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.38721877680287109,-4.0678335266782977,CESM2,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.4418550434090025,-3.4240166909025271,CESM2,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-1.0999588003615159,-5.5494108941304834,CESM2,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.62590030365190208,-4.3349487924920744,CESM2,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-0.4947155558319285,-3.1446901325195662,CESM2,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,6.3857806117071217E-2,-2.7517136567327323,CESM2,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-0.23686940124502437,-1.7156228090215309,CESM2,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.70541404423954723,-4.9505591887315852,CESM2,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.70541404423954723,-4.9505591887315852,CESM2,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.19695902618413505,-2.7166842892918295,CESM2,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.74974062649173756,-1.0992911569274981,CESM2,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-0.27940214736454611,-2.0217823306224099,CESM2,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.39279629932996157,-3.651778287758332,CESM2,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,-0.22773153404160829,-2.6921345033831696,CESM2,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-0.42627469560014242,-3.4758164306280173,CESM2,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.33784475755856808,-2.3441600323126637,CESM2,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-0.20027708598348731,-2.0120338970256473,CESM2,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-0.85319792587857046,-2.0669333052777294,CESM2,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.95593549053192295,-8.5007146385217798,CESM2,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-0.21885218887532321,-1.9335956645202681,CESM2,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-0.21885218887532321,-1.9335956645202681,CESM2,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-6.758810765528922E-2,-2.5706565524057967,CESM2,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.43818291940008292,-2.6696876091887805,CESM2,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.68526661093334451,-0.6234959752818412,CESM2,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.68526661093334451,-0.6234959752818412,CESM2,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.68526661093334451,-0.6234959752818412,CESM2,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.68526661093334451,-0.6234959752818412,CESM2,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-0.34358977040133393,-1.3977178692892669,CESM2,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-1.0411447919722141,-7.8055516763725761,CESM2,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-1.0411447919722141,-7.8055516763725761,CESM2,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,-0.10304975446053068,-1.4959995820947181,CESM2,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-0.20368371693123352,-2.6697904101687593,CESM2,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.53764336227845766,-3.0479676669903211,CESM2,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.44167128112183041,-4.1533996637224897,CESM2,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.69329423988921557,-3.9992291749636881,CESM2,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.59443317668867279,-6.0079391981768486,CESM2,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-0.73621591991202195,-4.366702103085597,CESM2,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,-0.15437003921703532,-1.670668871949637,CESM2,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.46913346415554646,-3.1084346960494154,CESM2,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,-9.4164786911042422E-2,-1.4901283217102184,CESM2,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-1.0869192223306108,-5.8265198072188298,CESM2,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.62673011164240033,-5.3404907750352901,CESM2,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.52968809777745607,-5.6043588146150274,CESM2,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.85186491747291704,-3.9136611671099413,CESM2,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-0.38716794207899852,-1.6133589295643589,CESM2,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.85857589344093099,-4.6507751395728532,CESM2,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.62381513968048408,-3.3315762527192874,CESM2,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,-0.3094017572427693,-2.702544298700464,CESM2,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-0.2053093267849338,-3.7262641605796776,CESM2,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.70947508531559744,-5.2842440528623555,CESM2,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.35878612818840377,-2.4501466671914347,CESM2,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.40236466555596867,-3.3465394400196171,CESM2,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.40236466555596867,-3.3465394400196171,CESM2,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.65710968689717264,-4.2225423380332199,CESM2,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.68295426722612851,-3.3518729572819503,CESM2,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,-0.28651351076859372,-2.2605407626328011,CESM2,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.7102087694149446,-6.1137026088443189,CESM2,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.24862168859805422,-3.600399299677806,CESM2,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.87287492289713986,-3.2852431143920016,CESM2,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,-0.41547119267123395,-2.290133898371506,CESM2,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.48006651248606091,-3.9102693555763817,CESM2,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.52908451121929689,-5.1712690361656009,CESM2,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.43768021717007843,-2.1927820362379764,CESM2,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,-4.8862245308751023E-2,-1.9344875059796713,CESM2,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-0.49097503536718778,-4.6318524228488691,CESM2,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.39111083298481092,-2.9404493082203618,CESM2,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.69753631657295767,-4.0485703737893672,CESM2,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.4446434697043295,-2.5254527049404278,CESM2,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-0.28008458100078359,-3.3447033658060001,CESM2,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-0.60116556935284782,-5.4223142494391103,CESM2,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-0.46208749868436955,-2.3802087947036252,CESM2,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-0.3176171012384405,-1.7360886317209463,CESM2,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.59399597207588295,-3.8530235707148628,CESM2,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-1.0745660555856573,-4.6652538153742373,CESM2,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-0.87819788857710068,-5.0702042764493616,CESM2,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.86541368817285491,-5.9377541546462336,CESM2,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.86541368817285491,-5.9377541546462336,CESM2,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.46598697497267033,-3.3606547295169626,CESM2,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.71748178068971202,-4.7007350912614907,CESM2,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.92926549432329775,-2.2474031264302265,CESM2,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.93296244339736156,-6.8559153001241206,CESM2,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.29627561842978151,-3.2028898422913419,CESM2,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-0.32256373244345582,-2.4361707600038507,CESM2,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.27187983185571207,-2.7968789665762115,CESM2,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-1.4628599072784634,-6.5976019054986708,CESM2,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.35555059363312191,-4.8900966223856841,CESM2,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.27641661492450054,-1.9632275740681577,CESM2,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.5934386400548971,-4.8446502092203092,CESM2,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.70961242961399773,-5.8204119337533173,CESM2,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.3535772092282049,-3.5699379231751607,CESM2,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,-2.1196286282219999E-2,-1.5656562017074294,CESM2,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.48375848517136472,-4.1450646631514463,CESM2,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.76751714460479969,-5.3341334226757784,CESM2,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.74804022251441848,-5.9835512191257774,CESM2,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-0.25731385093351794,-2.3151440491672002,CESM2,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,-0.25142468557504716,-2.5454071232647628,CESM2,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.76146414043551724,-1.564730063824664,CESM2,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.63537502531934809,-4.3165451714678627,CESM2,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,-0.24555327418277867,-3.1142231967119045,CESM2,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.6855274269169864,-12.8411693484209,CESM2,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,CESM2,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.64324850798506739,-4.9868388447887053,CESM2,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.82932595041405066,-5.4818719368923805,CESM2,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.82932595041405066,-5.4818719368923805,CESM2,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.59227042311981815,-2.0541390470855228,CESM2,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.35538919074666875,-3.3349608348221484,CESM2,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.35538919074666875,-3.3349608348221484,CESM2,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-0.39179862365252666,-6.3163581283915029,CESM2,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.44679844774824001,-3.6875655567323036,CESM2,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.93235743115121372,-4.9002786468654529,CESM2,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.93235743115121372,-4.9002786468654529,CESM2,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.35415744922982412,-2.7602006050105907,CESM2,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-0.14973725452353692,-2.1426327610077531,CESM2,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.43959555479024831,-3.7754117536751988,CESM2,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,CESM2,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,0.14295350535998602,-3.2237112944038251,CESM2,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-1.2841788770070726,-6.1194263158654092,CESM2,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.33397677872972831,-2.524013879025778,CESM2,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.47728438827709319,-3.0463357839616454,CESM2,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-0.21830305556720048,-3.3228625670708434,CESM2,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,-0.44175298024727122,-1.9131777380280295,CESM2,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,CESM2,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.62807210640049249,-4.1556890075529749,CESM2,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-0.83989452841107348,-5.713395240009552,CESM2,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,-0.860028228842311,-3.9053393711138744,CESM2,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,CESM2,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.53332853821097681,-3.1709338285217661,CESM2,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.25169911345005397,-1.6006189871962453,CESM2,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-0.5164150097735799,-2.8710071704077453,CESM2,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.44129378813935166,-2.2688012679304936,CESM2,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.62144273703503039,-1.6941261580294067,CESM2,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.61993978486420032,-3.4139916550442533,CESM2,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-0.96527512097277857,-5.3792844017455046,CESM2,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-1.1414250616177462,-6.5487574947423024,CESM2,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.48481160590574701,-2.8350225196381427,CESM2,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.48776428787564752,-4.6697269451811234,CESM2,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.36677584991616702,-3.3581486405644161,CESM2,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.27681759574447218,-2.181317185412853,CESM2,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-0.36237495492786781,-3.1497785664155149,CESM2,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,CESM2,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.71896706722088077,-6.1499032351368044,CESM2,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.65054665288843427,-6.1159628801992465,CESM2,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.5755038520923349,-4.9905363999615062,CESM2,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.54127090301143166,-7.4427740054352904,CESM2,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,-0.18523167946142072,-2.6596190527613168,CESM2,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.93383947792228761,-4.0885017935030463,CESM2,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.78071796921024417,-5.0247922011737991,CESM2,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.2562861964466488,-3.365602974804967,CESM2,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.4924340360749711,-4.3494547252711744,CESM2,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-0.37504071936159161,-3.0272583560272652,CESM2,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-1.7269701429750552,-5.6980289274086466,CESM2,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.45843604573171531,-4.0675942156661389,CESM2,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.37964665546074966,-4.0965921975710984,CESM2,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,-0.33708163680423375,-3.1713906164742953,CESM2,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-1.4112276487408575,-6.3306493166798861,CESM2,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.17191925084124288,-2.3121675821591476,CESM2,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.72819135291326087,-3.796021894397247,CESM2,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-1.5601089096110967,-4.4105212513583538,CESM2,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.25900525706719979,-2.9609403067165805,CESM2,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.3649169169414051,-2.8138121541721883,CESM2,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.3649169169414051,-2.8138121541721883,CESM2,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.1687936684665296,-2.9599734144266816,CESM2,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-1.1453280363149598,-5.5327638633493503,CESM2,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.76497780648443803,-5.2541346407571288,CESM2,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.64874903721429988,-4.8880307723155427,CESM2,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.53241527901832808,-5.6075935007861135,CESM2,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.8133976985027136,-1.6600793418775726,CESM2,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.51870677041384139,-4.758605047178035,CESM2,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-0.24214496859908768,-2.9184176506758748,CESM2,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-0.6816546302443075,-4.4020231907588752,CESM2,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.25337496264288806,-3.5948878875741559,CESM2,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.82671591923666332,-5.1003482208135056,CESM2,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.62310436889954912,-4.7808841802752102,CESM2,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-0.63600411904516485,-3.3039594096142473,CESM2,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-0.55642934861463489,-4.2967406589547172,CESM2,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,CESM2,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,-0.23175171116126553,-2.1338906978846395,CESM2,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.37859347173345687,-3.0302982274700665,CESM2,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-0.94944931831756219,-5.5835917185412631,CESM2,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-0.88996953260403622,-3.4486652365487918,CESM2,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-0.88996953260403622,-3.4486652365487918,CESM2,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-0.29753981983315148,-2.3152191456175428,CESM2,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.59071489898651108,-1.3609574112201313,CESM2,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.59071489898651108,-1.3609574112201313,CESM2,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.59071489898651108,-1.3609574112201313,CESM2,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.48138194180030358,-3.3286110159094733,CESM2,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.50163259552623229,-4.4143491167128932,CESM2,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,-0.43815074553230976,-4.403028201009711,CESM2,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.51548052254063292,-1.9712817743308879,CESM2,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.51548052254063292,-1.9712817743308879,CESM2,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.51548052254063292,-1.9712817743308879,CESM2,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.65720511098367584,-1.718607131062788,CESM2,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.79233440949704104,-4.7869224979811671,CESM2,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,-0.1093680322088343,-2.2125122364768068,CESM2,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.46026668314000624,-3.0619942075007378,CESM2,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.6377171470650741,-3.5580562637464617,CESM2,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.6377171470650741,-3.5580562637464617,CESM2,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.6377171470650741,-3.5580562637464617,CESM2,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+Afghanistan,0.54020618398852005,-0.60085865917884917,-3.6554041490274827,GFDL,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.78471190548944159,-5.4475970078440774,GFDL,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.5112002864868177,-3.2455609761993705,GFDL,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.50322249493963644,-6.0312750424319681,GFDL,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-0.13363907194956645,-2.350485756521373,GFDL,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.40873088232621707,-4.4767616788383391,GFDL,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.30945766721572415,-1.6043068052762768,GFDL,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.56077822905634145,-4.9440197595189304,GFDL,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.28192225062026804,-1.753897971066563,GFDL,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.4506787528061133,-3.079497837908427,GFDL,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.39891653081748663,-3.5363805124786625,GFDL,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-0.69444143617812393,-5.0542340863033601,GFDL,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.76316708213047202,-5.5124739640411509,GFDL,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.45877398551775894,-2.0779590542214281,GFDL,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.31019943314776799,-3.6393017547518038,GFDL,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.47431983683960866,-2.8230554520400521,GFDL,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-0.49882256842707878,-3.0698194857423893,GFDL,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.52202157828338602,-3.8620056162051966,GFDL,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-0.14736719148472449,-2.0643227171887935,GFDL,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,0.21804749609721338,-1.3245644177011886,GFDL,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-0.1206627492242083,-1.5442726337153609,GFDL,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.88137597002638213,-4.7428875876898262,GFDL,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.88137597002638213,-4.7428875876898262,GFDL,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.14762085967753058,-2.5672835333262944,GFDL,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.38308127545703313,-1.1285091222967611,GFDL,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-0.28552677542205857,-2.2339618228257883,GFDL,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.57511929460031297,-3.2715743790154197,GFDL,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,-0.15314866434591534,-2.2070112197171436,GFDL,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-0.38332536158445962,-3.6126643200556794,GFDL,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.32190069609396588,-2.2169417296433247,GFDL,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-0.10226242339272558,-1.6696120766895026,GFDL,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-0.60423802926536152,-1.5702224961037938,GFDL,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.64687720356065936,-6.403436718864449,GFDL,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-0.47497403248371245,-3.1334412756424532,GFDL,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-0.47497403248371245,-3.1334412756424532,GFDL,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-0.30714269746072859,-3.0922916516832251,GFDL,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.31855854906373704,-2.2546915841812418,GFDL,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.68307520686784851,0.18597860018999501,GFDL,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.68307520686784851,0.18597860018999501,GFDL,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.68307520686784851,0.18597860018999501,GFDL,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.68307520686784851,0.18597860018999501,GFDL,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-0.28457733422650705,-1.4634512300686899,GFDL,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-0.55734559628500902,-5.1413389235117393,GFDL,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-0.55734559628500902,-5.1413389235117393,GFDL,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,-6.1127356057212043E-3,-1.277737844054827,GFDL,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-8.4252290232566404E-2,-1.83597478314016,GFDL,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.54774021959422392,-3.1644757911938779,GFDL,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.58130171522380081,-3.9457744968620849,GFDL,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.5694110414493182,-3.5513779486160826,GFDL,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.74631322594102378,-5.9496509338829568,GFDL,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-0.67981552672684453,-3.3709463037081129,GFDL,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,3.3336649278208438E-2,-1.301284776152813,GFDL,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.42212284699716723,-2.8573213078547264,GFDL,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,-4.878551632439837E-2,-1.7848147274075183,GFDL,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-0.9419805789904665,-4.6790929826175418,GFDL,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.52162072040893004,-4.4994777504910211,GFDL,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.39216018734095454,-4.6209419653453692,GFDL,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.6356390415219082,-3.2633227328102405,GFDL,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-0.18357363560181386,-1.4017870562880332,GFDL,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.67393055449142869,-3.2113941121564413,GFDL,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.59303027428106148,-3.2952647568789515,GFDL,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,0.13818690683091825,-0.62258776377332137,GFDL,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-0.69116612157545099,-5.5114311860139349,GFDL,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.64423792918907219,-4.4542556846860029,GFDL,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.3551462117437732,-2.491671295673318,GFDL,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.35806516485899215,-3.2202643069420049,GFDL,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.35806516485899215,-3.2202643069420049,GFDL,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.65394184407010347,-3.7313158625517509,GFDL,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.62334298823090195,-2.4516161622209074,GFDL,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,0.12127043139573443,-0.67689503108228788,GFDL,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.5290358980807599,-5.0490804188620384,GFDL,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.40136934415394632,-3.5804732461261475,GFDL,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.52171269511380192,-2.1950139449059769,GFDL,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,-0.1984008135748373,-1.8599916154959801,GFDL,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.58365989198945645,-3.3872586784042915,GFDL,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.36871270655959931,-4.1499485619706196,GFDL,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.57066140963202727,-2.5336416360630807,GFDL,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,6.5644044499408452E-3,-1.7245940266390185,GFDL,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-0.23083985813555713,-3.2118329009093283,GFDL,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.24054988869431831,-2.4190088986868217,GFDL,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.64123428856202958,-3.8380442194404578,GFDL,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.4855909007695085,-2.6424503189243378,GFDL,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-0.66553174854231334,-3.4759943906866289,GFDL,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-0.9200043546426544,-6.9339064513936286,GFDL,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-0.21277291644795152,-1.83574456919919,GFDL,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-0.55626393627489512,-1.2134026912048306,GFDL,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.54076082673261405,-2.9566542807830007,GFDL,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-0.67052982815560092,-3.5621116640837385,GFDL,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-1.0603993557232039,-5.0661621630632077,GFDL,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.6117763525313582,-4.0333992484398262,GFDL,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.6117763525313582,-4.0333992484398262,GFDL,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.53745585609092572,-2.7005231026492407,GFDL,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.57140963480217521,-4.133844993455476,GFDL,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.60728288302475131,-2.0443270030034895,GFDL,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.66089441682445516,-4.9257873031529664,GFDL,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.45860772095673741,-2.4316106980925918,GFDL,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-0.20200390956803066,-2.3224235545032306,GFDL,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.36861089876074654,-3.6307462706032418,GFDL,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-0.85344324487585288,-4.809513067451471,GFDL,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.47694127328704006,-4.0076060239352929,GFDL,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.30188376351653123,-2.0574011224152526,GFDL,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.61780158614319447,-4.2712717113540393,GFDL,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.77896770716400743,-5.04120425878315,GFDL,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.19780687425129073,-2.7458973556276254,GFDL,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,-4.5987894476163721E-2,-1.6946167317211089,GFDL,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.47452212279259043,-3.5820456731753154,GFDL,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.59364136191413963,-3.9774077832223576,GFDL,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.18805146811008863,-2.6648197425063538,GFDL,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-7.6128062108758263E-2,-1.8585219433182809,GFDL,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,-3.0275243125885323E-2,-2.0209986635418424,GFDL,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.23970455569395105,-1.4490136203656261,GFDL,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.40351584700731075,-3.4367340758001492,GFDL,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,-9.2641530733882191E-2,-2.1670515510017614,GFDL,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.22752499407349,-9.4325285124710234,GFDL,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,GFDL,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.55762564086050614,-4.0623659473750564,GFDL,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.38281918913391311,-3.3506580786301106,GFDL,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.38281918913391311,-3.3506580786301106,GFDL,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.45979382746904807,-1.7986303236069228,GFDL,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.28094554863721088,-3.1537708194874492,GFDL,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.28094554863721088,-3.1537708194874492,GFDL,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-0.73758299668351723,-8.5359379746178377,GFDL,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.71243895027626924,-3.5561125752350891,GFDL,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.63639039855439583,-3.6416281248367177,GFDL,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.63639039855439583,-3.6416281248367177,GFDL,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.17898724517786543,-2.3648307516457225,GFDL,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-0.41243007001674559,-2.366387437453902,GFDL,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.17308252869294488,-2.9497595202001721,GFDL,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,GFDL,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,0.15785829570722765,-1.5041752607729295,GFDL,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-0.67424084452295729,-3.5331109190967904,GFDL,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.26154466806645393,-2.2550981635740803,GFDL,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.47869266570635882,-2.9767814414177693,GFDL,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-0.10882566307381898,-2.4426818489847757,GFDL,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,-5.8167266658364462E-2,-1.7111910695304571,GFDL,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,GFDL,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.67200294080050771,-3.7995685391409233,GFDL,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-0.81044960945800959,-4.9650032005526992,GFDL,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,0.55406300543648312,-2.9813716719865604,GFDL,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,GFDL,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.44999057512809942,-3.029880803241924,GFDL,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.21452322828898487,-1.653823123507741,GFDL,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-0.18202137284098657,-1.7578148169904724,GFDL,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.37938602808126148,-2.2425736524076885,GFDL,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.48739163411961206,-1.7436990465212845,GFDL,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.50254932347499104,-2.3595926177558311,GFDL,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-1.097669311986444,-5.2353534755913316,GFDL,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-0.9216834958491702,-5.5856450766681984,GFDL,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.62739274283785529,-2.5949608744777928,GFDL,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.52882903433283179,-4.1066079866616869,GFDL,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.54068383461629776,-2.80543663553633,GFDL,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.30353027774270758,-1.6361696088979258,GFDL,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-0.30549397907641213,-3.1592850910694636,GFDL,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,GFDL,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.45948584490114291,-4.5349688697882513,GFDL,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.45245947817966597,-4.7805255748353623,GFDL,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.40271540566967834,-3.9853243813059978,GFDL,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.4880802624400874,-6.2547523976653903,GFDL,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,-2.2017856433442552E-2,-1.7619770123009217,GFDL,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.83958986382564693,-3.2972989588072976,GFDL,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.54463893237225269,-3.9460995150485125,GFDL,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.45107319262059098,-2.8865102653689325,GFDL,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.31464361862452028,-3.4031965185993327,GFDL,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-5.1335067954015462E-2,-1.8492252581143578,GFDL,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-0.23763478146597269,-2.2532755540780065,GFDL,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.55942180344923109,-3.458322004841456,GFDL,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.48756309262863218,-3.905601456302751,GFDL,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,5.6385273099448692E-2,-1.0318173940221917,GFDL,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-0.85431917988307093,-4.6752637608711645,GFDL,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.31317816788394415,-2.0309848174753511,GFDL,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.69637120074920311,-3.0634150163801457,GFDL,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-1.1451988450430557,-3.5159969069948751,GFDL,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.33905007391050973,-2.6498958808591189,GFDL,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.22117856577406925,-2.3074838383096523,GFDL,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.22117856577406925,-2.3074838383096523,GFDL,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.28810865104484462,-3.3734745200753609,GFDL,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-0.98633825774740835,-4.6018640246608502,GFDL,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.58320711098208777,-3.9315845863446941,GFDL,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.40589564356063762,-3.4212812578970322,GFDL,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.60058180984294707,-4.6289355350421637,GFDL,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.45267460698499956,-1.4726187566273914,GFDL,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.58914304666621264,-4.1965349178545246,GFDL,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-6.413573660141246E-2,-2.0997834216406299,GFDL,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-0.21710830150022642,-2.4607312619848911,GFDL,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.2464497921074886,-3.628417284759597,GFDL,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.23940344431753136,-2.5083046164341369,GFDL,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.42636463154169402,-3.633424530519096,GFDL,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-0.79425858413199402,-2.5132134984105212,GFDL,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-0.71144109738823524,-3.5740744542149216,GFDL,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,GFDL,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,-3.1978201036607415E-3,-1.8976085187729936,GFDL,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.42516942551623593,-2.3248511703258368,GFDL,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-0.92673043287453094,-4.7355869358360874,GFDL,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-0.84673857886072323,-2.6239839107959289,GFDL,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-0.84673857886072323,-2.6239839107959289,GFDL,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-0.12167841250194017,-2.1886339339457499,GFDL,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.48825855461680351,-1.0286641919741264,GFDL,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.48825855461680351,-1.0286641919741264,GFDL,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.48825855461680351,-1.0286641919741264,GFDL,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.26195008526933694,-2.3270876551369031,GFDL,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.54199047147767232,-3.3296539034945583,GFDL,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,5.389495437949994E-2,-1.3394057839918367,GFDL,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.40165440684028364,-1.8142937492315419,GFDL,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.40165440684028364,-1.8142937492315419,GFDL,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.40165440684028364,-1.8142937492315419,GFDL,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.46479687929912855,-1.6086833704770627,GFDL,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.8147980242165529,-4.3177693145983209,GFDL,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,2.7600319768183629E-2,-2.0366761609876711,GFDL,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.30199670407382317,-2.76523127904357,GFDL,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.7994354081388626,-3.0695634983307052,GFDL,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.7994354081388626,-3.0695634983307052,GFDL,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.7994354081388626,-3.0695634983307052,GFDL,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+Afghanistan,0.54020618398852005,-0.81305408947403246,-4.1222750498602192,GISS,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.83013433361489808,-5.2240702607319385,GISS,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.58722265047237843,-3.4206920384430211,GISS,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.6316746093959521,-7.0624940258144253,GISS,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-0.14273394757809379,-1.9952905423444787,GISS,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.44314409210736139,-4.5919302589181479,GISS,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.315806529130921,-0.95467111041174935,GISS,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.62336850432071755,-5.3127765875188189,GISS,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.38702843144540422,-1.2399387679930693,GISS,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.53068057370215316,-3.3808543470297594,GISS,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.46848960505021703,-3.4571016530021277,GISS,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-0.77607872299299641,-5.2153320107252785,GISS,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.4347891305749304,-3.568011264379118,GISS,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.2487773388472799,-2.0131483967319972,GISS,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.34386023931416243,-3.6483950005070218,GISS,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.53832560511598504,-2.8730107117074142,GISS,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-0.89019017816026458,-3.770327905663887,GISS,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.50767016897362827,-3.6889811593134683,GISS,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-0.301983626451511,-2.1550266599957677,GISS,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,-0.33028186099600876,-3.6401169277962993,GISS,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-0.27391686140560723,-1.8190689976087242,GISS,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-1.2142254509259138,-5.8007061448522066,GISS,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-1.2142254509259138,-5.8007061448522066,GISS,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.41949556070270649,-2.8148224266564075,GISS,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.57192015536425045,-0.52537910899131879,GISS,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-0.51488046698718359,-3.2469382765569903,GISS,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.92675904774169571,-3.9772458476991672,GISS,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,-0.40742224171137342,-1.9929729317761198,GISS,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-0.52148554097961297,-3.1939661000120592,GISS,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.88962591975077621,-3.6043691101861324,GISS,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-0.33616323265385073,-1.747565217074859,GISS,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-1.0114849005321329,-1.351691326292753,GISS,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.87434516456484712,-7.3675077952540891,GISS,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-0.19415831659818988,-1.8732818594222995,GISS,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-0.19415831659818988,-1.8732818594222995,GISS,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-0.12149453340132257,-1.7184809603623099,GISS,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.52082098262380971,-1.9135005967755521,GISS,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.56653416446211935,0.31548332046487459,GISS,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.56653416446211935,0.31548332046487459,GISS,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.56653416446211935,0.31548332046487459,GISS,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.56653416446211935,0.31548332046487459,GISS,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-0.16158025524580075,-0.77225037362062299,GISS,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-0.72824359273613659,-5.5146228959380768,GISS,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-0.72824359273613659,-5.5146228959380768,GISS,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,9.0788113385437352E-2,-0.74158865143808039,GISS,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-0.16743874226635264,-2.1520066213357998,GISS,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.45351760814115488,-2.5943473560210775,GISS,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.64973939297289229,-4.0337311075024829,GISS,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.75879385169814484,-4.094583874899083,GISS,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.87527785359878441,-6.1531584393381422,GISS,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-1.1483594845328262,-4.4649937862465086,GISS,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,5.5094566246326734E-2,-1.172680115436483,GISS,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.79959582865900691,-3.0768690318623957,GISS,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,0.19266172240093016,-1.3993159310425769,GISS,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-1.09402844389849,-4.7911670649285103,GISS,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.48130343069867504,-4.095782231832338,GISS,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.47186247191847719,-5.0645155216040534,GISS,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.78195853633919399,-3.8635214955203487,GISS,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-0.21888014731988872,-1.0875363811938106,GISS,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.81241702439038543,-3.6183611933997275,GISS,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.46001616915610843,-2.8364569932160819,GISS,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,-0.18921753900282912,-1.8343307560674678,GISS,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-1.051573668973051,-7.2046719383125311,GISS,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.50170210668132786,-3.2304912715100742,GISS,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.44030991210473786,-2.4992886937288699,GISS,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.61467751018533279,-3.8324483397286371,GISS,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.61467751018533279,-3.8324483397286371,GISS,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.60386788244803657,-3.2070426330292641,GISS,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.89742031463181804,-2.5834105988990292,GISS,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,9.6793313621990507E-2,-0.47081190924938476,GISS,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.43869114713760748,-3.4892291435014435,GISS,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.49829767089131966,-3.9684139053702019,GISS,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.77836347476493828,-2.3150526821063697,GISS,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,2.3355382718282986E-2,-1.2300079836066384,GISS,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.50467407332536041,-2.6757465781948655,GISS,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.39633537635833221,-4.1782415912997521,GISS,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.55997366677782712,-2.7606762620763989,GISS,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,-1.7804204953716582E-2,-1.1859001478272408,GISS,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-0.33275116706851199,-3.0524673881342617,GISS,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.19000910644446781,-1.9832972173644674,GISS,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.80645342601860281,-4.4984825951877641,GISS,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.49463879417297363,-2.7859747911932442,GISS,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-1.231489959806062,-5.2354885708068144,GISS,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-1.2464906418075126,-8.5300917312798337,GISS,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-0.37588520796519514,-1.5378920609734077,GISS,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-0.84422440799059772,-1.0967775135485551,GISS,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.76036929214754923,-3.1953049954016888,GISS,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-0.8011485505962489,-3.8153895130403743,GISS,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-1.5475789164488745,-6.3777294704899576,GISS,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.82898342506988043,-5.0881092487443578,GISS,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.82898342506988043,-5.0881092487443578,GISS,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.71869388378527799,-2.8331278825836845,GISS,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.5914447901367228,-4.1256478222644093,GISS,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.79745238588924938,-2.0313768935955592,GISS,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.59687462177252881,-5.3786146248117062,GISS,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.72570077734611238,-2.5718973768131286,GISS,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-0.17308024954636472,-1.780752543748005,GISS,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.22799045442105256,-2.2324435421841002,GISS,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-0.81631447597039108,-3.9944935586020778,GISS,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.63971892672584008,-4.5801195742833229,GISS,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.27421956181562751,-2.2792339736889726,GISS,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.58278647991073895,-3.8148236163314424,GISS,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.79011660365819292,-5.8573815457418821,GISS,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.60697058272315063,-3.4903183018392694,GISS,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,0.11009375337666615,-1.0714334302436448,GISS,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.52349517130501255,-3.5414565842826264,GISS,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.72187826405582867,-4.2029033454456677,GISS,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.93531914038771358,-5.8213115623526273,GISS,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-0.19955771646051843,-1.8131816709706072,GISS,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,-0.15000482608544963,-1.8940983891212471,GISS,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.4892170077413639,-1.2884235906860992,GISS,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.5159954052604413,-3.9975233867640378,GISS,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,-0.13341541886149744,-1.3346155716234822,GISS,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.0027615139690569,-7.5665450750697927,GISS,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,GISS,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.38780016634434961,-2.6738584390314832,GISS,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.76203792213410382,-4.4200533888989488,GISS,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.76203792213410382,-4.4200533888989488,GISS,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.58308402562763617,-2.0350048127771214,GISS,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.25687071552495311,-2.8234160961278918,GISS,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.25687071552495311,-2.8234160961278918,GISS,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-0.98888932387695372,-10.584758198906895,GISS,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.51250458413287825,-3.2591062432292919,GISS,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.64822701769583668,-3.5146808311452959,GISS,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.64822701769583668,-3.5146808311452959,GISS,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.30442628537583294,-2.2414543574906522,GISS,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-1.4414310179923613,-4.1527944356145934,GISS,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.46874863066018135,-3.7144277089192399,GISS,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,GISS,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,0.271036299405783,-2.5351266420209062,GISS,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-1.0364965654143148,-4.2978201722478975,GISS,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.4585728457552482,-2.0411559083954529,GISS,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.38839355762741767,-2.5991561497603612,GISS,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-0.23045673640048062,-1.8962356987681859,GISS,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,-0.20728589169938499,-1.1189411918624006,GISS,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,GISS,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.81467183458336212,-3.9269566542995857,GISS,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-0.85321483857641889,-5.1509343066241549,GISS,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,-0.53118904620969176,-2.6823010100369871,GISS,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,GISS,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.43683867197419185,-2.4636611700590425,GISS,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.33083340395719074,-1.6781058512394142,GISS,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-0.24847050773429527,-1.2334734670953504,GISS,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.4051001695247064,-1.7869032834116911,GISS,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.70944423352174546,-2.0780181186544988,GISS,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.63199234245015901,-2.4279099442796288,GISS,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-0.8034555502035956,-3.8091366032767926,GISS,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-0.79872974172482158,-4.4410091112106622,GISS,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.62046393615290196,-2.1426716055917172,GISS,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.52435690629040033,-3.8226396823092337,GISS,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.867861481845981,-3.3948566438174375,GISS,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.38694590366579862,-1.3266883118105253,GISS,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-0.3502455272689709,-2.5675460689630762,GISS,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,GISS,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.47967247846296962,-4.4876015125850612,GISS,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.44625104065835236,-4.5684808463445394,GISS,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.38706102566317485,-3.4724220375290855,GISS,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.81745355239445172,-9.2267511383810934,GISS,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,5.0570343003633847E-2,-0.83905310325682492,GISS,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.88347543444053667,-3.241193637632823,GISS,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.45544749336301221,-2.711802602278869,GISS,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.42380038332016878,-2.8375366272602647,GISS,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.29337445667716677,-2.9964995863818418,GISS,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-0.11517062541746972,-1.6745791425060208,GISS,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-0.5778862888599251,-2.5219896292859563,GISS,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.72662387524936689,-4.0122632179730813,GISS,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.45685712723673016,-3.6764538077156006,GISS,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,-0.15445551677423025,-1.8897929053060445,GISS,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-1.2537008890632615,-6.0137473106795145,GISS,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.49334806851526486,-1.3430635183475772,GISS,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.6939822304649178,-2.8331306253366373,GISS,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-1.3334324354857361,-3.8182959367414187,GISS,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.36493277572225286,-2.2927065516223823,GISS,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.17326225583494412,-1.7372042981170903,GISS,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.17326225583494412,-1.7372042981170903,GISS,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.41329885085130824,-3.3480315797005282,GISS,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-0.9455815521808093,-4.0460562743443553,GISS,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.9941089554960405,-5.3976267652759891,GISS,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.50637150080599802,-4.0329219080848739,GISS,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.54550029778137621,-4.2833896689858957,GISS,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.51846191082424586,-1.5992188395910716,GISS,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.82037743956211995,-5.1099502417452127,GISS,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-0.2421090238334706,-2.3531516921790301,GISS,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-0.45533694429818117,-3.0734263099020529,GISS,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.45398837943372716,-4.6209811302557542,GISS,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.60489068935827162,-3.9591049596081285,GISS,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.46928260569902247,-3.4345325501860033,GISS,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-1.1257518187689839,-2.6957329185155032,GISS,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-1.1550920565931961,-4.0755647252136384,GISS,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,GISS,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,8.8545609015329416E-2,-1.0266780461172151,GISS,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.51239402538758028,-2.158201104036376,GISS,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-0.85232567968968487,-4.2395923167789613,GISS,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-1.1296988936849186,-2.5946543122119814,GISS,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-1.1296988936849186,-2.5946543122119814,GISS,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-0.10307537596432825,-1.6759683867346316,GISS,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.49978000635501668,-0.69766725537274399,GISS,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.49978000635501668,-0.69766725537274399,GISS,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.49978000635501668,-0.69766725537274399,GISS,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.35566424228519761,-1.8501892320517546,GISS,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.79313543029518074,-3.6213212456304276,GISS,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,-0.13825683730196422,-2.0726910498817692,GISS,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.38521482567923265,-1.6671774439610005,GISS,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.38521482567923265,-1.6671774439610005,GISS,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.38521482567923265,-1.6671774439610005,GISS,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.70319882548796431,-1.7487937855011546,GISS,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.90299209321512042,-4.6310490736422301,GISS,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,-1.4382219590982971E-2,-1.7593097866787684,GISS,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.62929852877753223,-3.0575723469804981,GISS,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.8066576884441955,-2.9934071278014045,GISS,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.8066576884441955,-2.9934071278014045,GISS,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.8066576884441955,-2.9934071278014045,GISS,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+Afghanistan,0.54020618398852005,-0.55253067577435,-4.6812790058732663,HadGEM,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.90317116756067528,-7.161707473068164,HadGEM,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.66039553216436431,-4.8309147753130288,HadGEM,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.62587889648493222,-7.7990868626681831,HadGEM,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-0.11917973778609409,-2.5305741114064184,HadGEM,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.38855420026284865,-5.0345624664489321,HadGEM,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.23249340119487943,-1.4638677422303528,HadGEM,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.51648261194471579,-5.4402195584396136,HadGEM,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.29115232810090158,-2.1201550804266049,HadGEM,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.69648711992992884,-4.7789578984025125,HadGEM,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.44976133982784894,-4.7173185297237641,HadGEM,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-0.74616830905502018,-5.9427496044466572,HadGEM,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.99408181393025208,-9.189481831200343,HadGEM,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.9895736206913055,-3.4392782263120796,HadGEM,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.24306392421861892,-3.8733441199285989,HadGEM,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.49089528716743386,-3.746286919521971,HadGEM,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-1.0363269118534668,-5.7282790947197268,HadGEM,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.4255137545774933,-4.1705707852687635,HadGEM,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-0.33960922970820601,-3.936457553152886,HadGEM,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,-0.69338414172847462,-5.3790945599577284,HadGEM,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-8.3743102315999463E-2,-1.3481690176418855,HadGEM,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.93826537801293386,-6.153082413120643,HadGEM,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.93826537801293386,-6.153082413120643,HadGEM,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.29840719201464783,-3.3932198628726651,HadGEM,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.53472467795910172,-1.3734127632790969,HadGEM,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-0.22847411362221684,-2.0972489016646554,HadGEM,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.72361121077387636,-5.0352960169309728,HadGEM,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,-0.23852789456434448,-3.5127906643306757,HadGEM,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-0.20948090096915883,-2.9627668462111387,HadGEM,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.51365285682202733,-3.2622108664035512,HadGEM,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-0.15561107386248305,-2.2580988185831008,HadGEM,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-0.89495535507710522,-1.9684871016126873,HadGEM,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.60760881378030185,-6.8815360090875091,HadGEM,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-0.11463043395776105,-1.8085159834218731,HadGEM,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-0.11463043395776105,-1.8085159834218731,HadGEM,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-0.17836940189196837,-3.6303054098782335,HadGEM,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.29683431474252275,-2.4826538510709364,HadGEM,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.72665985886148099,-1.0470144264725958,HadGEM,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.72665985886148099,-1.0470144264725958,HadGEM,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.72665985886148099,-1.0470144264725958,HadGEM,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.72665985886148099,-1.0470144264725958,HadGEM,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-0.30092070798088522,-1.6500828635132356,HadGEM,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-0.37874292485816607,-4.1089439134651853,HadGEM,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-0.37874292485816607,-4.1089439134651853,HadGEM,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,-8.6496083057198456E-2,-1.9405505591201193,HadGEM,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-0.12949950909715399,-2.6189492010169908,HadGEM,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.40335519088661093,-2.9334746026161378,HadGEM,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.64715795082488381,-5.2721993275812293,HadGEM,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.74156313244954575,-5.0081593439022738,HadGEM,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.65338279719598402,-6.8317640179868313,HadGEM,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-1.167957669454748,-5.866974613956808,HadGEM,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,-0.15179112676276296,-2.5623765896387249,HadGEM,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.56188108649764612,-3.6585506532004608,HadGEM,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,-3.9847007966743404E-2,-1.9507939433701369,HadGEM,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-1.1112862923281668,-6.0845703361985999,HadGEM,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.52455410549663106,-6.1209947793379937,HadGEM,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.35349496693749299,-5.0351995870105011,HadGEM,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.74976227041562382,-4.3228254415938236,HadGEM,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-0.32217191792622929,-1.6947283169615086,HadGEM,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.92733997727701289,-5.4678417906531074,HadGEM,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.6601667679548695,-4.3341266603891633,HadGEM,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,-0.13122335330177548,-2.4084968361066652,HadGEM,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-0.84218125122761356,-8.1980365496594629,HadGEM,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.68496795914518616,-5.0953479651690339,HadGEM,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.39211760048581229,-3.9478368205225722,HadGEM,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.21793999041874026,-2.7015666402960945,HadGEM,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.21793999041874026,-2.7015666402960945,HadGEM,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.48462039730172823,-3.4184118490837738,HadGEM,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.89697036876498681,-3.9861998757058261,HadGEM,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,-0.11663767542576334,-2.0298785210307648,HadGEM,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.53870042383777073,-6.0927840219812079,HadGEM,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.3395371767721998,-3.9000283274187302,HadGEM,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.91206408961761642,-3.6876909534178868,HadGEM,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,-0.39467636551105367,-3.397035208767194,HadGEM,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.7056541314832202,-4.9292445491833519,HadGEM,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.36360445546683995,-4.7576957723278834,HadGEM,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.78882749564207255,-3.7090641291000699,HadGEM,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,-7.5388252928380556E-2,-2.805138147584473,HadGEM,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-0.37461178652965149,-5.1990239763206008,HadGEM,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.18426600772855148,-2.5657155827066198,HadGEM,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.70627405425229339,-4.6773614643727743,HadGEM,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.4653974183899024,-3.2059508527650742,HadGEM,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-0.8360194687194844,-5.509696639150226,HadGEM,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-0.50796867958091729,-4.8149872782996468,HadGEM,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-1.449618695314786,-1.0349775467419038,HadGEM,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-1.0631098888967248,-1.7981503667053758,HadGEM,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.73742470840909924,-4.73091691599436,HadGEM,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-0.93665683971028846,-5.6145279653577802,HadGEM,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-1.094601866374658,-6.079537700768876,HadGEM,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.89342327174321112,-6.5816839582316389,HadGEM,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.89342327174321112,-6.5816839582316389,HadGEM,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.71625256398881798,-4.069084399376294,HadGEM,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.76898332885703857,-5.8374311235363212,HadGEM,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.74256347888093766,-2.8402531844064178,HadGEM,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.95752885753752104,-7.5744626129341581,HadGEM,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.43641622519503259,-3.3144614780187212,HadGEM,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-0.29309882594451592,-3.3088547144684322,HadGEM,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.1776884339934221,-2.7829337827972598,HadGEM,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-1.2794697111303293,-8.5051123219642832,HadGEM,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.37141924380667718,-4.2618809793819601,HadGEM,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.34897436623707256,-3.015359733937593,HadGEM,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.69671080297620847,-5.2408169458222336,HadGEM,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.71499194823755785,-6.2735103289108611,HadGEM,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.35231778963341176,-3.3721798709539659,HadGEM,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,7.6615649964706439E-3,-2.1134294011286499,HadGEM,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.41860044102758348,-4.6518338674062187,HadGEM,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.80540310618065025,-5.6379205341683072,HadGEM,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.80587902489944074,-6.7940778631452599,HadGEM,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-8.6780603597178652E-2,-2.1007664246699789,HadGEM,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,-2.3271015753894283E-2,-2.1089450941374817,HadGEM,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.84175677665808846,-2.6072626692712442,HadGEM,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.37595785491103617,-4.2116387462382257,HadGEM,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,-0.1346542642526066,-3.5746530613593346,HadGEM,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.6183169442737999,-12.949197777630065,HadGEM,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,HadGEM,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.53044017365362639,-5.1687544607029059,HadGEM,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.46172597437972235,-4.0668667520811388,HadGEM,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.46172597437972235,-4.0668667520811388,HadGEM,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.67615328333115621,-2.6208339440445743,HadGEM,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.21707190045211364,-3.1081698998806724,HadGEM,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.21707190045211364,-3.1081698998806724,HadGEM,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-1.0965784193182404,-12.945446034788775,HadGEM,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.34521695404846292,-3.5043543990845443,HadGEM,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.79818715875895618,-5.1552909408942247,HadGEM,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.79818715875895618,-5.1552909408942247,HadGEM,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.14239483133842895,-2.4159402644504659,HadGEM,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-0.51155301974102263,-3.4615079739861616,HadGEM,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.21490773680532096,-3.1557728208842684,HadGEM,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,HadGEM,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,-1.1140731410224358,-6.2416092188257748,HadGEM,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-0.83665788454400702,-5.4256115728340415,HadGEM,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.30178910949966375,-2.5913002560743319,HadGEM,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.43735642069648162,-3.3823786842750279,HadGEM,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-0.20493762244433977,-4.2299643076192543,HadGEM,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,-0.4060028464716649,-2.7426358436643281,HadGEM,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,HadGEM,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.56185091958971356,-3.7101241508253908,HadGEM,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-1.0403358044609268,-7.6691616333826094,HadGEM,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,-1.3991646384544978,-4.5272968552287622,HadGEM,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,HadGEM,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.45921120166148854,-3.2746641122134124,HadGEM,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.15059541418269004,-1.5920330269802363,HadGEM,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-0.19920264869936186,-1.6366738304267705,HadGEM,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.47909744081005973,-2.8386413780501174,HadGEM,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.5015687480008002,-2.2137456937219882,HadGEM,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.90926664108817112,-4.0997870077962322,HadGEM,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-0.86468594174174562,-5.2590096989363424,HadGEM,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-0.31639368564613035,-7.5325567160992248,HadGEM,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.67931322851857778,-3.6454421039306397,HadGEM,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.49002359407096396,-5.2236649253969238,HadGEM,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.65073841224534212,-4.40932266152873,HadGEM,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.33872902490114798,-2.2721265586161676,HadGEM,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-0.23158786446411353,-3.1638824489737774,HadGEM,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,HadGEM,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.51659970885609641,-5.5742131199836606,HadGEM,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.37015199791356423,-4.8653878892306821,HadGEM,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.22713081644794716,-3.0845342629075434,HadGEM,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.70262423961491016,-9.3088322926163656,HadGEM,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,-1.4878713425449894E-2,-2.2067651393135206,HadGEM,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.98296278307259199,-5.3960470910771132,HadGEM,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.64228163862269461,-5.3245212347087563,HadGEM,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.58966316604736435,-4.5634839923448363,HadGEM,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.18935641357475766,-3.2540068429095337,HadGEM,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-0.21698847531337523,-3.3494428228427524,HadGEM,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-1.0572574731280673,-5.0065367243661631,HadGEM,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.9189603296977179,-6.0902492514589568,HadGEM,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.60357785600518798,-5.2468556885222313,HadGEM,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,-2.4416918024918206E-2,-1.8000981106363945,HadGEM,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-0.61239023831741712,-4.7922113966223421,HadGEM,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.43090926536711111,-2.3963571099228358,HadGEM,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.74646826000677524,-4.0294656063192633,HadGEM,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-1.4330100678051534,-5.5521506033915422,HadGEM,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.39469442654702724,-4.1778185967142552,HadGEM,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.17453603644160723,-2.5800859141170887,HadGEM,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.17453603644160723,-2.5800859141170887,HadGEM,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.39618724600509714,-4.1804835451290359,HadGEM,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-0.89265109879244087,-4.7780468761340025,HadGEM,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.71474576098787057,-5.3018756479258222,HadGEM,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.69039863344044394,-5.3347687000666486,HadGEM,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.54837609028040135,-5.0656622802117628,HadGEM,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.6300133018402424,-2.71941079887026,HadGEM,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.7898342874548191,-6.2126580974488146,HadGEM,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-0.14844139280374252,-2.8280821827237537,HadGEM,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-0.44930050952653061,-4.5074422023154268,HadGEM,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.15498607986061569,-3.1166262859756229,HadGEM,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.69359285407014759,-5.2481730996716127,HadGEM,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.63356673289011001,-5.5465107814671004,HadGEM,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-0.80777319307756879,-3.6730998692951515,HadGEM,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-0.82623458406628103,-4.9679073926231894,HadGEM,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,HadGEM,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,-0.27388143291056283,-3.3621182363423214,HadGEM,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.48524464257276206,-3.640202263403955,HadGEM,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-1.0218400783824837,-7.5779703045107896,HadGEM,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-0.95336657130599667,-3.8917329012247159,HadGEM,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-0.95336657130599667,-3.8917329012247159,HadGEM,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-0.12510249053885961,-2.3868988142050291,HadGEM,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.70241430829716389,-1.4610161314080532,HadGEM,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.70241430829716389,-1.4610161314080532,HadGEM,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.70241430829716389,-1.4610161314080532,HadGEM,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.28770150508421283,-2.326388573976959,HadGEM,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.57469728898308048,-4.1756357893407268,HadGEM,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,-7.4510775703234278E-3,-2.0087962693269303,HadGEM,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.64111239887089977,-2.8889254635563852,HadGEM,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.64111239887089977,-2.8889254635563852,HadGEM,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.64111239887089977,-2.8889254635563852,HadGEM,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.68137483861754045,-2.4108318323272657,HadGEM,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.82224351606714174,-6.1108533882994491,HadGEM,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,-1.1865021687443219E-2,-2.2444358005474117,HadGEM,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.24428623413631742,-2.8107048570375928,HadGEM,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.95768843848859619,-4.4757942368394881,HadGEM,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.95768843848859619,-4.4757942368394881,HadGEM,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.95768843848859619,-4.4757942368394881,HadGEM,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+Afghanistan,0.54020618398852005,-0.54012378407852957,-2.8423754622521935,MIROC,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.6929410729716855,-4.6771530309732707,MIROC,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.3597807281366166,-2.3520368938823784,MIROC,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.42915378414987909,-4.9277150327001591,MIROC,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-8.7756511397114323E-2,-1.3412561465061641,MIROC,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.34261978778097307,-3.7273396111014874,MIROC,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.23298294716216128,-1.121231435690941,MIROC,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.4836658309473702,-4.1308418835329999,MIROC,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.1789323857462215,-1.3065827912300818,MIROC,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.57303144851227905,-3.0618175500976159,MIROC,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.38496553088318924,-3.1571150267881678,MIROC,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-0.71148706293721564,-4.6813990322367598,MIROC,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.97715205773100344,-6.0721365890462549,MIROC,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.26565941426278006,-1.2253996172234238,MIROC,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.24604713799389186,-2.921764608087948,MIROC,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.36618598843505895,-2.2999902430333403,MIROC,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-0.97749901334437406,-3.8474984337697258,MIROC,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.24164968123415168,-2.0816301896763911,MIROC,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-5.8659330383077232E-2,-1.0275728638862369,MIROC,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,-0.33766745188376762,-2.7823496271490962,MIROC,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-0.11627438294858593,-1.1561885666796456,MIROC,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.72902513560230631,-3.9526565840894001,MIROC,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.72902513560230631,-3.9526565840894001,MIROC,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.19396401454443976,-2.0088304950233118,MIROC,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.30424812642420945,-0.78116172401394723,MIROC,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-7.6224549088503513E-2,-0.99962469218950445,MIROC,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.59415300164321683,-3.0776400123657384,MIROC,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,1.8009142312830709E-3,-0.78369360735918669,MIROC,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-5.7503898995038334E-2,-1.1253124010237225,MIROC,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.16131734322240937,-1.2593876409682403,MIROC,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-6.5770388447255737E-3,-0.77293860930383207,MIROC,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-0.75520459080317959,-1.2806210006766043,MIROC,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.4309586744251237,-4.377139791710178,MIROC,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-4.642838713007786E-2,-0.84518684464632632,MIROC,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-4.642838713007786E-2,-0.84518684464632632,MIROC,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-4.498041492014597E-2,-1.2199745405242055,MIROC,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.3640662002627939,-2.1386931622356466,MIROC,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.72188458993451721,0.5783958883548832,MIROC,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.72188458993451721,0.5783958883548832,MIROC,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.72188458993451721,0.5783958883548832,MIROC,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.72188458993451721,0.5783958883548832,MIROC,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-5.7426371359135323E-2,-0.72480142045512908,MIROC,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-0.34243483133943325,-3.3571494230264172,MIROC,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-0.34243483133943325,-3.3571494230264172,MIROC,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,-1.6406576041012227E-2,-0.74926988375608183,MIROC,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-0.12624018895525299,-2.2075495135373102,MIROC,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.21129972917267634,-1.5352268813948329,MIROC,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.52620516744178047,-3.4840833843659182,MIROC,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.29412010521083898,-2.0495973108282244,MIROC,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.5966146369468156,-4.7771911586058593,MIROC,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-0.85105128084806403,-3.4386805429563667,MIROC,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,6.8866245542903394E-3,-0.92073523295530535,MIROC,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.51024424369615606,-2.5508835876741842,MIROC,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,-2.3047839233712227E-3,-0.72940163375692724,MIROC,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-1.2838413966704227,-5.3316804173505723,MIROC,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.2999961440357467,-2.9267900788862145,MIROC,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.36019324700633371,-4.1086690005299751,MIROC,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.25050284100138981,-1.7929954524865264,MIROC,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-8.7073993086201604E-2,-0.81280171531941459,MIROC,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.92246762895115564,-3.3255064009568605,MIROC,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.23181086562355477,-1.6631660585195132,MIROC,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,-2.4169397983446871E-2,-0.97058060234743504,MIROC,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-0.42754658903458809,-3.4920916423358879,MIROC,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.57016055524593579,-3.716985719322949,MIROC,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.17254452873065376,-1.5105559554504095,MIROC,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.25131490939929146,-2.4776976402173565,MIROC,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.25131490939929146,-2.4776976402173565,MIROC,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.47792445674330875,-2.7143921502253656,MIROC,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.64715924804676006,-2.0899566793541644,MIROC,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,-4.8749682456923011E-3,-0.72965610609147713,MIROC,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.16537486867602505,-2.227456178431416,MIROC,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.34665588777623663,-2.9740796337465971,MIROC,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.82675714622732988,-2.0653986833960309,MIROC,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,-1.1731949578103138E-2,-0.88315045771180523,MIROC,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.55170229473873822,-2.8933141207295092,MIROC,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.3373541074227856,-3.641506310720664,MIROC,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.20081083790818233,-1.2444477917827999,MIROC,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,3.3945204120878293E-2,-0.88713649928877236,MIROC,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-9.0764803664872509E-2,-1.7625828773049739,MIROC,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.14085771129520402,-1.604215780373883,MIROC,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.17424127944170681,-1.7430690623472886,MIROC,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.18825810640128343,-1.4334226159316621,MIROC,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-0.66461033539132541,-3.4058293376626594,MIROC,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-0.4273753885240128,-3.6636435440302755,MIROC,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-0.61682481641335218,6.9354865367103447E-2,MIROC,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-0.25822769794807487,-0.58072677465667111,MIROC,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.71010401296185699,-2.6381477832663514,MIROC,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-0.83355241415525383,-3.106242507366646,MIROC,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-0.76797933948191333,-3.8137729868006254,MIROC,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.46821369228999299,-3.0468437957195382,MIROC,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.46821369228999299,-3.0468437957195382,MIROC,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.52065190208051904,-2.2656167328489349,MIROC,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.77705088022162294,-4.544610036096965,MIROC,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.66706595444903205,-1.6740032270177376,MIROC,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.49538204467326113,-3.5948322009611489,MIROC,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.43661481570954747,-1.9908906751732349,MIROC,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-7.1680968616478005E-2,-1.1664487770417131,MIROC,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.15749132426870069,-2.2023151904110976,MIROC,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-0.94951686353410714,-4.6087970311605897,MIROC,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.46549520927618943,-3.4391128612977004,MIROC,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.11406660201513159,-1.2377465893874209,MIROC,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.57312934188202092,-3.7457622424767685,MIROC,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.44353719083942478,-3.2467774960866862,MIROC,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.36537263388144131,-2.7217920267351063,MIROC,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,7.6352914358964854E-3,-1.0231890676351878,MIROC,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.37988309302081857,-2.8111481169481163,MIROC,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.61543046123565714,-3.7587832218545314,MIROC,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.58310662013817471,-4.0670882528530141,MIROC,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-5.4046878382077328E-2,-1.3958807767292851,MIROC,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,1.3235319278157071E-2,-1.089105869055502,MIROC,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.14958869232512173,-0.70805668264834476,MIROC,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.28105754682302075,-2.7690858290594447,MIROC,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,1.2004567179603996E-3,-0.9684789534734104,MIROC,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.2156352037567226,-8.8782668912280442,MIROC,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,MIROC,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.32829358246181445,-2.7009750908247567,MIROC,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.43764388156578432,-3.4607671144281698,MIROC,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.43764388156578432,-3.4607671144281698,MIROC,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.27456159215393028,-1.1977230389119722,MIROC,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.15179266551935242,-2.345574512139132,MIROC,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.15179266551935242,-2.345574512139132,MIROC,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-0.60727141136096374,-7.04770257932591,MIROC,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.24898714127179178,-2.1906898496370806,MIROC,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.44299412491155332,-2.5331021344329909,MIROC,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.44299412491155332,-2.5331021344329909,MIROC,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.12032248022693118,-1.5292709976043084,MIROC,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-0.38712775757555051,-1.777379381445876,MIROC,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.18857735403947723,-2.0956435128903435,MIROC,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,MIROC,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,-0.58297993795718106,-3.0161941202418556,MIROC,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-0.98289319182035562,-4.036898377643718,MIROC,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.17532249787261717,-1.5875525195212834,MIROC,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.24684833005174098,-1.8111380730671276,MIROC,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-1.5362269514027371E-2,-1.0544486603012604,MIROC,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,3.5433533956450781E-4,-0.82056306298227044,MIROC,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,MIROC,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.52592468642661183,-2.8551341239228911,MIROC,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-0.66816526857637615,-4.1414022439260698,MIROC,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,-0.69087412264327352,-1.6457781272444691,MIROC,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,MIROC,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.12565488044091064,-1.1948573341378406,MIROC,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.12308229178601363,-1.2198194571246912,MIROC,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-7.2305279666441638E-2,-0.77970104626014325,MIROC,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.27904617031765838,-1.3375875640587087,MIROC,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.16389130921447548,-1.0284561352273087,MIROC,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.68115179851871377,-2.2954615932170497,MIROC,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-0.69094221366484621,-3.4600719352681528,MIROC,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-1.0091461591890296,-5.3303699468540948,MIROC,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.5350967310061775,-2.2607249763087456,MIROC,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.3439845506716831,-2.9366505145796711,MIROC,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.53908307564976532,-2.6119699552536533,MIROC,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.29903080941948179,-1.2638556387014437,MIROC,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-2.4637083461503149E-2,-0.94881094589998294,MIROC,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,MIROC,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.37849909814750099,-3.7505380278399887,MIROC,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.36926365680630158,-3.9290238492766019,MIROC,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.22637441864205363,-2.8061806171926507,MIROC,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.54094281440953751,-6.4149350559198339,MIROC,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,-2.6211031120711267E-2,-1.4870597934717611,MIROC,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.84112598277699724,-2.9586430260534984,MIROC,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.14540852804531412,-1.7781484612947445,MIROC,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.46234737235500423,-2.6840007061372484,MIROC,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.17679355883792355,-2.5053298988929118,MIROC,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-5.9667763706564639E-2,-1.2796370625006843,MIROC,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-0.26768150194643364,-1.2580517456498221,MIROC,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.71595689786465544,-3.8110838313160373,MIROC,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.54500256934170621,-3.8428998969143828,MIROC,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,-4.3073875875035049E-2,-1.335413279196199,MIROC,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-0.48447904934386221,-3.010140556088043,MIROC,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.31086046870482198,-1.4641173860154353,MIROC,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.55176723587277066,-2.3100716343105931,MIROC,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-0.29539350949414744,-1.4549222397483288,MIROC,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.19756441367421965,-1.6252635168836373,MIROC,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.13699506142869342,-1.6420903097476001,MIROC,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.13699506142869342,-1.6420903097476001,MIROC,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.26372663859268181,-2.6385375390883583,MIROC,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-0.83293677740844829,-3.6822680481608852,MIROC,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.56860348637103986,-3.5154158941356517,MIROC,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.36102635482870105,-2.7384813417313971,MIROC,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.61124995651369285,-4.1867271646950162,MIROC,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.16581996446804248,-1.0165727057789327,MIROC,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.60353325278688585,-3.9153718396879631,MIROC,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-5.0178133030837097E-2,-1.1230547399718871,MIROC,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-3.2299668825527199E-2,-0.91700058361715386,MIROC,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.16962757194847028,-2.8031877589208527,MIROC,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.18744557736357792,-1.8708898261094713,MIROC,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.28873861776333187,-2.5697518438180342,MIROC,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-0.75789875182033806,-2.1028976446518608,MIROC,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-0.84588363696075664,-3.4344066770833024,MIROC,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,MIROC,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,1.6940358543034835E-2,-0.68846471686134081,MIROC,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.35705069954937896,-1.9122294418902421,MIROC,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-0.87243905954329104,-4.0608474772927767,MIROC,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-0.82885032550123316,-2.2482644976156405,MIROC,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-0.82885032550123316,-2.2482644976156405,MIROC,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-3.6999700312271899E-2,-1.1267679133263215,MIROC,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.49780722385894771,-0.58592767814220448,MIROC,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.49780722385894771,-0.58592767814220448,MIROC,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.49780722385894771,-0.58592767814220448,MIROC,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.22469587656585055,-1.6978421695833321,MIROC,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.63516444271543893,-3.0326734451327306,MIROC,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,-6.5229772586240353E-2,-1.7785969683891532,MIROC,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.24483962365379006,-1.2211601261450911,MIROC,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.24483962365379006,-1.2211601261450911,MIROC,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.24483962365379006,-1.2211601261450911,MIROC,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.17263888559427454,-0.94153846535994712,MIROC,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.621774571376979,-3.3676894010783371,MIROC,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,7.9180456050729382E-3,-1.0944909065475066,MIROC,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.19045957218945961,-1.6779244822856505,MIROC,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.51541353035752613,-2.0712403037331684,MIROC,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.51541353035752613,-2.0712403037331684,MIROC,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.51541353035752613,-2.0712403037331684,MIROC,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+Afghanistan,0.54020618398852005,-0.57591600719023817,-3.9670171284551046,MMM,Afghanistan,4,1,North Africa / Middle East,North Africa & Middle East,AFG
+Albania,1.6035863573910999E-2,-0.78548540529716437,-5.7053035731995667,MMM,Albania,8,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ALB
+Algeria,0.436210922803145,-0.55288601443613528,-3.5895719436542652,MMM,Algeria,12,1,North Africa / Middle East,North Africa & Middle East,DZA
+Andorra,8.5223669850833996E-4,-0.49291527183434231,-6.1350045077415789,MMM,Andorra,20,1,"Europe, Western",High Income,
+Angola,0.138888917387128,-0.17130959767740297,-2.1947339114571927,MMM,Angola,24,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,AGO
+Antigua+Barbuda,4.6263763132191899E-3,-0.43734893706534833,-4.7203375172568904,MMM,Antigua and Barbuda,28,1,Caribbean,Latin America and Caribbean,
+Argentina,1.1501908079258101,-0.27005287618184293,-1.3866647420857223,MMM,Argentina,32,1,"Latin America, Southern",High Income,ARG
+Armenia,1.9579205122316399E-2,-0.5060263797208383,-4.8971017762899969,MMM,Armenia,51,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",ARM
+Australia,1.0049127359732599,-0.29894849475960145,-1.6971788269944377,MMM,Australia,36,1,Australasia,High Income,AUS
+Austria,0.13216719689453399,-0.54838249988809085,-3.6443519229646837,MMM,Austria,40,1,"Europe, Western",High Income,AUT
+Azerbaijan,8.6154385027909897E-2,-0.3838675765903436,-3.7161757638956567,MMM,Azerbaijan,31,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",AZE
+Bahamas,4.7822968462919398E-2,-0.82628659328981457,-5.6958406244630249,MMM,Bahamas,44,1,Caribbean,Latin America and Caribbean,BHS
+Bahrain,8.7296646001481196E-2,-0.79447132070868465,-6.0504500796074172,MMM,Bahrain,48,1,North Africa / Middle East,North Africa & Middle East,BHR
+Bangladesh,0.76402837565891302,-0.49210672187788496,-2.3810991935238439,MMM,Bangladesh,50,1,"Asia, South",South Asia,BGD
+Barbados,9.3303662971251696E-3,-0.30607790229546233,-3.6301278019907333,MMM,Barbados,52,1,Caribbean,Latin America and Caribbean,BRB
+Belarus,0.19988025252937999,-0.46231635219341771,-3.0332720034410605,MMM,Belarus,112,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",BLR
+Belgium,0.19057125536030201,-0.90055949442933969,-4.3930671628052416,MMM,Belgium,56,1,"Europe, Western",High Income,BEL
+Belize,2.9313386520202201E-2,-0.46455109734411204,-3.6276273085911779,MMM,Belize,84,1,Caribbean,Latin America and Caribbean,BLZ
+Benin,5.1284875442839599E-2,-0.26846698677188963,-2.4656139853486505,MMM,Benin,204,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BEN
+Bhutan,2.56495154522807E-2,-0.215885630478793,-3.1755678378674084,MMM,Bhutan,64,1,"Asia, South",South Asia,BTN
+Bolivia,9.5003283597702201E-2,-0.16629329942788493,-1.516664404933429,MMM,Bolivia,68,1,"Latin America, Andean",Latin America and Caribbean,BOL
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.89366119576141656,-5.119978383696731,MMM,Bosnia and Herzegovina,70,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BIH
+Bosnia+Herzegovina,5.1227429744539997E-2,-0.89366119576141656,-5.119978383696731,MMM,Montenegro,499,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MNE
+Botswana,4.5787010488969E-2,-0.25128933062469194,-2.7001681214341016,MMM,Botswana,72,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,BWA
+Brazil,3.1097421547645299,-0.50874297233926657,-0.98155077510172428,MMM,Brazil,76,1,"Latin America, Tropical",Latin America and Caribbean,BRA
+Brunei Darussalam,1.62252236423279E-2,-0.27690161049690171,-2.1199112047718693,MMM,Brunei Darussalam,96,1,"Asia Pacific, High Income",High Income,BRN
+Bulgaria,0.11551869653265,-0.64248777081781305,-3.8027069087539269,MMM,Bulgaria,100,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",BGR
+Burkina Faso,5.1001452948917801E-2,-0.20500588408639173,-2.2377205853132596,MMM,Burkina Faso,854,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,BFA
+Burundi,2.3486793608540599E-2,-0.31961407962568261,-2.8741052195861236,MMM,Burundi,108,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,BDI
+Cambodia,0.103012570565662,-0.44486831468954929,-2.5374138759027822,MMM,Cambodia,116,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",KHM
+Cameroon,7.7883163251867699E-2,-0.16017817094745421,-1.692049723735388,MMM,Cameroon,120,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CMR
+Canada,1.6746842744139101,-0.82381616031127036,-1.6475910459927134,MMM,Canada,124,1,"North America, High Income",High Income,CAN
+Cape Verde,2.41331951943753E-3,-0.7031450693725706,-6.7060669906875994,MMM,Cabo Verde,132,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CPV
+Central African Rep.,1.16170838631404E-2,-0.20980867180901269,-1.9188043255306433,MMM,Central African Republic,140,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,CAF
+Central African Rep.,1.16170838631404E-2,-0.20980867180901269,-1.9188043255306433,MMM,South Sudan,728,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,
+Chad,2.5226374668832902E-2,-0.14391503106589054,-2.4463418229707528,MMM,Chad,148,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TCD
+Chile,0.49278310696444599,-0.3876925932185894,-2.2918453606904317,MMM,Chile,152,1,"Latin America, Southern",High Income,CHL
+China,32.8646407088522,-0.67668408621186249,-0.11813051854893564,MMM,China,156,1,"Asia, East","Southeast Asia, East Asia, Oceania",CHN
+China,32.8646407088522,-0.67668408621186249,-0.11813051854893564,MMM,"China, Hong Kong SAR",344,1,"Asia, East","Southeast Asia, East Asia, Oceania",HKG
+China,32.8646407088522,-0.67668408621186249,-0.11813051854893564,MMM,"China, Macao SAR",446,1,"Asia, East","Southeast Asia, East Asia, Oceania",MAC
+China,32.8646407088522,-0.67668408621186249,-0.11813051854893564,MMM,"China, Taiwan Province of China",158,1,"Asia, East","Southeast Asia, East Asia, Oceania",TWN
+Colombia,0.45812642354440902,-0.22961888784273238,-1.2016607513893889,MMM,Colombia,170,1,"Latin America, Central",Latin America and Caribbean,COL
+Comoros,3.1966831110471399E-3,-0.60958234743819173,-5.1855213664627984,MMM,Comoros,174,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,COM
+Comoros,3.1966831110471399E-3,-0.60958234743819173,-5.1855213664627984,MMM,Mayotte,175,1,"Europe, Western",High Income,
+Congo,2.3042542138840501E-2,-2.4255407155805039E-2,-1.2410293040927654,MMM,Congo,178,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COG
+Cook Islands,3.98550357606546E-4,-0.14222288949651188,-2.2968541058398042,MMM,Cook Islands,184,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Costa Rica,7.8533421110330598E-2,-0.43071122201462486,-2.6550984596432499,MMM,Costa Rica,188,1,"Latin America, Central",Latin America and Caribbean,CRI
+Croatia,4.8479206081969303E-2,-0.56921510151703725,-4.1778375960068397,MMM,Croatia,191,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HRV
+Cuba,0.11882756277472301,-0.61143647413941271,-3.7405895306418704,MMM,Cuba,192,1,Caribbean,Latin America and Caribbean,CUB
+Cyprus,1.4322379802609799E-2,-0.69320433807425608,-5.9439407495981271,MMM,Cyprus,196,1,"Europe, Western",High Income,CYP
+Czech Republic,0.15667733061758499,-0.91667997629490061,-4.3016594699906783,MMM,Czech Republic,203,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",CZE
+Cote dIvoire,8.0007215271083301E-2,-4.2168665180194527E-2,-1.5255491172265925,MMM,Cote d'Ivoire,384,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,CIV
+Dem.Peo.Rep.of Korea,0.27335194066142898,-0.55259549400110441,-3.0504118553282362,MMM,North Korea,408,1,"Asia, East","Southeast Asia, East Asia, Oceania",
+Dem.Rep.of the Congo,0.14136044385230101,1.5119254550748605E-3,-1.4708909114574757,MMM,Congo DRC,180,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,COD
+Denmark,9.6693110208052296E-2,-1.1036111868436311,-5.3426061216628096,MMM,Denmark,208,1,"Europe, Western",High Income,DNK
+Djibouti,1.46164542716739E-2,-0.49084090245647671,-4.5967071231165715,MMM,Djibouti,262,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,DJI
+Dominica,2.56603680419461E-3,-0.42147979419614273,-4.8867369778209842,MMM,Dominica,212,1,Caribbean,Latin America and Caribbean,
+Dominican Republic,0.16052827758839,-0.65394552135020645,-3.431265257904176,MMM,Dominican Republic,214,1,Caribbean,Latin America and Caribbean,DOM
+Ecuador,0.28266515768466099,-0.23977352720262649,-1.3220424798654253,MMM,Ecuador,218,1,"Latin America, Andean",Latin America and Caribbean,ECU
+Egypt,0.76026476922916997,-0.83894621571018257,-4.0547757273477973,MMM,Egypt,818,1,North Africa / Middle East,North Africa & Middle East,EGY
+El Salvador,7.4374381930881597E-2,-0.51376784333921566,-3.0921181443445995,MMM,El Salvador,222,1,"Latin America, Central",Latin America and Caribbean,SLV
+Equatorial Guinea,1.1607676123127301E-2,-0.10316502813998056,-1.7077080513990708,MMM,Equatorial Guinea,226,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GNQ
+Eritrea,1.29438728122356E-2,-0.64355539151912733,-5.6264990953802982,MMM,Eritrea,232,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ERI
+Estonia,2.9718534816356099E-2,-0.62210872711542364,-4.3562649387100816,MMM,Estonia,233,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",EST
+Ethiopia,0.22844121616639099,-0.34378087625067649,-2.5798998865133211,MMM,Ethiopia,231,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ETH
+Fiji,1.86197244303879E-2,-0.36887244808366498,-3.1157032734407415,MMM,Fiji,242,1,Oceania,"Southeast Asia, East Asia, Oceania",FJI
+Fiji,1.86197244303879E-2,-0.36887244808366498,-3.1157032734407415,MMM,New Caledonia,540,1,"Europe, Western",High Income,NCL
+Finland,0.110069016233429,-0.5754928534920698,-3.4587409665846742,MMM,Finland,246,1,"Europe, Western",High Income,FIN
+France,0.78087762631337199,-0.74956943738011872,-2.8926112546923752,MMM,France,250,1,"Europe, Western",High Income,FRA
+Gabon,1.9316902781713101E-2,-3.7992481884464864E-2,-1.233556466017343,MMM,Gabon,266,1,"Sub-Saharan Africa, Central",Sub-Saharan Africa,GAB
+Gambia,7.19363342875343E-3,-0.47640222142942179,-4.5944504743240859,MMM,Gambia,270,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GMB
+Georgia,4.5538159799346202E-2,-0.36689635363835132,-3.6046788824678964,MMM,Georgia,268,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",GEO
+Germany,1.1291358387019499,-0.78235446572416534,-2.7096798756436531,MMM,Germany,276,1,"Europe, Western",High Income,DEU
+Ghana,0.13880084741819099,-0.199384987723389,-1.9320638327906248,MMM,Ghana,288,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GHA
+Greece,0.21870495214229299,-0.56515138080456728,-3.55916665641768,MMM,Greece,300,1,"Europe, Western",High Income,GRC
+Grenada,5.1831741849132796E-3,-0.39901823140537068,-4.3797322544969033,MMM,Grenada,308,1,Caribbean,Latin America and Caribbean,
+Guatemala,0.19512948815740899,-0.51159072542603756,-2.4881223710520652,MMM,Guatemala,320,1,"Latin America, Central",Latin America and Caribbean,GTM
+Guinea,4.3563179029471003E-2,-2.0309018924005919E-2,-1.7074512654638354,MMM,Guinea,324,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GIN
+Guinea-Bissau,5.8779717856286802E-3,-0.30398853015315613,-3.5715519131036064,MMM,Guinea-Bissau,624,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,GNB
+Guyana,3.58007103520981E-2,-0.22935870942947048,-2.3025373574704302,MMM,Guyana,328,1,Caribbean,Latin America and Caribbean,GUY
+Haiti,6.1430221288765602E-2,-0.60514787296951822,-3.7611055430275311,MMM,Haiti,332,1,Caribbean,Latin America and Caribbean,HTI
+Honduras,0.13070897278676299,-0.4157057378875994,-2.518650256750949,MMM,Honduras,340,1,"Latin America, Central",Latin America and Caribbean,HND
+Hungary,0.101560879743216,-0.73554721869199369,-4.1943424608224653,MMM,Hungary,348,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",HUN
+Iceland,7.4123832697181096E-3,-0.74060092678158906,-5.8729886508884999,MMM,Iceland,352,1,"Europe, Western",High Income,ISL
+India,15.644534866874499,-0.62343782696513073,-1.3438936212502053,MMM,India,356,1,"Asia, South",South Asia,IND
+Indonesia,3.96645147142149,-0.60788860646974652,-1.2850291955672755,MMM,Indonesia,360,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",IDN
+Isl.Rep.of Iran,2.3415034626023998,-0.66853096246540034,-3.474809509232053,MMM,Iran,364,1,North Africa / Middle East,North Africa & Middle East,IRN
+Iraq,0.95224655218377996,-0.86329073764061004,-4.1527050930445544,MMM,Iraq,368,1,North Africa / Middle East,North Africa & Middle East,IRQ
+Ireland,8.0114545120354597E-2,-1.0697514733211499,-5.2814813195144055,MMM,Ireland,372,1,"Europe, Western",High Income,IRL
+Israel,0.180807985509158,-0.73356208596145966,-4.9375580811563182,MMM,Israel,376,1,"Europe, Western",High Income,ISR
+Israel,0.180807985509158,-0.73356208596145966,-4.9375580811563182,MMM,Palestinian Territory,275,1,North Africa / Middle East,North Africa & Middle East,PSE
+Italy,0.69353263536418097,-0.59180823618364231,-3.0458013693950234,MMM,Italy,380,1,"Europe, Western",High Income,ITA
+Jamaica,5.6980915771563799E-2,-0.6852740829414542,-4.6684538133229321,MMM,Jamaica,388,1,Caribbean,Latin America and Caribbean,JAM
+Japan,2.2024061513358499,-0.7487260393134535,-2.1674726868906862,MMM,Japan,392,1,"Asia Pacific, High Income",High Income,JPN
+Jordan,7.4808603784814007E-2,-0.72872847684102549,-5.6659224083968196,MMM,Jordan,400,1,North Africa / Middle East,North Africa & Middle East,JOR
+Kazakhstan,0.82099728655203597,-0.47072303152744194,-2.7023500140778038,MMM,Kazakhstan,398,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KAZ
+Kenya,0.16466464895690999,-0.21248553722376912,-2.2029300699530463,MMM,Kenya,404,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,KEN
+Kiribati,5.1361743922707795E-4,-0.24073218865992665,-2.7290635505143812,MMM,Kiribati,296,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Kuwait,0.21173035588943001,-1.0723208405578286,-5.703103576935419,MMM,Kuwait,414,1,North Africa / Middle East,North Africa & Middle East,KWT
+Kyrgyzstan,0.104638753466927,-0.46182504934577367,-4.2357632122567921,MMM,Kyrgyzstan,417,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",KGZ
+Lao Peo.Dem.Rep.,9.6776685248989094E-2,-0.2631121817017727,-2.1105937986994792,MMM,Laos,418,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LAO
+Latvia,3.0479716394888001E-2,-0.61277337019341183,-4.3834649450409584,MMM,Latvia,428,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LVA
+Lebanon,9.5853842192210006E-2,-0.6874451759026361,-5.2478571126551792,MMM,Lebanon,422,1,North Africa / Middle East,North Africa & Middle East,LBN
+Lesotho,5.7502174146395697E-2,-0.37520901794349998,-3.1800250956662257,MMM,Lesotho,426,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,LSO
+Liberia,1.8890624297359101E-2,1.1641285810129864E-2,-1.4936649664872044,MMM,Liberia,430,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,LBR
+Libyan Arab Jamahiriya,0.31474383329498401,-0.45605186266347381,-3.7463097809927444,MMM,Libya,434,1,North Africa / Middle East,North Africa & Middle East,LBY
+Lithuania,4.2280876428604397E-2,-0.70077406759821481,-4.5822296614733276,MMM,Lithuania,440,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",LTU
+Luxembourg,2.79503250679538E-2,-0.65207929520996732,-5.0661697279966074,MMM,Luxembourg,442,1,"Europe, Western",High Income,LUX
+Madagascar,7.1566611392471502E-2,-0.1347654222964102,-1.8966989729710708,MMM,Madagascar,450,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MDG
+Malawi,3.6396339942273599E-2,-8.8348090252423794E-2,-1.9317110278241669,MMM,Malawi,454,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MWI
+Malaysia,0.75188434985308195,-0.49634623457080845,-1.5234973253591957,MMM,Malaysia,458,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MYS
+Maldives,2.28265314801217E-2,-0.44238033586423131,-3.7463054418659434,MMM,Maldives,462,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MDV
+Mali,3.8444553120462299E-2,-0.12101280626256078,-2.231804466833978,MMM,Mali,466,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MLI
+Malta,6.8430651736194198E-3,-1.3499532165980115,-10.333541520963967,MMM,Malta,470,1,"Europe, Western",High Income,MLT
+Marshall Islands,6.3796828287251701E-4,nan,nan,MMM,Marshall Islands,584,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Mauritania,4.6067843773729397E-2,-0.48948161426107284,-3.918558556544582,MMM,Mauritania,478,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,MRT
+Mauritius,2.3484788645881799E-2,-0.57471058352551496,-4.1560434541861504,MMM,Mauritius,480,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MUS
+Mauritius,2.3484788645881799E-2,-0.57471058352551496,-4.1560434541861504,MMM,Reunion,638,1,"Europe, Western",High Income,
+Mexico,1.9657486543333,-0.51717263034031791,-1.9412662332852226,MMM,Mexico,484,1,"Latin America, Central",Latin America and Caribbean,MEX
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.25241400417605969,-2.9531784324914581,MMM,Guam,316,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Fed.Sts.of Micronesia,1.20646372791546E-3,-0.25241400417605969,-2.9531784324914581,MMM,Micronesia,583,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Monaco,2.5813717516844802E-4,-0.76442415497844041,-9.0860405832061844,MMM,Monaco,492,1,"Europe, Western",High Income,
+Mongolia,0.14610146196889201,-0.45318921549552871,-3.2395657247836622,MMM,Mongolia,496,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",MNG
+Morocco+W.Sahara,0.24989683237298599,-0.69163122621439133,-3.9489961356349372,MMM,Morocco,504,1,North Africa / Middle East,North Africa & Middle East,MAR
+Morocco+W.Sahara,0.24989683237298599,-0.69163122621439133,-3.9489961356349372,MMM,Western Sahara,732,1,North Africa / Middle East,North Africa & Middle East,
+Mozambique,5.20485687849137E-2,-0.22005765826977675,-2.2623393952403483,MMM,Mozambique,508,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,MOZ
+Myanmar,0.27197917238524399,-0.58045582396984341,-2.7801403979016572,MMM,Myanmar,104,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",MMR
+Namibia,2.1878608713586802E-2,-0.29698236099763464,-3.1382030633138447,MMM,Namibia,516,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,NAM
+Nauru,0,nan,nan,MMM,Nauru,520,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Nepal,0.120395965967328,-0.2250409957013241,-3.3041633072530585,MMM,Nepal,524,1,"Asia, South",South Asia,NPL
+Netherlands,0.173137078699234,-0.96289347266174175,-4.6825734715375722,MMM,Netherlands,528,1,"Europe, Western",High Income,NLD
+New Zealand,0.173463041693698,-0.30624117998474237,-2.1998241453181855,MMM,New Zealand,554,1,Australasia,High Income,NZL
+Nicaragua,6.3139540639145203E-2,-0.40571507247181859,-2.7631580264963862,MMM,Nicaragua,558,1,"Latin America, Central",Latin America and Caribbean,NIC
+Niger,4.59591056152759E-2,-0.15557706939997332,-2.5892386165488639,MMM,Niger,562,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NER
+Nigeria,0.78275487699300605,-0.22257092994742442,-1.6613017812134974,MMM,Nigeria,566,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,NGA
+Niue,6.2221492575331597E-5,nan,nan,MMM,Niue,570,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Norway,0.158552739980583,-0.6405044975601375,-3.6894944951483533,MMM,Norway,578,1,"Europe, Western",High Income,NOR
+Oman,0.15146314587972001,-0.84241200989656095,-5.5279793248990172,MMM,Oman,512,1,North Africa / Middle East,North Africa & Middle East,OMN
+Pakistan,1.6459102434279,-0.58543860614265797,-3.1484174071221309,MMM,Pakistan,586,1,"Asia, South",South Asia,PAK
+Palau,1.2385156170253201E-3,nan,nan,MMM,Palau,585,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Panama,5.1995126456688898E-2,-0.40100477348313346,-2.6267994496347971,MMM,Panama,591,1,"Latin America, Central",Latin America and Caribbean,PAN
+Papua New Guinea,7.3294850802225406E-2,-0.21414669033298647,-1.548880089209665,MMM,Papua New Guinea,598,1,Oceania,"Southeast Asia, East Asia, Oceania",PNG
+Paraguay,6.3631105738768498E-2,-0.24368296374293302,-1.6557340662360964,MMM,Paraguay,600,1,"Latin America, Tropical",Latin America and Caribbean,PRY
+Peru,0.33626653427549202,-0.39678471937460774,-2.09490142917174,MMM,Peru,604,1,"Latin America, Andean",Latin America and Caribbean,PER
+Philippines,0.55049106579517804,-0.49674773237833275,-1.7516090304308973,MMM,Philippines,608,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",PHL
+Poland,0.64431788946536706,-0.66897997807924725,-2.9193485636185992,MMM,Poland,616,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",POL
+Portugal,0.139446072260377,-0.88440562771388187,-4.6285712229636236,MMM,Portugal,620,1,"Europe, Western",High Income,PRT
+Qatar,0.16263691723246099,-0.83747562880537962,-5.8876676691148973,MMM,Qatar,634,1,North Africa / Middle East,North Africa & Middle East,QAT
+Rep.of Korea,0.65650353723565102,-0.58941564888425202,-2.6957644159894074,MMM,South Korea,410,1,"Asia Pacific, High Income",High Income,KOR
+Rep.of Moldova,2.0220472449907299E-2,-0.47499167464830538,-4.1518580108257286,MMM,Moldova,498,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",MDA
+Romania,0.21343406018205599,-0.59302853085471097,-3.3159469073401144,MMM,Romania,642,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",ROU
+Russian Fed.,3.5784350982236699,-0.32101072229472166,-1.7360314606877829,MMM,Russian Federation,643,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",RUS
+Rwanda,2.1687605153289199E-2,-0.2548678818397736,-2.5978606242643636,MMM,Rwanda,646,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,RWA
+St.Kitts+Nevis,2.40832595097497E-3,nan,nan,MMM,Saint Kitts and Nevis,659,1,Caribbean,Latin America and Caribbean,
+St.Lucia,7.0127452691368802E-3,-0.51064483951771811,-4.8994449530667534,MMM,Saint Lucia,662,1,Caribbean,Latin America and Caribbean,LCA
+St.Vincent+Grenadines,3.8734938281319302E-3,-0.45773456528926365,-4.8518762079772859,MMM,Saint Vincent and the Grenadines,670,1,Caribbean,Latin America and Caribbean,VCT
+Samoa,1.8537504683998501E-3,-0.36375710370303765,-3.6677995397793559,MMM,Samoa,882,1,Oceania,"Southeast Asia, East Asia, Oceania",WSM
+San Marino,3.2175877320880401E-4,-0.61807435437408365,-7.7296089780035953,MMM,San Marino,674,1,"Europe, Western",High Income,
+Sao Tome+Principe,1.4119763499378401E-3,-3.9553787487478273E-2,-1.7908948202208701,MMM,Sao Tome and Principe,678,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,STP
+Saudi Arabia,1.9196182884527999,-0.89619870840761229,-3.7963369014147563,MMM,Saudi Arabia,682,1,North Africa / Middle East,North Africa & Middle East,SAU
+Senegal,6.8517296036957595E-2,-0.5136989123227037,-3.7570728029009368,MMM,Senegal,686,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SEN
+Serbia+Montenegro,0.16372630251522599,-0.43663406215795558,-3.2674269131832503,MMM,Serbia,688,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SRB
+Seychelles,5.0492700704306802E-3,-0.29332041675786774,-3.3016975144109582,MMM,Seychelles,690,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",
+Sierra Leone,2.2998917012001699E-2,-0.16364053035060339,-2.2360285283982164,MMM,Sierra Leone,694,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,SLE
+Singapore,0.28599812496695398,-0.77348603767509072,-3.3475765161577185,MMM,Singapore,702,1,"Asia Pacific, High Income",High Income,SGP
+Slovakia,6.8384942628248693E-2,-0.67587979039853696,-4.2879025042511323,MMM,Slovakia,703,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVK
+Slovenia,3.1195878010021601E-2,-0.49452946013460142,-4.1536806094052139,MMM,Slovenia,705,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",SVN
+Solomon Islands,1.5773903856633399E-3,-0.10052853487579365,-1.8457024611270247,MMM,Solomon Islands,90,1,Oceania,"Southeast Asia, East Asia, Oceania",SLB
+Somalia,3.3177293836453001E-2,-0.92322340106969392,-4.9644024681881902,MMM,Somalia,706,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,SOM
+South Africa,1.3588967829393599,-0.34404304426247678,-1.9093380827840694,MMM,South Africa,710,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZAF
+Spain,0.74692611481524995,-0.6833560560013856,-3.2064209553487775,MMM,Spain,724,1,"Europe, Western",High Income,ESP
+Sri Lanka,0.31881294178011699,-1.1534287534878378,-3.7503773876469038,MMM,Sri Lanka,144,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",LKA
+Sudan,0.21204761847846099,-0.31104938938424226,-2.7413249705591953,MMM,Sudan,729,1,North Africa / Middle East,North Africa & Middle East,SDN
+Suriname,3.06762361181078E-2,-0.21417776728414392,-2.2161353028927242,MMM,French Guiana,254,1,"Europe, Western",High Income,
+Suriname,3.06762361181078E-2,-0.21417776728414392,-2.2161353028927242,MMM,Suriname,740,1,Caribbean,Latin America and Caribbean,SUR
+Swaziland,9.5344276768309106E-3,-0.30602301099209239,-3.3001001196839939,MMM,Eswatini,748,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,SWZ
+Sweden,0.106484984892253,-0.96056714448881364,-4.528199817329889,MMM,Sweden,752,1,"Europe, Western",High Income,SWE
+Switzerland,5.7969420620573003E-2,-0.72512862406429524,-4.6801275068878567,MMM,Switzerland,756,1,"Europe, Western",High Income,CHE
+Syrian Arab Rep.,0.17595526338369699,-0.5224882339700162,-4.0830967960190989,MMM,Syria,760,1,North Africa / Middle East,North Africa & Middle East,SYR
+Tajikistan,5.3692336741199699E-2,-0.56762468668734922,-4.7544616299441911,MMM,Tajikistan,762,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TJK
+Thailand,1.1329941759558,-0.51607349652404899,-1.6935800885490457,MMM,Thailand,764,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",THA
+Fmr.Yugoslav Rep.of Macedonia,3.36087823902173E-2,-0.66431895937677621,-4.8386240287829114,MMM,North Macedonia,807,1,"Europe, Central","Central Europe, Eastern Europe, Central Asia",MKD
+Timor-Leste,8.06884172344614E-3,-0.14940185097371009,-2.264497937438235,MMM,Timor-Leste,626,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",TLS
+Togo,1.5985088074999002E-2,-0.36714001087895454,-3.0721247097156796,MMM,Togo,768,1,"Sub-Saharan Africa, Western",Sub-Saharan Africa,TGO
+Tonga,5.4942144572012804E-4,-0.25568535719863794,-3.5528200694971965,MMM,Tonga,776,1,Oceania,"Southeast Asia, East Asia, Oceania",TON
+Trinidad+Tobago,6.1057630336216501E-2,-0.51040969686923854,-3.7373641445273718,MMM,Trinidad and Tobago,780,1,Caribbean,Latin America and Caribbean,TTO
+Tunisia,8.7137671518938795E-2,-0.48821139135874175,-3.9930207772530899,MMM,Tunisia,788,1,North Africa / Middle East,North Africa & Middle East,TUN
+Turkey,0.95556253685753401,-0.82433729336880956,-2.8577806680974569,MMM,Turkey,792,1,North Africa / Middle East,North Africa & Middle East,TUR
+Turkmenistan,0.30992369825235899,-0.8190161447246207,-4.0697387816179535,MMM,Turkmenistan,795,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",TKM
+Tuvalu,0,nan,nan,MMM,Tuvalu,798,1,Oceania,"Southeast Asia, East Asia, Oceania",
+Uganda,9.2063869718621599E-2,-8.0668999323425014E-2,-1.8217520431957022,MMM,Uganda,800,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,UGA
+Ukraine,0.55699177083181695,-0.43169045295188291,-2.6131564414252955,MMM,Ukraine,804,1,"Europe, Eastern","Central Europe, Eastern Europe, Central Asia",UKR
+United Arab Emirates,0.40790914176480098,-0.9245569137615105,-5.2395177505919754,MMM,United Arab Emirates,784,1,North Africa / Middle East,North Africa & Middle East,ARE
+United Kingdom,0.846882993866798,-0.92972478039138162,-2.9614601716794113,MMM,Channel Islands,830,1,"Europe, Western",High Income,
+United Kingdom,0.846882993866798,-0.92972478039138162,-2.9614601716794113,MMM,United Kingdom,826,1,"Europe, Western",High Income,GBR
+United Rep.of Tanzania,0.1740325076773,-0.1368791598301102,-1.9386976387658548,MMM,Tanzania,834,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,TZA
+United Sts.of America,10.528314402522099,-0.55579499842288838,-1.0268465336234522,MMM,French Polynesia,258,1,"Europe, Western",High Income,PYF
+United Sts.of America,10.528314402522099,-0.55579499842288838,-1.0268465336234522,MMM,Guadeloupe,312,1,"Europe, Western",High Income,
+United Sts.of America,10.528314402522099,-0.55579499842288838,-1.0268465336234522,MMM,United States,840,1,"North America, High Income",High Income,USA
+Uruguay,6.0240707918088901E-2,-0.3222787302009803,-2.3060237293316845,MMM,Uruguay,858,1,"Latin America, Southern",High Income,URY
+Uzbekistan,0.35389009994843301,-0.60932404579952104,-3.714726700062267,MMM,Uzbekistan,860,1,"Asia, Central","Central Europe, Eastern Europe, Central Asia",UZB
+Vanuatu,1.4504877950399901E-3,-0.11903869572226762,-2.3205036545198805,MMM,Vanuatu,548,1,Oceania,"Southeast Asia, East Asia, Oceania",VUT
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.43766035551696764,-1.9125677114449811,MMM,Aruba,533,1,"Europe, Western",High Income,ABW
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.43766035551696764,-1.9125677114449811,MMM,Curacao,531,1,"Europe, Western",High Income,
+Boliv.Rep.of Venezuela,0.67539286482648098,-0.43766035551696764,-1.9125677114449811,MMM,Venezuela,862,1,"Latin America, Central",Latin America and Caribbean,VEN
+Viet Nam,0.82618364739209305,-0.53584290799651679,-1.6856909169456435,MMM,Vietnam,704,1,"Asia, Southeast","Southeast Asia, East Asia, Oceania",VNM
+Yemen,0.144325446823443,-0.79082852287456729,-4.642856735119901,MMM,Yemen,887,1,North Africa / Middle East,North Africa & Middle East,YEM
+Zambia,4.0306208900952399E-2,-2.0019381622800824E-2,-1.869484978247633,MMM,Zambia,894,1,"Sub-Saharan Africa, Eastern",Sub-Saharan Africa,ZMB
+Zimbabwe,9.3447737478082493E-2,-0.36526154446342768,-2.6746854345696098,MMM,Zimbabwe,716,1,"Sub-Saharan Africa, Southern",Sub-Saharan Africa,ZWE
+PuertoRico_VirginIslands,0.70579572935807999,-0.74338244249885088,-3.2336122860902456,MMM,Martinique,474,1,"Europe, Western",High Income,
+PuertoRico_VirginIslands,0.70579572935807999,-0.74338244249885088,-3.2336122860902456,MMM,Puerto Rico,630,1,Caribbean,Latin America and Caribbean,PRI
+PuertoRico_VirginIslands,0.70579572935807999,-0.74338244249885088,-3.2336122860902456,MMM,US Virgin Islands,850,1,Caribbean,Latin America and Caribbean,
+,NA,NA,NA,NA,American Samoa,16,1,Oceania,"Southeast Asia, East Asia, Oceania",ASM
+,NA,NA,NA,NA,Anguilla,660,1,,,
+,NA,NA,NA,NA,Antarctica,10,1,,,
+,NA,NA,NA,NA,Bermuda,60,1,Caribbean,Latin America and Caribbean,
+,NA,NA,NA,NA,Bouvet Island,74,1,,,
+,NA,NA,NA,NA,British Indian Ocean Territory,86,1,,,
+,NA,NA,NA,NA,British Virgin Islands,92,1,,,
+,NA,NA,NA,NA,Cayman Islands,136,1,,,
+,NA,NA,NA,NA,Christmas Island,162,1,,,
+,NA,NA,NA,NA,Cocos Islands,166,1,,,
+,NA,NA,NA,NA,Falkland Islands,238,1,,,
+,NA,NA,NA,NA,Faroe Islands,234,1,,,
+,NA,NA,NA,NA,Gibraltar,292,1,,,
+,NA,NA,NA,NA,Greenland,304,1,"North America, High Income",High Income,
+,NA,NA,NA,NA,Heard Island and McDonald Islands,334,1,,,
+,NA,NA,NA,NA,Isle of Man,833,1,,,
+,NA,NA,NA,NA,Liechtenstein,438,1,,,
+,NA,NA,NA,NA,Montserrat,500,1,,,
+,NA,NA,NA,NA,Norfolk Island,574,1,,,
+,NA,NA,NA,NA,Northern Mariana Islands,580,1,Oceania,"Southeast Asia, East Asia, Oceania",
+,NA,NA,NA,NA,Pitcairn,612,1,,,
+,NA,NA,NA,NA,Saint Barthelemy,652,1,,,
+,NA,NA,NA,NA,Saint Helena,654,1,,,
+,NA,NA,NA,NA,Saint Martin,663,1,,,
+,NA,NA,NA,NA,Saint Pierre and Miquelon,666,1,,,
+,NA,NA,NA,NA,Sint Maarten,534,1,,,
+,NA,NA,NA,NA,South Georgia and South Sandwich Islands,239,1,,,
+,NA,NA,NA,NA,Svalbard,744,1,,,
+,NA,NA,NA,NA,Tokelau,772,1,Oceania,"Southeast Asia, East Asia, Oceania",
+,NA,NA,NA,NA,Turks and Caicos Islands,796,1,,,
+,NA,NA,NA,NA,United States Minor Outlying Islands,581,1,"North America, High Income",High Income,
+,NA,NA,NA,NA,Vatican City,336,1,,,
+,NA,NA,NA,NA,Wallis and Futuna,876,1,,,

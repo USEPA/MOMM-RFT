@@ -1,1 +1,1 @@
-These files are created by: 'Summarizing Results.R' script
+These files are created by: 'Summarizing BenMAP Results.R' script

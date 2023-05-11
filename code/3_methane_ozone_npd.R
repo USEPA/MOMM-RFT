@@ -1,23 +1,32 @@
-#####
-## Title:   3_methane_ozone_npd.R
-## Purpose: This file will read all output files from the Methane-Ozone Mortality
-##          Model-Reduced Form Tool and calculate net present damages
-##          and aggregate statistics across all trials.
-##          
-## Inputs:  output/damages/rffsp/damages_[scenario].parquet
-## Outputs: output/damages/rffsp/damages_[scenario].parquet
-## Written by: US EPA, Climate Change Division (OAP); April 2023
-## Last updated: 4/12/2023 by E. McDuffie
-## Notes:       
-##
-#####
+#######################################################################################
+### Title:        3_methane_ozone_npd.R
+### Purpose:      This file will read all output files from the Methane-Ozone Mortality
+##                Model-Reduced Form Tool and calculate net present damages
+##                and aggregate statistics across all trials. (for each model & country)
+##                The calculations are done for each model and country and combined at
+##                the end to help reduce the memory usage when processing all 10,000 RFF scenarios
+### Written by:   US EPA, Climate Change Division (OAP), adapted from NCEE (OP)
+### Date Created: 3/15/2023      
+### Last Edited:  4/25/2023
+##      Inputs:                                                                       ##
+##        -damages_mean_NOx_X_momm_rft.parquet                                        ##
+##        -Final Country Grid Col_Row Index.csv                                       ##
+##     Outputs:
+##        -npd_full_streams_rff_NOx_X_MODEL_COUNTRY.parquet                           ##
+##        - npd_country_rff_means_NOX_MODEL_COUNTRY.parquet                           ##
+##        - npd_global_rff_means_NOX_MODEL.csv                                        ##
+## Units: All $ values for $2020                                                      ##
+########################################################################################
+
 rm(list = ls()); gc()
 #necessary packages
+
 packs<-c("dplyr","tidyverse","readxl","purrr","foreach","utils")
 for (package in packs) { #Installs packages if not yet installed
   if (!requireNamespace(package, quietly = TRUE))
     install.packages(package)
 }
+
 library(dplyr) #for general data manipulation
 library(tidyverse) #for general data manipulation
 library(readxl) #to read in xlsx files
@@ -25,16 +34,18 @@ library(foreach) #to do parallel processing in loop
 library(purrr)  #for general data manipulation
 library(utils)
 library(arrow)
-setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
+#setwd("~/shared/OAR/OAP/CCD/CSIB/Methane-Ozone/MOMM-RFT")
 
 Inputs <- file.path('output',"rft")
-Outputs <- file.path("output")
+Outputs <- file.path("output",'npd')
 
-YEAR=2020
+YEAR  = 2020
 PULSE = 275e6 #CH4 pulse of 275 million metric tonnes
 
-countries<-read.csv(file.path('input',"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8)]
+countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8)]
 countries <- countries %>% filter(Region != "")
+
+NOx_scalar = 1
 
 read_momm_rft = 
   function(x,model){
@@ -57,9 +68,15 @@ read_momm_rft =
 
 
 for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
-  damages = 
-    list.files(Inputs, full.names = T) %>% 
-    map_df(~read_momm_rft(., MODEL))
+  # To read all files:
+  #damages = 
+  #  list.files(Inputs, full.names = T) %>% 
+  #  map_df(~read_momm_rft(., MODEL))
+
+  # to read specific file:
+  damages =
+    read_momm_rft(file.path(Inputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
+  
   print(MODEL)
   
   countries <- damages %>% distinct(LocID)
@@ -83,6 +100,7 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   print('here')
   
   ## discount rates
+  ## Using stochastic Ramsey discount rate calcualtion, following Rennert et al., 2022
   rates = tibble(rate = c('1.5% Ramsey', '2.0% Ramsey', '2.5% Ramsey', '3.0% Ramsey', '2.0% CDR', '3.0% CDR'),
                rho  = c(exp(0.000091496)-1, exp(0.001972641)-1, exp(0.004618785)-1, exp(0.007702711)-1, 0.02, 0.03), ## under discrete time, need to transform the rho that was calibrated using continuous time 
                #rho = c(0.000091496, 0.001972641, 0.004618785, 0.007702711, 0.02, 0.03),
@@ -137,7 +155,7 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
 
   ## export full streams
  data %>%
-    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
 #     write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_',MODEL,'.parquet')))
 }
   # recover summary statistics across all trials
@@ -162,7 +180,7 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   means %>%
     #mutate(LocID = countries$COL[COUNTRY]) %>%
     #write_csv(file.path(Outputs,paste0('npd_country_rff_means_',countries$COL[COUNTRY],'.csv')))
-    write_csv(file.path(Outputs,paste0('npd_country_rff_means_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+    write_csv(file.path(Outputs,paste0('npd_country_rff_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
 
 
   #data = unique(data) #get unique rows (filter out duplicate years)
@@ -217,7 +235,7 @@ read_results =
 
 #for (COUNTRY in c(41:42)) { #nrow(countries)) {
 Results_comb = 
-    list.files(Outputs, pattern = "full_streams_rff_MMM",full.names = T) %>% 
+    list.files(Outputs, pattern = paste0("full_streams_rff_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
     map_df(~read_results(.))
 
 #Result.files <- file.path(Outputs,"npd_country_rff_MMM") %>%
@@ -251,4 +269,4 @@ glob_means = tibble()
 # #
 #  #write data
   glob_means %>%
-    write_csv(file.path(Outputs,paste0('npd_global_rff_means_',MODEL,'.csv')))
+    write_csv(file.path(Outputs,paste0('npd_global_rff_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
