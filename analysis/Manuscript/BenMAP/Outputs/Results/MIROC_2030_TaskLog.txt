@@ -1,0 +1,94 @@
+-------------------------------
+HEALTH IMPACT FUNCTION TASK LOG
+-------------------------------
+
+BenMAP Cloud application version: 0.3.0, database version: 1010
+User: test@test.com
+Completed: 2022-10-13 07:58:30
+Total processing time: 24 seconds 
+
+Task Name: MIROC_2030
+
+Analysis Year: 2030
+
+POLLUTANT
+
+Pollutant Name: Ground-level ozone
+Defined Metrics: D1HourMax, D24HourMean, D8HourMax, D8HourMean
+
+AIR QUALITY DATA
+
+Pre-policy Air Quality Surface
+Name: Sim1_Ozone MIROC
+Source: Model
+Grid Definition: Fragmented Grid
+Metric: D8HourMax
+- Seasonal Metric: 
+- Annual Statistic: None
+- Cell Count: 65152
+- Min/Max/Mean: 12.222786/97.59376/37.9733588423073
+
+Post-policy Air Quality Surface
+Name: Sim1_Sim2_Ozone MIROC_2030
+Source: Model
+Grid Definition: Fragmented Grid
+Metric: D8HourMax
+- Seasonal Metric: 
+- Annual Statistic: None
+- Cell Count: 65152
+- Min/Max/Mean: 12.2650850996418/97.7239026693849/38.092269955195334
+
+POPULATION DATA
+
+Population Dataset: Fragmented Population
+Population Year: 2030
+Grid Definition: Fragmented Grid
+
+HEALTH IMPACT FUNCTIONS
+
+Health Effect Groups Analyzed:
+- Mortality (1)
+
+Functions Selected: 1
+
+Function 1:
+Unique ID: 1143
+Health Effect Group: Mortality
+Health Effect: Mortality, Respiratory
+Author: Murray CJL et al
+Year: 2020
+Start Age: 0
+End Age: 99
+Race: ALL
+Ethnicity: ALL
+Gender: ALL
+Pollutant: Ground-level ozone
+Metric: D8HourMax
+Seasonal Metric: Null
+Metric Statistic: Mean
+Reference: Murray C J L et al 2020 Global burden of 87 risk factors in
+204 countries and territories, 1990–2019: a systematic
+analysis for the global burden of disease study 2019 Lancet
+396 1223–49
+Function: (1-(1/exp(BETA*DELTAQ)))*INCIDENCE*POPULATION
+Baseline Function: INCIDENCE*POPULATION
+Incidence Dataset: Respiratory Mortality (2030)
+Incidence Race: ALL
+Incidence Ethnicity: ALL
+Incidence Gender: ALL
+Beta: 0.00583
+Beta Distribution: Normal
+Standard Error: 0.00168
+
+ADVANCED SETTINGS
+
+BenMAP-CE Desktop Backward Compatibility Mode: Enabled
+
+PROCESSING LOG
+
+2022-10-13 07:58:06: Starting HIF analysis
+2022-10-13 07:58:07: Loaded air quality data
+2022-10-13 07:58:13: Loaded incidence and prevalence for 1 function
+2022-10-13 07:58:20: Loaded population data
+2022-10-13 07:58:21: Health impact function calculations complete
+2022-10-13 07:58:30: Saved 64,228 results
