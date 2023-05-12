@@ -41,8 +41,9 @@ Outputs <- file.path("output",'npd')
 
 YEAR  = 2020
 PULSE = 275e6 #CH4 pulse of 275 million metric tonnes
+allRFF = 1
 
-countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8)]
+countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index.csv"))[,c(1,3:4,6,8)]
 countries <- countries %>% filter(Region != "")
 
 NOx_scalar = 1
@@ -68,15 +69,16 @@ read_momm_rft =
 
 
 for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
-  # To read all files:
-  #damages = 
-  #  list.files(Inputs, full.names = T) %>% 
-  #  map_df(~read_momm_rft(., MODEL))
-
-  # to read specific file:
-  damages =
-    read_momm_rft(file.path(Inputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
-  
+  if (allRFF==1){
+    # To read all files:
+    damages = 
+      list.files(Inputs, full.names = T) %>% 
+      map_df(~read_momm_rft(., MODEL))
+  } else {
+    # to read specific file:
+    damages =
+      read_momm_rft(file.path(Inputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
+  }
   print(MODEL)
   
   countries <- damages %>% distinct(LocID)
@@ -154,9 +156,13 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   
 
   ## export full streams
- data %>%
+ if (allRFF ==1){
+  data %>%
     write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
-#     write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_',MODEL,'.parquet')))
+ } else {
+   data %>%
+     write_parquet(file.path(Outputs, paste0('npd_full_streams_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+ }
 }
   # recover summary statistics across all trials
   means =
@@ -177,11 +183,13 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
 
 
   ## export summary stats
-  means %>%
-    #mutate(LocID = countries$COL[COUNTRY]) %>%
-    #write_csv(file.path(Outputs,paste0('npd_country_rff_means_',countries$COL[COUNTRY],'.csv')))
-    write_csv(file.path(Outputs,paste0('npd_country_rff_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
-
+  if (allRFF ==1){
+    means %>%
+        write_csv(file.path(Outputs,paste0('npd_country_rff_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+  } else {
+    means %>%
+      write_csv(file.path(Outputs,paste0('npd_country_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+  }
 
   #data = unique(data) #get unique rows (filter out duplicate years)
 
@@ -233,11 +241,15 @@ read_results =
   }
 
 
-#for (COUNTRY in c(41:42)) { #nrow(countries)) {
-Results_comb = 
+if (allRFF ==1){
+  Results_comb = 
     list.files(Outputs, pattern = paste0("full_streams_rff_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
     map_df(~read_results(.))
-
+} else {
+  Results_comb = 
+    list.files(Outputs, pattern = paste0("full_streams_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
+    map_df(~read_results(.))
+}
 #Result.files <- file.path(Outputs,"npd_country_rff_MMM") %>%
 #  Result.files <- list.files(Outputs, pattern = "full_streams_rff_MMM")  # "\\.parquet") #%>%
 #  Results_comb<-lapply(paste0(Outputs,"/",Result.files[1:2]), read_parquet)
@@ -268,5 +280,10 @@ glob_means = tibble()
   )
 # #
 #  #write data
-  glob_means %>%
-    write_csv(file.path(Outputs,paste0('npd_global_rff_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+  if (allRFF ==1){
+    glob_means %>%
+      write_csv(file.path(Outputs,paste0('npd_global_rff_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+  } else {
+    glob_means %>%
+      write_csv(file.path(Outputs,paste0('npd_global_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+  }

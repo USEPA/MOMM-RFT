@@ -1136,13 +1136,13 @@ globalresults <-
            col_types = cols())
 Results2 <- file.path(rft_inputs,'npd_global_rff_means_NOx_1_MMM.csv')
 rft_results <- read_csv(Results2, col_types = cols())
-nox_results1 <- file.path(rft_inputs,'npd_global_rff_means_NOx_1_MMM.csv')
+nox_results1 <- file.path(rft_inputs,'npd_global_means_NOx_1_MMM.csv')
 nox_results1 <- read_csv(nox_results1, col_types = cols())%>%
   mutate(NOx = '1')
-nox_results5 <- file.path(rft_inputs, 'npd_global_rff_means_NOx_0.5_MMM.csv')
+nox_results5 <- file.path(rft_inputs, 'npd_global_means_NOx_0.5_MMM.csv')
 nox_results5 <- read_csv(nox_results5, col_types = cols())%>%
   mutate(NOx = '0.5')
-nox_results15 <- file.path(rft_inputs, 'npd_global_rff_means_NOx_1.5_MMM.csv')
+nox_results15 <- file.path(rft_inputs, 'npd_global_means_NOx_1.5_MMM.csv')
 nox_results15 <- read_csv(nox_results15, col_types = cols()) %>%
   mutate(NOx = '1.5')
 nox_total_results <- rbind(nox_results1,nox_results5,nox_results15)
