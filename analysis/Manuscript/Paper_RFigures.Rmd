@@ -143,6 +143,11 @@ p4
 
 ```
 
+
+## Figure S2
+Made elsewhere in python
+
+
 ##Figure S3
 
 Time series of population characteristics 
@@ -219,7 +224,7 @@ p1 <-  rffsp_global_all_pop %>%
 p1
 
 ggsave(plot = p1, filename = 
-         file.path(Plots,'Timeseries_global_population.png'),width = 8,height = 5)
+         file.path(Plots,'FigS3a.png'),width = 8,height = 5)
 
 ####### Respiratory Mortality Rate & Population #############
 
@@ -358,7 +363,7 @@ p2 <-  rffsp_mort3 %>%
 p2
 
 ggsave(plot = p2, filename = 
-         file.path(Plots,'Timeseries_global_avgMortRate.png'),width = 8,height = 5)
+         file.path(Plots,'FigS3b.png'),width = 8,height = 5)
 
 
 p3<- p1+p2
@@ -380,14 +385,15 @@ Time series of respiratory mortality, with beta uncertainties (Fig 2a)
 
 
 #plot line graph of global total and top 10 countries (for MMM)
-Plots <- file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')
+Plots <- file.path(getwd(),'analysis','Manuscript','Plots')
+input <- file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')
 
 # Processed BenMAP respiratory mortality output files
 # from /analysis/Manuscript/BenMAP/Summarizing BenMAP Results.R
-countryResults    <- read.csv(paste0(Plots,"/Country Results Summary by Model & Year.csv"))
-globalResults     <- read.csv(paste0(Plots,"/Global Results Summary by Model & Year.csv"))
-globalResults2.5  <- read.csv(paste0(Plots,"/Global Results Summary by Model & Year 2_5CI.csv"))
-globalResults97.5 <- read.csv(paste0(Plots,"/Global Results Summary by Model & Year 97_5CI.csv"))
+countryResults    <- read.csv(paste0(input,"/Country Results Summary by Model & Year.csv"))
+globalResults     <- read.csv(paste0(input,"/Global Results Summary by Model & Year.csv"))
+globalResults2.5  <- read.csv(paste0(input,"/Global Results Summary by Model & Year 2_5CI.csv"))
+globalResults97.5 <- read.csv(paste0(input,"/Global Results Summary by Model & Year 97_5CI.csv"))
 
 globalResultslong <- globalResults %>%
   select(-c('AvgResponse','TotalResults','TotalPct2_5','TotalPct97_5'))
@@ -421,7 +427,7 @@ p1 <-  ggplot(globalResultslong, aes(x=Model.years,y=value,colour=Model,group=Mo
         scale_y_continuous(limits=c(0,18000))
 p1
 ggsave(plot = p1, filename = 
-         file.path(Plots,'Plots/Timeseries_O3Mort_GCMs.png'),width = 8,height = 5)
+         file.path(Plots,'FigS4.png'),width = 8,height = 5)
 
 
 #### 
@@ -715,10 +721,10 @@ p5 <- ggplot() +
 
 p5
 ggsave(plot = p5, filename = 
-         file.path(Plots,paste0('Total_MortMap_',MODEL,'.png')),width = 9,height = 5)
+         file.path(Plots,paste0('FigS5_',MODEL,'.png')),width = 9,height = 5)
 ```
 
-## Figures 2b and SXX
+## Figures 2b and S6
 
 global maps of respiratory mortality, per capita (in 2020)
 as well as maps of 2020 population, mortality rate, and average O3/CH4 response
@@ -906,14 +912,14 @@ p <-p+plot_annotation(title = "",
 p
 
 ggsave(plot = p, filename = 
-         file.path(Plots,paste0('Relative_2020_CombMaps_',MODEL,'.png')),width = 9,height = 15)
+         file.path(Plots,paste0('FigS6_',MODEL,'.png')),width = 9,height = 15)
 
 ggsave(plot = p5, filename = 
-         file.path(Plots,paste0('Relative_2020_DeathsPerCapMaps_',MODEL,'.png')),width = 9,height = 5)
+         file.path(Plots,paste0('Fig2b_',MODEL,'.png')),width = 9,height = 5)
 ```
 
 
-## Figure 2c and SX
+## Figure 2c and S7
 
 barchart of NPD values by region, central case and by discount rate
 ```{r, damagesbar}
@@ -1025,7 +1031,7 @@ p2 <-  cResultslong %>%
 p2
 
 ggsave(plot = p1, filename = 
-         file.path(Plots,'npd_country_bar_discount.png'),width = 10,height = 5)
+         file.path(Plots,'FigS7.png'),width = 10,height = 5)
 ggsave(plot = p2, filename = 
          file.path(Plots,'Fig2c.png'),width = 10,height = 5)
 
