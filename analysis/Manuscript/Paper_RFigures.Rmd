@@ -13,23 +13,27 @@ library('tidyverse')
 library('reshape2')
 library('patchwork')
 library('RColorBrewer')
-library('maps')
-library('mapproj')
+#library('maps')
+#library('mapproj')
 library('arrow')
 library('readxl')
 library('zoo')
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
 ```
 
 # Figures
-
+ 
 ##Figure S1
 
 Time series of global methane and O3 mixing ratios, by GCM
 ```{r FigureS1}
 
 #specify input and output paths
-Plots <-file.path(getwd(),'analysis','Manuscript','Plots')
-Input <- file.path(getwd(),'analysis','Manuscript','BenMAP','Inputs')
+dir.root <- getwd()
+Plots <-file.path('../..','analysis','Manuscript','Plots')
+Input <- file.path('../..','analysis','Manuscript','BenMAP','Inputs')
 
 #Define BenMAP years and create dataframes
 Model.years<-c(2020,2025,2030,2035,2040,2050,2060,2070,2080,2090,2100)
@@ -162,7 +166,7 @@ Inputs_socio <- file.path('input','RFF','rft_inputs')
 
 #Read in RFF-SP data
 # Pre-processed in /code/1_build_inputs_for_momm_rft.R
-rffsp <- read_parquet(file.path(Inputs_socio, 'rffsp_pop_gdp_all_trials.parquet'))
+rffsp <- read_parquet(file.path(getwd(),Inputs_socio, 'rffsp_pop_gdp_all_trials.parquet'))
 
 rffsp_mean_pop <- rffsp %>%
   select(-c('dollar.year','gdp')) %>%
@@ -385,8 +389,8 @@ Time series of respiratory mortality, with beta uncertainties (Fig 2a)
 
 
 #plot line graph of global total and top 10 countries (for MMM)
-Plots <- file.path(getwd(),'analysis','Manuscript','Plots')
-input <- file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')
+Plots <- file.path('../..','analysis','Manuscript','Plots')
+input <- file.path('../..','analysis','Manuscript','BenMAP','Outputs')
 
 # Processed BenMAP respiratory mortality output files
 # from /analysis/Manuscript/BenMAP/Summarizing BenMAP Results.R
@@ -658,7 +662,7 @@ global maps of respiratory mortality, absolute total (by model)
 ## Figure 2b and adapted to S5
 
 #map of country mortality results
-MODEL = 'MMM'
+MODEL = 'GFDL'
 
 Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
 input <- file.path(getwd(),'input','BenMAP')
@@ -668,40 +672,63 @@ country_total <- countryResults %>%
   select(c('COUNTRY','Region','SuperRegion','Model','TotalResults','TotalPct2_5','TotalPct97_5')) %>%
   filter(Model == MODEL) %>%
   rename(region = COUNTRY) #%>%
+country_total["region"][country_total["region"] == "Cote d'Ivoire"] <- "Côte d'Ivoire"
+country_total["region"][country_total["region"] == "Congo DRC"] <- "Democratic Republic of the Congo"
+country_total["region"][country_total["region"] == "Congo"] <- "Republic of Congo"
+country_total["region"][country_total["region"] == "Cabo Verde"] <- "Cape Verde"
+country_total["region"][country_total["region"] == "Gambia"] <- "The Gambia"
+country_total["region"][country_total["region"] == "China, Hong Kong SAR"] <- "Hong Kong"
+country_total["region"][country_total["region"] == "South Korea"] <- "Republic of Korea"
+country_total["region"][country_total["region"] == "Laos"] <- "Lao PDR"
+country_total["region"][country_total["region"] == "China, Macao SAR"] <- "Macao" 
+country_total["region"][country_total["region"] == "Sao Tome and Principe"] <- "	São Tomé and Principe"
+country_total["region"][country_total["region"] == "North Korea"] <- "Dem. Rep. Korea"
+country_total["region"][country_total["region"] == "Palestinian Territory"] <- "Palestine"
+country_total["region"][country_total["region"] == "Eswatini"] <- "Swaziland"
+country_total["region"][country_total["region"] == "China, Taiwan Province of China"] <- "Taiwan"
 
 
-# load map data and align country names
-worldData <- map_data("world")
-#correct region names
-worldData["region"][worldData["region"] == "Russia"] <- "Russian Federation"
-worldData["region"][worldData["region"] == "USA"] <- "United States"
-worldData["region"][worldData["region"] == "Virgin Islands" & worldData['subregion']==' US'] <- "US Virgin Islands"
-worldData["region"][worldData["region"] == "Taiwan"] <- "China, Taiwan Province of China"
-worldData["region"][worldData["region"] == "Trinidad" | worldData['region']=='Tobago'] <- "Trinidad and Tobago"
-worldData["region"][worldData["region"] == "Grenadines"| worldData['region']=='Saint Vincent'] <- "Saint Vincent and the Grenadines"
-worldData["region"][worldData["region"] == "Swaziland"] <- "Eswatini"
-worldData["region"][worldData["region"] == "UK"] <- "United Kingdom"
-worldData["region"][worldData["region"] == "Cape Verde"] <- "Cabo Verde"
-worldData["region"][worldData["region"] == "Republic of Congo"] <- "Congo"
-worldData["region"][worldData["region"] == "Democratic Republic of the Congo"] <- "Congo DRC"
-worldData["region"][worldData["region"] == "Ivory Coast"] <- "Cote d'Ivoire"
-worldData["region"][worldData["region"] == "Brunei"] <- "Brunei Darussalam"
-worldData["region"][worldData["region"] == "Antigua"| worldData['region']=='Barbuda'] <- "Antigua and Barbuda"
-worldData["region"][worldData["region"] == "Palestine"] <- "Palestinian Territory"
-worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Hong Kong'] <- "China, Hong Kong SAR"
-worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Macao'] <- "China, Macao SAR"
-worldData["region"][worldData["region"] == "Guernsey"| worldData['region']=='Jersey'] <- "Channel Islands"
+# # load map data and align country names
+# worldData <- map_data("world")
+# #correct region names
+# worldData["region"][worldData["region"] == "Russia"] <- "Russian Federation"
+# worldData["region"][worldData["region"] == "USA"] <- "United States"
+# worldData["region"][worldData["region"] == "Virgin Islands" & worldData['subregion']==' US'] <- "US Virgin Islands"
+# worldData["region"][worldData["region"] == "Taiwan"] <- "China, Taiwan Province of China"
+# worldData["region"][worldData["region"] == "Trinidad" | worldData['region']=='Tobago'] <- "Trinidad and Tobago"
+# worldData["region"][worldData["region"] == "Grenadines"| worldData['region']=='Saint Vincent'] <- "Saint Vincent and the Grenadines"
+# worldData["region"][worldData["region"] == "Swaziland"] <- "Eswatini"
+# worldData["region"][worldData["region"] == "UK"] <- "United Kingdom"
+# worldData["region"][worldData["region"] == "Cape Verde"] <- "Cabo Verde"
+# worldData["region"][worldData["region"] == "Republic of Congo"] <- "Congo"
+# worldData["region"][worldData["region"] == "Democratic Republic of the Congo"] <- "Congo DRC"
+# worldData["region"][worldData["region"] == "Ivory Coast"] <- "Cote d'Ivoire"
+# worldData["region"][worldData["region"] == "Brunei"] <- "Brunei Darussalam"
+# worldData["region"][worldData["region"] == "Antigua"| worldData['region']=='Barbuda'] <- "Antigua and Barbuda"
+# worldData["region"][worldData["region"] == "Palestine"] <- "Palestinian Territory"
+# worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Hong Kong'] <- "China, Hong Kong SAR"
+# worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Macao'] <- "China, Macao SAR"
+# worldData["region"][worldData["region"] == "Guernsey"| worldData['region']=='Jersey'] <- "Channel Islands"
+# MergedData <- left_join(worldData, country_total, by = 'region')
+
+world <- ne_countries(scale = "medium", returnclass = "sf")
+world <- world %>% 
+  filter(sov_a3 != 'ATA') #%>% #remove antarctica
+  #select(-c("formal_en","formal_fr","note_adm0","note_brk","name_sort","name_alt"))
+  #select("name_long")
 
 
-#Merge data
-MergedData <- left_join(worldData, country_total, by = 'region')
+MergedData <- left_join(world, country_total, by = c('name_long'='region'))
 #replace zero with na
 MergedData$TotalResults[MergedData$TotalResults ==0] <- NA
 
 #chloropleth of world
 p5 <- ggplot() +
-  geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = TotalResults),
-               color = 'black',linewidth=0.15)+
+  #geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = TotalResults),
+  #             color = 'black',linewidth=0.15)+
+  geom_sf(data = MergedData, color = "black",  aes(fill = TotalResults))+
+  coord_sf(crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+           +datum=WGS84 +units=m +no_defs")+
   scale_fill_fermenter("Total Deaths",
                        n.breaks=9,
                         type = 'seq',
@@ -711,13 +738,25 @@ p5 <- ggplot() +
                        limits=c(0,100000),
                        breaks= c(0,100,1000,10000,100000),
                        label=scales::comma)+
-  theme_void()+
+  theme_bw()+
   theme(legend.spacing.y = unit(.5,'cm'),
         legend.text = element_text(size=12),
         legend.title = element_text(size=13))+
+  theme(panel.border = element_rect(color = "transparent"),
+        axis.text.x= element_blank(),
+        axis.ticks.x = element_blank())+
+  #theme(panel.grid.major = element_line(color = 'gray75', 
+  #                                      linetype = "solid",
+  #                                      linewidth = 0.25),
+  #      panel.grid.minor = element_line(color = 'gray75', 
+  #                                      linetype = "solid",
+  #                                      linewidth = 0.25),
+  #      panel.grid = element_line(colour = "grey70", size=2),
+  #      )+
   
-  guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
-  coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
+  guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))#+
+  #coord_proj("+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+  #coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
 
 p5
 ggsave(plot = p5, filename = 
@@ -734,9 +773,10 @@ as well as maps of 2020 population, mortality rate, and average O3/CH4 response
 #map of country mortality results
 MODEL = 'MMM'
 
-Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
-input <- file.path(getwd(),'input')
-countryResults <- read.csv(paste0(input,'/BenMAP',"/Country Results Summary by Model & Year.csv"))
+Plots <- file.path( 'analysis','Manuscript','Plots')
+input <- file.path('../..','input')
+
+countryResults <- read.csv(file.path(input,'BenMAP',"Country Results Summary by Model & Year.csv"))
 
 country_2020 <- countryResults %>%
   select(c('COUNTRY','Region','SuperRegion','Model','AvgResponse','X2020')) %>%
@@ -744,7 +784,7 @@ country_2020 <- countryResults %>%
   rename(region = COUNTRY) #%>%
 
 #read in population
-socio_inputs <- file.path('input','RFF','lookup_tables')
+socio_inputs <- file.path('../..','input','RFF','lookup_tables')
 mean.pop<-read.csv(file.path(socio_inputs,"rff_pop_means.csv")) #this data set includes all countries (rff-sp does not)
 mean.pop <- mean.pop %>%
   filter(Year ==2020) %>%
@@ -765,32 +805,30 @@ mort_rate <- resp_mort_means_noage %>%
   filter(Min.Year ==2020)
 country_plot <- country_plot1 %>% left_join(mort_rate, by ='LocID')
 
-
-# read in map data and align country names
-worldData <- map_data("world")
-#correct region names
-worldData["region"][worldData["region"] == "Russia"] <- "Russian Federation"
-worldData["region"][worldData["region"] == "USA"] <- "United States"
-worldData["region"][worldData["region"] == "Virgin Islands" & worldData['subregion']==' US'] <- "US Virgin Islands"
-worldData["region"][worldData["region"] == "Taiwan"] <- "China, Taiwan Province of China"
-worldData["region"][worldData["region"] == "Trinidad" | worldData['region']=='Tobago'] <- "Trinidad and Tobago"
-worldData["region"][worldData["region"] == "Grenadines"| worldData['region']=='Saint Vincent'] <- "Saint Vincent and the Grenadines"
-worldData["region"][worldData["region"] == "Swaziland"] <- "Eswatini"
-worldData["region"][worldData["region"] == "UK"] <- "United Kingdom"
-worldData["region"][worldData["region"] == "Cape Verde"] <- "Cabo Verde"
-worldData["region"][worldData["region"] == "Republic of Congo"] <- "Congo"
-worldData["region"][worldData["region"] == "Democratic Republic of the Congo"] <- "Congo DRC"
-worldData["region"][worldData["region"] == "Ivory Coast"] <- "Cote d'Ivoire"
-worldData["region"][worldData["region"] == "Brunei"] <- "Brunei Darussalam"
-worldData["region"][worldData["region"] == "Antigua"| worldData['region']=='Barbuda'] <- "Antigua and Barbuda"
-worldData["region"][worldData["region"] == "Palestine"] <- "Palestinian Territory"
-worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Hong Kong'] <- "China, Hong Kong SAR"
-worldData["region"][worldData["region"] == "China" & worldData['subregion']=='Macao'] <- "China, Macao SAR"
-worldData["region"][worldData["region"] == "Guernsey"| worldData['region']=='Jersey'] <- "Channel Islands"
+country_plot["region"][country_plot["region"] == "Cote d'Ivoire"] <- "Côte d'Ivoire"
+country_plot["region"][country_plot["region"] == "Congo DRC"] <- "Democratic Republic of the Congo"
+country_plot["region"][country_plot["region"] == "Congo"] <- "Republic of Congo"
+country_plot["region"][country_plot["region"] == "Cabo Verde"] <- "Cape Verde"
+country_plot["region"][country_plot["region"] == "Gambia"] <- "The Gambia"
+country_plot["region"][country_plot["region"] == "China, Hong Kong SAR"] <- "Hong Kong"
+country_plot["region"][country_plot["region"] == "South Korea"] <- "Republic of Korea"
+country_plot["region"][country_plot["region"] == "Laos"] <- "Lao PDR"
+country_plot["region"][country_plot["region"] == "China, Macao SAR"] <- "Macao" 
+country_plot["region"][country_plot["region"] == "Sao Tome and Principe"] <- "	São Tomé and Principe"
+country_plot["region"][country_plot["region"] == "North Korea"] <- "Dem. Rep. Korea"
+country_plot["region"][country_plot["region"] == "Palestinian Territory"] <- "Palestine"
+country_plot["region"][country_plot["region"] == "Eswatini"] <- "Swaziland"
+country_plot["region"][country_plot["region"] == "China, Taiwan Province of China"] <- "Taiwan"
 
 
-#Merge data
-MergedData <- left_join(worldData, country_plot, by = 'region')
+# # load map data and align country names
+world <- ne_countries(scale = "medium", returnclass = "sf")
+world <- world %>% 
+  filter(sov_a3 != 'ATA') #%>% #remove antarctica
+  #select(-c("formal_en","formal_fr","note_adm0","note_brk","name_sort","name_alt"))
+  #select("name_long")
+
+MergedData <- left_join(world, country_plot, by = c('name_long'='region'))
 #replace zero with na
 MergedData$death_percap[MergedData$death_percap ==0] <- NA
 MergedData$AvgResponse[MergedData$AvgResponse ==0] <- NA
@@ -804,35 +842,36 @@ MergedData <- MergedData %>%
 
 #chloropleth of world Per capita deaths
 p5 <- ggplot() +
-  geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = death_percap),
-               color = 'black',linewidth=0.15)+
+  geom_sf(data = MergedData, color = "black",  aes(fill = death_percap))+
+  coord_sf(crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+           +datum=WGS84 +units=m +no_defs")+
   scale_fill_fermenter("Deaths Per Capita",
                        n.breaks=10.5,
                         type = 'seq',
                        direction = -1,
                         palette = "Spectral",
                         na.value='lightgray',
-                       #values=rescale(c(-1,0,1)),
                        limits=c(#0,
                                 min(MergedData$death_percap, na.rm=TRUE),
                                 0.3),
                        labels = c('Minimum',rep('',8),'Maximum'))+
-  theme_void()+
+  theme_bw()+
   theme(legend.position = 'right')+
   theme(legend.key.height = unit(0.5,'cm'),
         legend.spacing.y = unit(.5,'cm'),
         legend.text = element_text(size=12),
         legend.title = element_text(size=13))+
-  guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
-  coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
-
+  theme(panel.border = element_rect(color = "transparent"),
+        axis.text.x= element_blank(),
+        axis.ticks.x = element_blank())+
+  guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))#+
 p5
 
 #mortality rate
 p6 <- ggplot() +
-  geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, 
-                                      fill = MeanMortalityRate),
-               color = 'black',linewidth=0.15)+
+  geom_sf(data = MergedData, color = "black",  aes(fill = MeanMortalityRate))+
+  coord_sf(crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+           +datum=WGS84 +units=m +no_defs")+
   scale_fill_fermenter("Respiratory Mortality Rates",
                        n.breaks=9,
                         type = 'seq',
@@ -843,7 +882,7 @@ p6 <- ggplot() +
                                 max(MergedData$MeanMortalityRate, na.rm=TRUE)),
                        labels = c('Minimum','','','','','','Maximum'))+
   
-  theme_void()+
+  theme_bw()+
   ggtitle("b) Respiratory Mortality Rates Per 100K")+
   theme(legend.position = 'none')+
   theme(legend.spacing.y = unit(.5,'cm'),
@@ -851,13 +890,16 @@ p6 <- ggplot() +
         legend.title = element_text(size=13))+
   theme(plot.title = element_text(size = 20))+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
-  coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
+  theme(panel.border = element_rect(color = "transparent"),
+        axis.text.x= element_blank(),
+        axis.ticks.x = element_blank())
 p6
 
 #population
 p7 <- ggplot() +
-  geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = mean_pop),
-               color = 'black',linewidth=0.15)+
+  geom_sf(data = MergedData, color = "black",  aes(fill = mean_pop))+
+  coord_sf(crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+           +datum=WGS84 +units=m +no_defs")+
   scale_fill_fermenter("Population",
                        n.breaks=9,
                         type = 'seq',
@@ -871,7 +913,7 @@ p7 <- ggplot() +
                        #n.breaks = 6,
                        #label=scales::comma)+
                        labels = c('Minimum','','','','','','Maximum'))+
-  theme_void()+
+  theme_bw()+
   ggtitle('a) Population')+
   theme(legend.position = 'none')+
   theme(legend.spacing.y = unit(.5,'cm'),
@@ -879,13 +921,16 @@ p7 <- ggplot() +
         legend.title = element_text(size=13))+
   theme(plot.title = element_text(size = 20))+
   guides(col = guide_legend(override.aes = list(shape = 15, size = 10)))+
-  coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
+  theme(panel.border = element_rect(color = "transparent"),
+        axis.text.x= element_blank(),
+        axis.ticks.x = element_blank())
 p7
 
 #avg response
 p8 <- ggplot() +
-  geom_polygon(data = MergedData, aes(x=long, y = lat, group=group, fill = AvgResponse),
-               color = 'black',linewidth=0.15)+
+  geom_sf(data = MergedData, color = "black",  aes(fill = AvgResponse))+
+  coord_sf(crs = "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+           +datum=WGS84 +units=m +no_defs")+
   scale_fill_fermenter("",
                        n.breaks=9,
                         type = 'seq',
@@ -895,14 +940,16 @@ p8 <- ggplot() +
                        limits=c(min(MergedData$AvgResponse, na.rm=TRUE),
                                 max(MergedData$AvgResponse, na.rm=TRUE)),
                        labels = c('Minimum','','','','','','Maximum'))+
-  theme_void()+
+  theme_bw()+
   ggtitle(expression(paste('c) Average Ozone Response (pptv ', O[3],"/", "ppbv ",CH[4],')')))+
   theme(legend.position = 'bottom')+
   theme(legend.key.width = unit(2,'cm'),
         legend.text = element_text(size=12),
         legend.title = element_text(size=13))+
   theme(plot.title = element_text(size = 20))+
-  coord_map(projection = 'mercator',xlim=c(-180,180),ylim = c(-55,80))
+  theme(panel.border = element_rect(color = "transparent"),
+        axis.text.x= element_blank(),
+        axis.ticks.x = element_blank())
 p8
 
 p<- p7+p6+p8
@@ -924,8 +971,8 @@ ggsave(plot = p5, filename =
 barchart of NPD values by region, central case and by discount rate
 ```{r, damagesbar}
 
-Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
-inputs <- file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')
+Plots <- file.path('../..','analysis','Manuscript','Plots')
+inputs <- file.path('../..','analysis','Manuscript','BenMAP','Outputs')
 countryresults <-
    read_csv(file.path(inputs,"npd_country_damage_transformation_woutCessation.csv"),
            col_types = cols())
@@ -962,19 +1009,20 @@ means = cResultslong %>%
   group_by_at(c('discount.rate','SuperRegion')) %>% 
   summarise(means=mean) %>% 
   ungroup() %>%
-  mutate(across(c('means'), ~ signif(.,3)))
+  #mutate(across(c('means'), ~ signif(.,3))) %>%
+  mutate(means = case_when( means >100 ~ signif(means,2), TRUE ~signif(means,1)))
 
 lower = cResultslong %>% 
   group_by_at(c('discount.rate','SuperRegion')) %>% 
   summarise(means=`2.5%`) %>% 
   ungroup() %>%
-  mutate(across(c('means'), ~ signif(.,3)))
+  mutate(across(c('means'), ~ signif(.,2)))
 
 upper = cResultslong %>% 
   group_by_at(c('discount.rate','SuperRegion')) %>% 
   summarise(means=`97.5%`) %>% 
   ungroup() %>%
-  mutate(across(c('means'), ~ signif(.,3)))
+  mutate(across(c('means'), ~ signif(.,2)))
 
     
   reg_i <- cResultslong %>% 
@@ -1126,9 +1174,9 @@ Tornado sensitivity plot
 
 
 #Read in 
-Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
-inputs <- file.path(getwd(),'analysis','Manuscript','BenMAP','Outputs')
-rft_inputs <- file.path(getwd(),'output','npd')
+Plots <- file.path('../..', 'analysis','Manuscript','Plots')
+inputs <- file.path('../..','analysis','Manuscript','BenMAP','Outputs')
+rft_inputs <- file.path('../..','output','npd')
 
 Results <- file.path('Results')
 globalresults <-
@@ -1196,7 +1244,7 @@ p1 <- plot_data %>%
   coord_flip()+
   theme_minimal()+
   xlab('')+
-  ylab("Change in Global $1660(2020)/mT" ~CH[4])+
+  ylab("Change in Global $1700(2020)/mT" ~CH[4])+
   theme(axis.text = element_text(size=16),
         axis.title = element_text(size=16))+
   scale_y_continuous(limits = c(-1000, 1300),label = scales::dollar)+
