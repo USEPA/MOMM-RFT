@@ -114,14 +114,15 @@
   NOx_scalar = 1          #Options: numerical values > 0 (e.g., 50% = 0.5, 150% = 1.5)
   # this value represents the proportion of NOx emissions in each country relative
   # to NOx emission in the original CCAC simulations
+  # default = 1
   
-  # Implement cessation lags (1 = yes, 0 = no)
-  cessation_flag = 1
+  # Implement cessation lags (1 = yes, 0 = no (default))
+  cessation_flag = 0
   
   #homogeneous methane-ozone response
-  homogeneous =1
+  homogeneous = 0
   # if set to 1, the ozone response will be set to the global (non-weighted) average (4.8 pptv/ppbv)
-  
+  #default= 0
   
 ##########
 ###### Pre-Processing Steps

@@ -2,7 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-./input/RFF/rft_inputs/*
-./output/rft/*
-./output/npd/npd_country*
-./output/npd/npd_full_streams*
+**/input/RFF/rft_inputs/*
+**/output/rft/*
+**/output/npd/npd_country*
+**/output/npd/npd_full_streams*
+**/Manuscript/Methane Ozone Figures.pptx
