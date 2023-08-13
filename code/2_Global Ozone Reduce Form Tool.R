@@ -3,7 +3,7 @@
 ### Created by: Melanie Jackson, IEc 
 ### Adapted by: E. McDuffie (EPA)
 ### Date Created: 3/15/2023      
-### Last Edited: 4/24/2023
+### Last Edited: 8/11/2023
 ##      Inputs:                                                                       ##
 ##        -Country Results Interpolated 2020-2100 by Model.csv                        ##
 ##        -All Trajectory Mortality Ratios_through 2100.rds (parts 1&2)               ##
@@ -20,7 +20,7 @@
   rm(list = ls()); gc()
   
   #necessary packages
-    packs<-c("dplyr","tidyverse","readxl","purrr","foreach","utils","pbmcapply")
+    packs<-c("dplyr","tidyverse","readxl","purrr","foreach","utils","pbmcapply","arrow")
     for (package in packs) { #Installs packages if not yet installed
       if (!requireNamespace(package, quietly = TRUE))
         install.packages(package)
@@ -51,7 +51,7 @@
   BaseYear            = 2020 # year of CH4 pulse used in BenMAP simulations
   gdp_2011_to_2020    = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
                       #last access: March 30, 2023
-  base_vsl            = 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
+  base_vsl            = 10.05e6 # $2020 VSL from Rennert et al., 2022 (and EPA SC-GHG report) 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
   Elasticity          = 1  # income elasticity
   Years               <- c(2020:2100) # set simulation years
   lags                = c(6, 2.5, 2.5, 2.5, 2.5, 4/15, 4/15, 4/15, 4/15,4/15, 4/15, 4/15, 4/15, 
@@ -65,32 +65,13 @@
 ########
     
     ## 1) Original BenMAP O3-Methane Mortality 
-    CloudResults <- read.csv(file.path(Inputs,"BenMAP","Country Results Interpolated 2020-2100 by Model_eem.csv"))
+    CloudResults <- read.csv(file.path(Inputs,"BenMAP","Country Results Interpolated 2020-2100 by Model.csv"))
     CloudResults$LocID  <- CloudResults$column #rename
     # Description: Timeseries of mean and 95th percentile interpolated CH4-O3 mortality 
     #  results from BenMAP for each model (from 'Summarizing Results.R')
-    
-    ## 2) Original O3-CH4 Response data by country (O3 pptv/CH4 ppbv), derived from CCAC simualtions
-#    OzoneResponse   <- read.csv(file.path(Inputs,"BenMAP","Country Results Summary by Model & Year_eem.csv"))
-#      OzoneResponse <- OzoneResponse %>%
-#        select(c("column","COUNTRY",'Region','SuperRegion','Model','AvgResponse'))
-#      names(OzoneResponse)[1] <- "LocID" 
-#      names(OzoneResponse)[6] <- "CloudAvgResponse" 
-    # Description: Average O3-CH4 response (pptv O3/ppbv CH4), by country (from CCAC). Values 
-    #  calculated in 'Summarizing Results.R', extracted & matched with country ID here
-    # We now calculate the ozone-methane response at NOx levels = 1 (i.e., those used in BenMAP), using the
-    # equations from the CCAC report. We re-calculate the responses so that the *change* in NOx relative
-    # to the NOx=1 case is appropriately captured in the RFT
-    
-    ## 3) Create a copy of the BenMAP cloud results & combine with the Ozone Response Data
-     # CloudResults_rft        <- CloudResults
-    #  CloudResults_rft$LocID  <- CloudResults_rft$column #rename
-    #  #calculate cloud standard deviation (N = 10,000 monte carlo runs; CI = 95% -> Z=1.96x2 = 3.92)
-    #  #CloudResults_rft$Std.Dev<-(CloudResults_rft$Inverse.97_5 - CloudResults_rft$Inverse.2_5)/3.92
-    #  CloudResults_rft        <- left_join(CloudResults_rft,OzoneResponse,by=c("LocID","Model"))
 
     ## Country Index Key ##
-    countries <- read.csv(file.path(Inputs,"Final Country Grid Col_Row Index_EEM.csv"))[,c(1,3:4,6,8,9)]
+    countries <- read.csv(file.path(Inputs,"Final Country Grid Col_Row Index.csv"))[,c(1,3:4,6,8,9)]
     # Description: The country name and LocID crosswalk (for BenMAP 0.5x0.5 grid)
       
     
@@ -108,7 +89,7 @@
   # The tool is currently set up to use data from the RFF-SPs
   # The user is asked to specify a specific RFF-SP trajectory Number, OR
   # specify 'ALL' to calculate the mortality estimates for all 10,000 trajectories
-  RFF_TrajNumber = 'mean'   #Options: numerical value 1-10000, or 'All', or 'mean'
+  RFF_TrajNumber = 'All'   #Options: numerical value 1-10000, or 'All', or 'mean'
   
   #NOx emissions
   NOx_scalar = 1          #Options: numerical values > 0 (e.g., 50% = 0.5, 150% = 1.5)
@@ -116,8 +97,8 @@
   # to NOx emission in the original CCAC simulations
   # default = 1
   
-  # Implement cessation lags (1 = yes, 0 = no (default))
-  cessation_flag = 0
+  # Implement cessation lags (1 = yes, 0 = no (default=1))
+  cessation_flag = 1 #if set to 1, with calculate results with and without lag
   
   #homogeneous methane-ozone response
   homogeneous = 0
@@ -205,8 +186,8 @@
     ### Parallel filter and writing of feather files
     ### Detect cores and get number of cores
     parallel::detectCores()
-    n.cores    <- parallel::detectCores() - 1
-    n.cores    <- 5
+    n.cores    <- parallel::detectCores() - 10
+    n.cores    <- 10
     n.cores
     
     ### Make cluster
@@ -463,13 +444,14 @@
       if (RFF_TrajNumber == 'mean' ) {
         if (homogeneous ==1) {
           Analysis %>% 
-            write_parquet(file.path(Outputs,paste0('damages_homo_mean_NOx_',NOx_scalar,'_momm_rft.parquet')))
+            write_parquet(file.path(Outputs,paste0('damages_homog_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
         } else {
-          write_parquet(file.path(Outputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')))
+          Analysis %>%
+            write_parquet(file.path(Outputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
         }
       } else {
         Analysis %>% 
-          write_parquet(file.path(Outputs,paste0('damages_',itrial,'_NOx_',NOx_scalar,'_momm_rft.parquet')))
+          write_parquet(file.path(Outputs,paste0('damages_',itrial,'_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
       }
       
 

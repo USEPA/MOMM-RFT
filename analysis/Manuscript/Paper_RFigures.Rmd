@@ -11,12 +11,12 @@ knitr::opts_knit$set(root.dir = "~/CCD-CSIB/GitHub/Code/MOMM-RFT")
 ```{r libraries, include = FALSE}
 library('tidyverse')
 library('reshape2')
-library('patchwork')
-library('RColorBrewer')
+require('patchwork')
+require('RColorBrewer')
 #library('maps')
 #library('mapproj')
 library('arrow')
-library('readxl')
+require('readxl')
 library('zoo')
 library(sf)
 library(rnaturalearth)
@@ -158,15 +158,15 @@ Time series of population characteristics
 ```{r popcharacteristics}
 
 #define paths
-Plots <-file.path('analysis','Manuscript','Plots') 
-inputs <- file.path("analysis","Manuscript")
-inputs2 <- file.path('input','RFF','lookup_tables')
-inputs3 <- file.path("input")
-Inputs_socio <- file.path('input','RFF','rft_inputs')
+Plots <-file.path('../..','analysis','Manuscript','Plots') 
+inputs <- file.path('../..',"analysis","Manuscript")
+inputs2 <- file.path('../..','input','RFF','lookup_tables')
+inputs3 <- file.path('../..',"input")
+Inputs_socio <- file.path('../..','input','RFF','rft_inputs')
 
 #Read in RFF-SP data
 # Pre-processed in /code/1_build_inputs_for_momm_rft.R
-rffsp <- read_parquet(file.path(getwd(),Inputs_socio, 'rffsp_pop_gdp_all_trials.parquet'))
+rffsp <- read_parquet(file.path(Inputs_socio, 'rffsp_pop_gdp_all_trials.parquet'))
 
 rffsp_mean_pop <- rffsp %>%
   select(-c('dollar.year','gdp')) %>%
@@ -498,7 +498,7 @@ p1_bounds <- global_limits %>%
               axis.text.x=element_text(angle=45,hjust=1, vjust=1))
 p1_bounds
 ggsave(plot = p1_bounds, filename = 
-         file.path(Plots,'Plots/Timeseries_O3Mort_CRFbounds.png'),width = 9,height = 5)
+         file.path(Plots,'Fig2a.png'),width = 9,height = 5)
 
 ###
 
@@ -662,10 +662,10 @@ global maps of respiratory mortality, absolute total (by model)
 ## Figure 2b and adapted to S5
 
 #map of country mortality results
-MODEL = 'GFDL'
+MODEL = 'MMM'
 
-Plots <- file.path(getwd(), 'analysis','Manuscript','Plots')
-input <- file.path(getwd(),'input','BenMAP')
+Plots <- file.path('../..','analysis','Manuscript','Plots')
+input <- file.path('../..','input','BenMAP')
 countryResults <- read.csv(paste0(input,"/Country Results Summary by Model & Year.csv"))
 
 country_total <- countryResults %>%
@@ -773,7 +773,7 @@ as well as maps of 2020 population, mortality rate, and average O3/CH4 response
 #map of country mortality results
 MODEL = 'MMM'
 
-Plots <- file.path( 'analysis','Manuscript','Plots')
+Plots <- file.path('../..','analysis','Manuscript','Plots')
 input <- file.path('../..','input')
 
 countryResults <- read.csv(file.path(input,'BenMAP',"Country Results Summary by Model & Year.csv"))
@@ -974,11 +974,11 @@ barchart of NPD values by region, central case and by discount rate
 Plots <- file.path('../..','analysis','Manuscript','Plots')
 inputs <- file.path('../..','analysis','Manuscript','BenMAP','Outputs')
 countryresults <-
-   read_csv(file.path(inputs,"npd_country_damage_transformation_woutCessation.csv"),
+   read_csv(file.path(inputs,"npd_country_damage_transformation_woutCessation_vsl10.csv"),
            col_types = cols())
 
 globalresults <-
-  read_csv(file.path(inputs, "npd_global_damage_transformation_woutCessation.csv"),
+  read_csv(file.path(inputs, "npd_global_damage_transformation_woutCessation_vsl10.csv"),
            col_types = cols())
 
 globalresults <- 
@@ -1179,18 +1179,23 @@ inputs <- file.path('../..','analysis','Manuscript','BenMAP','Outputs')
 rft_inputs <- file.path('../..','output','npd')
 
 Results <- file.path('Results')
+# CRF results - from BenMAP valuation script
 globalresults <-
-  read_csv(file.path(inputs,"npd_global_damage_transformation_woutCessation.csv"),
+  read_csv(file.path(inputs,"npd_global_damage_transformation_woutCessation_vsl10.csv"),
            col_types = cols())
+
+#Socioeconomic results - from RFT code
 Results2 <- file.path(rft_inputs,'npd_global_rff_means_NOx_1_MMM.csv')
 rft_results <- read_csv(Results2, col_types = cols())
-nox_results1 <- file.path(rft_inputs,'npd_global_means_NOx_1_MMM.csv')
+
+#NOx sensitivity results- from RFT code
+nox_results1 <- file.path(rft_inputs,'npd_global_means_vsl10_NOx_1_MMM.csv')
 nox_results1 <- read_csv(nox_results1, col_types = cols())%>%
   mutate(NOx = '1')
-nox_results5 <- file.path(rft_inputs, 'npd_global_means_NOx_0.5_MMM.csv')
+nox_results5 <- file.path(rft_inputs, 'npd_global_means_vsl10_NOx_0.5_MMM.csv')
 nox_results5 <- read_csv(nox_results5, col_types = cols())%>%
   mutate(NOx = '0.5')
-nox_results15 <- file.path(rft_inputs, 'npd_global_means_NOx_1.5_MMM.csv')
+nox_results15 <- file.path(rft_inputs, 'npd_global_means_vsl10_NOx_1.5_MMM.csv')
 nox_results15 <- read_csv(nox_results15, col_types = cols()) %>%
   mutate(NOx = '1.5')
 nox_total_results <- rbind(nox_results1,nox_results5,nox_results15)

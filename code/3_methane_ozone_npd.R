@@ -5,9 +5,9 @@
 ##                and aggregate statistics across all trials. (for each model & country)
 ##                The calculations are done for each model and country and combined at
 ##                the end to help reduce the memory usage when processing all 10,000 RFF scenarios
-### Written by:   US EPA, Climate Change Division (OAP), adapted from NCEE (OP)
+### Written by:   US EPA, Climate Change Division (OAP)
 ### Date Created: 3/15/2023      
-### Last Edited:  4/25/2023
+### Last Edited:  8/13/2023
 ##      Inputs:                                                                       ##
 ##        -damages_mean_NOx_X_momm_rft.parquet                                        ##
 ##        -Final Country Grid Col_Row Index.csv                                       ##
@@ -41,7 +41,7 @@ Outputs <- file.path("output",'npd')
 
 YEAR  = 2020
 PULSE = 275e6 #CH4 pulse of 275 million metric tonnes
-allRFF = 1
+allRFF = 1 #(set to 1 if reading in all RFF scenario, otherwise read in mean)
 
 countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index.csv"))[,c(1,3:4,6,8)]
 countries <- countries %>% filter(Region != "")
@@ -72,12 +72,12 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   if (allRFF==1){
     # To read all files:
     damages = 
-      list.files(Inputs, full.names = T) %>% 
+      list.files(Inputs, pattern = "damages_\\d+\\_vsl10_NOx_1*", full.names = T) %>% 
       map_df(~read_momm_rft(., MODEL))
   } else {
     # to read specific file:
     damages =
-      read_momm_rft(file.path(Inputs,paste0('damages_mean_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
+      read_momm_rft(file.path(Inputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
   }
   print(MODEL)
   
@@ -99,10 +99,9 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
       ) %>%  
   select(-c(contains('pct'))) %>%
   ungroup()
-  print('here')
   
   ## discount rates
-  ## Using stochastic Ramsey discount rate calcualtion, following Rennert et al., 2022
+  ## Using stochastic Ramsey discount rate calculation, following Rennert et al., 2022
   rates = tibble(rate = c('1.5% Ramsey', '2.0% Ramsey', '2.5% Ramsey', '3.0% Ramsey', '2.0% CDR', '3.0% CDR'),
                rho  = c(exp(0.000091496)-1, exp(0.001972641)-1, exp(0.004618785)-1, exp(0.007702711)-1, 0.02, 0.03), ## under discrete time, need to transform the rho that was calibrated using continuous time 
                #rho = c(0.000091496, 0.001972641, 0.004618785, 0.007702711, 0.02, 0.03),
@@ -158,10 +157,10 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   ## export full streams
  if (allRFF ==1){
   data %>%
-    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
  } else {
    data %>%
-     write_parquet(file.path(Outputs, paste0('npd_full_streams_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+     write_parquet(file.path(Outputs, paste0('npd_full_streams_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
  }
 }
   # recover summary statistics across all trials
@@ -185,10 +184,10 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   ## export summary stats
   if (allRFF ==1){
     means %>%
-        write_csv(file.path(Outputs,paste0('npd_country_rff_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+        write_csv(file.path(Outputs,paste0('npd_country_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
   } else {
     means %>%
-      write_csv(file.path(Outputs,paste0('npd_country_means_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_country_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
   }
 
   #data = unique(data) #get unique rows (filter out duplicate years)
@@ -243,11 +242,11 @@ read_results =
 
 if (allRFF ==1){
   Results_comb = 
-    list.files(Outputs, pattern = paste0("full_streams_rff_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
+    list.files(Outputs, pattern = paste0("full_streams_rff_vsl10_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
     map_df(~read_results(.))
 } else {
   Results_comb = 
-    list.files(Outputs, pattern = paste0("full_streams_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
+    list.files(Outputs, pattern = paste0("full_streams_vsl10_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
     map_df(~read_results(.))
 }
 #Result.files <- file.path(Outputs,"npd_country_rff_MMM") %>%
@@ -282,8 +281,9 @@ glob_means = tibble()
 #  #write data
   if (allRFF ==1){
     glob_means %>%
-      write_csv(file.path(Outputs,paste0('npd_global_rff_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_global_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'.csv')))
   } else {
     glob_means %>%
-      write_csv(file.path(Outputs,paste0('npd_global_means_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_global_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'.csv')))
   }
+  

@@ -13,7 +13,7 @@
 ##          npd_damage_transformation_full_streams_w[out]Cessation.parquet
 ##          npd_global_damage_transformation_w[out]Cessation.csv
 ## Written by: US EPA, Climate Change Division (OAP); March 2023
-## Last updated: 5.11.23 by E. McDuffie
+## Last updated: 8.11.23 by E. McDuffie
 ## NOTES: 
 #####################################################################
 
@@ -44,13 +44,13 @@ Inputs_mort     <- file.path('analysis','Manuscript','BenMAP','Outputs')
 Inputs_socio    <- file.path('input','RFF') #need mean population that was used in BenMAP, as well as the corresponding GDP scenario
 cntryxwalkpath  <- file.path('input')
 Results         <- file.path('analysis','Manuscript','BenMAP','Outputs')
-
+  
 #### Constants
-file_name_flag  <- 'vsl_10'  #custom file name string ending
+file_name_flag  <- 'vsl10_elas14'  #custom file name string ending
 pulse           = 275e6     #original methane pulse was 275 million metric tonnes
-base_vsl        = 10.05e6#9.33e6    #us vsl in 2020$ 
+base_vsl        = 10.05e6 # US $2020 VSL (from Rennert et al., 2022/EPA SC-GHG Report) 9.33e6    #us vsl in 2020$ 
 # from USEPA 2006 value in 2010 guidance (default = 1)
-Elasticity      = 1
+Elasticity      = 1.44
 # turn 20-year cessation flag on (=1) or off (=0) (default = 0)
 cessation_flag  = 0
 
