@@ -1035,7 +1035,7 @@ upper = cResultslong %>%
   mutate(SuperRegion = SuperRegion %>% factor(levels = (reg_i$SuperRegion))) %>%
   arrange_at(.vars=c("SuperRegion"))
   
-  # Figure SX
+  # Figure S7
   
   p1 <-  ggplot(cResultslong, aes(x=SuperRegion, y=mean))+
         geom_linerange(aes(x=SuperRegion,ymin=`2.5%`, ymax=`97.5%`,group=discount.rate),
@@ -1045,7 +1045,7 @@ upper = cResultslong %>%
         coord_flip()+
         scale_color_brewer('Discount Rate',palette = 'Spectral',direction=-1)+
         scale_x_discrete(labels = function(x) str_wrap(x,width=30))+
-        scale_y_continuous(limits=c(0,3000), label = scales::dollar)+
+        scale_y_continuous(limits=c(0,3200), label = scales::dollar)+
         xlab("")+ylab("$(2020)/mT" ~CH[4])+
         ggtitle(paste0('Net Present Damages per metric ton methane \nby GBD Super Region'))+
         theme_minimal()+
@@ -1054,6 +1054,8 @@ upper = cResultslong %>%
               legend.text=element_text(size=16))+
         theme(axis.text = element_text(size=16),
               axis.title = element_text(size=16))
+  p1
+  
 # Figure 2c
 p2 <-  cResultslong %>%
         filter(discount.rate == '2.0% Ramsey') %>%
@@ -1185,7 +1187,7 @@ globalresults <-
            col_types = cols())
 
 #Socioeconomic results - from RFT code
-Results2 <- file.path(rft_inputs,'npd_global_rff_means_NOx_1_MMM.csv')
+Results2 <- file.path(rft_inputs,'npd_global_rff_means_vsl10_NOx_1_MMM.csv')
 rft_results <- read_csv(Results2, col_types = cols())
 
 #NOx sensitivity results- from RFT code
@@ -1249,10 +1251,10 @@ p1 <- plot_data %>%
   coord_flip()+
   theme_minimal()+
   xlab('')+
-  ylab("Change in Global $1700(2020)/mT" ~CH[4])+
+  ylab("Change in Global $1800(2020)/mT" ~CH[4])+
   theme(axis.text = element_text(size=16),
         axis.title = element_text(size=16))+
-  scale_y_continuous(limits = c(-1000, 1300),label = scales::dollar)+
+  scale_y_continuous(limits = c(-1100, 1300),label = scales::dollar)+
   theme(legend.position = c(0.8,0.25),
         legend.title=element_text(size=14), 
         legend.text=element_text(size=14))
