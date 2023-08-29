@@ -7,7 +7,7 @@
 ##                the end to help reduce the memory usage when processing all 10,000 RFF scenarios
 ### Written by:   US EPA, Climate Change Division (OAP)
 ### Date Created: 3/15/2023      
-### Last Edited:  8/13/2023
+### Last Edited:  8/29/2023
 ##      Inputs:                                                                       ##
 ##        -damages_mean_NOx_X_momm_rft.parquet                                        ##
 ##        -Final Country Grid Col_Row Index.csv                                       ##
@@ -39,9 +39,9 @@ library(arrow)
 Inputs <- file.path('output',"rft")
 Outputs <- file.path("output",'npd')
 
-YEAR  = 2020
+PULSEYEAR  = 2020
 PULSE = 275e6 #CH4 pulse of 275 million metric tonnes
-allRFF = 1 #(set to 1 if reading in all RFF scenario, otherwise read in mean)
+allRFF = 'mean' #(set to 1 if reading in all RFF scenario, otherwise read in mean)
 
 countries <- read.csv(file.path('input',"Final Country Grid Col_Row Index.csv"))[,c(1,3:4,6,8)]
 countries <- countries %>% filter(Region != "")
@@ -77,7 +77,7 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   } else {
     # to read specific file:
     damages =
-      read_momm_rft(file.path(Inputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')),MODEL)
+      read_momm_rft(file.path(Inputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_',PULSEYEAR,'_momm_rft.parquet')),MODEL)
   }
   print(MODEL)
   
@@ -90,9 +90,9 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
       damages_wlag.pct        = 1 - (1/(1+(damages_wlag/gdp))),
       ypc                     = ((1-damages.pct) * gdp)/pop,   #gdp per capita, with gdp reduced by % of damages
       ypc_wlag                = ((1-damages_wlag.pct) * gdp)/pop,
-      base.ypc                = case_when(ModelYear == YEAR ~ ypc, T ~ 0),
+      base.ypc                = case_when(ModelYear == PULSEYEAR ~ ypc, T ~ 0),
       base.ypc                = max(base.ypc),                 #base year gdp/cap ## TO-DO, clunky way to ensure that the base ypc for discrete time discount factor can be used in the discounting function, fix later
-      base.ypc_wlag           = case_when(ModelYear == YEAR ~ ypc_wlag, T ~ 0),
+      base.ypc_wlag           = case_when(ModelYear == PULSEYEAR ~ ypc_wlag, T ~ 0),
       base.ypc_wlag           = max(base.ypc_wlag),                 #base year gdp/cap ## TO-DO, clunky way to ensure that the base ypc for discrete time discount factor can be used in the discounting function, fix later
       damages.marginal        = (gdp * damages.pct) / PULSE,   #calculate the damages as a % of GDP and divide by pulse size (for $/tonne CH4)
       damages_wlag.marginal   = (gdp * damages_wlag.pct) / PULSE,
@@ -140,10 +140,10 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
           filter(LocID == countries$LocID[COUNTRY]) %>%
           group_by(trial,Model,LocID) %>% #LocID
           mutate(discount.rate                   = rate,
-               discount.factor                   = case_when(grepl("Ramsey", rate) ~ (base.ypc/ypc)^eta/(1+rho)^(ModelYear-YEAR),
-                                                       T ~ 1/(1+rho)^(ModelYear-YEAR)),
-               discount.factor_wlag              = case_when(grepl("Ramsey", rate) ~ (base.ypc_wlag/ypc_wlag)^eta/(1+rho)^(ModelYear-YEAR),
-                                                       T ~ 1/(1+rho)^(ModelYear-YEAR)),
+               discount.factor                   = case_when(grepl("Ramsey", rate) ~ (base.ypc/ypc)^eta/(1+rho)^(ModelYear-PULSEYEAR),
+                                                       T ~ 1/(1+rho)^(ModelYear-PULSEYEAR)),
+               discount.factor_wlag              = case_when(grepl("Ramsey", rate) ~ (base.ypc_wlag/ypc_wlag)^eta/(1+rho)^(ModelYear-PULSEYEAR),
+                                                       T ~ 1/(1+rho)^(ModelYear-PULSEYEAR)),
                damages.marginal.discounted       = damages.marginal * discount.factor,
                damages.marginal.discounted_wlag  = damages_wlag.marginal * discount.factor_wlag,
                #damages.marginal.discounted  = case_when(is.na(discount.factor) ~ damages.marginal,
@@ -157,10 +157,10 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   ## export full streams
  if (allRFF ==1){
   data %>%
-    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+    write_parquet(file.path(Outputs, paste0('npd_full_streams_rff_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'_',PULSEYEAR,'.parquet')))
  } else {
    data %>%
-     write_parquet(file.path(Outputs, paste0('npd_full_streams_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.parquet')))
+     write_parquet(file.path(Outputs, paste0('npd_full_streams_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'_',PULSEYEAR,'.parquet')))
  }
 }
   # recover summary statistics across all trials
@@ -184,74 +184,37 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
   ## export summary stats
   if (allRFF ==1){
     means %>%
-        write_csv(file.path(Outputs,paste0('npd_country_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+        write_csv(file.path(Outputs,paste0('npd_country_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'_',PULSEYEAR,'.csv')))
   } else {
     means %>%
-      write_csv(file.path(Outputs,paste0('npd_country_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_country_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',countries$LocID[COUNTRY],'_',PULSEYEAR,'.csv')))
   }
 
-  #data = unique(data) #get unique rows (filter out duplicate years)
-
-  #  glob_means = 
-  #    bind_rows(
-  #      glob_means, 
-  #      data %>%
-  #        filter(ModelYear == 2020) %>% #npd's are the same for all years in the df
-  #        group_by(Model,discount.rate,trial) %>% #goup by rate and trial and then sum across all countries
-  #        summarise(npd = sum(npd),
-  #                  npd_wlag = sum(npd_wlag),
-  #                  .groups = 'keep') %>%
-  #        ungroup() %>%
-  #        group_by(Model,discount.rate) %>%      #next, group by trial to calculate stats across all trials
-  #        summarise(mean_npd      = mean(npd),
-  #                  npd_2.5       = quantile(npd, .025, na.rm = T), #these are the socioeconomic stats (not BenMAP)
-  #                  npd_97.5      = quantile(npd, .975, na.rm = T),
-  #                  median        = median(npd, na.rm = T),
-  #                  mean_npd_wlag = mean(npd_wlag),
-  #                  npd_2.5_wlag  = quantile(npd_wlag, .025, na.rm = T),
-  #                  npd_97.5_wlag = quantile(npd_wlag, .975, na.rm = T),
-  #                  median_wlag   = median(npd_wlag, na.rm = T),
-  #                  #`std. err.` = sd(npd, na.rm = T),
-  #                  #min         = min(npd, na.rm = T),
-  #                  #max         = max(npd),
-  #                .groups = 'keep') 
-  #  )
-  # # 
-  #  #write data
-  #  glob_means %>% 
-  #    write_csv(file.path(Outputs,paste0('npd_global_rff_means_',MODEL,'_',rate_name[RATE],'.csv')))
 }
 
 }
 
 #Do global calculation
 
-#Result.files<- list.files(Outputs,pattern=paste0("npd_country_rff_MMM",countries$LocID[COUNTRY],'.parquet'),full.names = T)
-#list.files(Inputs, full.names = T)
-
-
-
 read_results = 
   function(x){
     ttemp <- 
       read_parquet(x) %>%
-      filter(ModelYear == 2020) #%>% #all npd years are the same
+      filter(ModelYear == PULSEYEAR) #%>% #all npd years are the same
       #select(LocID,trial,discount.rate,npd,npd_wlag)
   }
 
 
 if (allRFF ==1){
   Results_comb = 
-    list.files(Outputs, pattern = paste0("full_streams_rff_vsl10_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
+    list.files(Outputs, pattern = paste0("full_streams_rff_vsl10_NOx_",NOx_scalar,'_MMM_\\d+\\_',PULSEYEAR),full.names = T) %>% 
     map_df(~read_results(.))
 } else {
   Results_comb = 
-    list.files(Outputs, pattern = paste0("full_streams_vsl10_NOx_",NOx_scalar,'_MMM'),full.names = T) %>% 
+    list.files(Outputs, pattern = paste0("full_streams_vsl10_NOx_",NOx_scalar,'_MMM_\\d+\\_',PULSEYEAR),full.names = T) %>% 
     map_df(~read_results(.))
 }
-#Result.files <- file.path(Outputs,"npd_country_rff_MMM") %>%
-#  Result.files <- list.files(Outputs, pattern = "full_streams_rff_MMM")  # "\\.parquet") #%>%
-#  Results_comb<-lapply(paste0(Outputs,"/",Result.files[1:2]), read_parquet)
+
 
 #export global stats
 glob_means = tibble()
@@ -281,9 +244,10 @@ glob_means = tibble()
 #  #write data
   if (allRFF ==1){
     glob_means %>%
-      write_csv(file.path(Outputs,paste0('npd_global_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_global_rff_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',PULSEYEAR,'.csv')))
   } else {
     glob_means %>%
-      write_csv(file.path(Outputs,paste0('npd_global_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'.csv')))
+      write_csv(file.path(Outputs,paste0('npd_global_means_vsl10_NOx_',NOx_scalar,'_',MODEL,'_',PULSEYEAR,'.csv')))
   }
-  
+
+  #CODE END  

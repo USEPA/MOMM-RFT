@@ -3,7 +3,7 @@
 ### Created by: Melanie Jackson, IEc 
 ### Adapted by: E. McDuffie (EPA)
 ### Date Created: 3/15/2023      
-### Last Edited: 8/11/2023
+### Last Edited: 8/29/2023
 ##      Inputs:                                                                       ##
 ##        -Country Results Interpolated 2020-2100 by Model.csv                        ##
 ##        -All Trajectory Mortality Ratios_through 2100.rds (parts 1&2)               ##
@@ -49,6 +49,7 @@
   CloudMethPulse_ppbv = CloudMethBase_ppbv+(CloudMethPulse_Mmt*methane_mmt_to_ppbv) # methane pulse (in ppbv) used in BenMAP simulations
   MethaneLifetime     = 11.8 # (years) methane perturbation lifetime  according to the AR6 assessment. 
   BaseYear            = 2020 # year of CH4 pulse used in BenMAP simulations
+  PulseYear           = 2020 # year of user-defined CH4 emissions pulse
   gdp_2011_to_2020    = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
                       #last access: March 30, 2023
   base_vsl            = 10.05e6 # $2020 VSL from Rennert et al., 2022 (and EPA SC-GHG report) 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
@@ -89,7 +90,7 @@
   # The tool is currently set up to use data from the RFF-SPs
   # The user is asked to specify a specific RFF-SP trajectory Number, OR
   # specify 'ALL' to calculate the mortality estimates for all 10,000 trajectories
-  RFF_TrajNumber = 'All'   #Options: numerical value 1-10000, or 'All', or 'mean'
+  RFF_TrajNumber = 'mean'   #Options: numerical value 1-10000, or 'All', or 'mean'
   
   #NOx emissions
   NOx_scalar = 1          #Options: numerical values > 0 (e.g., 50% = 0.5, 150% = 1.5)
@@ -124,8 +125,10 @@
   
   
   # 3) Calculate delta methane timeseries for original BenMAP and user-defined projections
+  #     if the user-defined pulse year is after the cloud pulse year (i.e., 2020), set pre-pulse values to zero
     Usr_MethaneProj               <- data.frame(Years)
-    Usr_MethaneProj$PulseMethane  <- (Usr_MethPulse_ppbv-Usr_MethBase_ppbv)*exp((BaseYear-Usr_MethaneProj$Years)/MethaneLifetime) #+Usr_MethBase_ppbv
+    Usr_MethaneProj$PulseMethane  <- case_when(PulseYear > Usr_MethaneProj$Years ~ 0, 
+                                               T ~ (Usr_MethPulse_ppbv-Usr_MethBase_ppbv)*exp((PulseYear-Usr_MethaneProj$Years)/MethaneLifetime)) #+Usr_MethBase_ppbv
     CloudMethaneProj              <- data.frame(Years)
     CloudMethaneProj$CloudMethane <- (CloudMethPulse_ppbv-CloudMethBase_ppbv)*exp((BaseYear-CloudMethaneProj$Years)/MethaneLifetime) #+CloudMethBase_ppbv
   
@@ -187,7 +190,7 @@
     ### Detect cores and get number of cores
     parallel::detectCores()
     n.cores    <- parallel::detectCores() - 10
-    n.cores    <- 10
+    n.cores    <- 1
     n.cores
     
     ### Make cluster
@@ -381,7 +384,7 @@
       #1. Calculate reference vsl
       usa_base_income <- Analysis %>%
         filter(LocID == 840,           #USA 
-               ModelYear == 2020) %>%
+               ModelYear == PulseYear) %>%
         select(Model, gdp_per_cap) %>%
         rename(base_income = gdp_per_cap)%>%
         filter(Model == "MMM") #is the same across all GCMs
@@ -444,14 +447,14 @@
       if (RFF_TrajNumber == 'mean' ) {
         if (homogeneous ==1) {
           Analysis %>% 
-            write_parquet(file.path(Outputs,paste0('damages_homog_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
+            write_parquet(file.path(Outputs,paste0('damages_homog_mean_vsl10_NOx_',NOx_scalar,'_',PulseYear,'_momm_rft.parquet')))
         } else {
           Analysis %>%
-            write_parquet(file.path(Outputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
+            write_parquet(file.path(Outputs,paste0('damages_mean_vsl10_NOx_',NOx_scalar,'_',PulseYear,'_momm_rft.parquet')))
         }
       } else {
         Analysis %>% 
-          write_parquet(file.path(Outputs,paste0('damages_',itrial,'_vsl10_NOx_',NOx_scalar,'_momm_rft.parquet')))
+          write_parquet(file.path(Outputs,paste0('damages_',itrial,'_vsl10_NOx_',NOx_scalar,'_',PulseYear,'_momm_rft.parquet')))
       }
       
 
