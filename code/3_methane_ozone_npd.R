@@ -7,7 +7,7 @@
 ##                the end to help reduce the memory usage when processing all 10,000 RFF scenarios
 ### Written by:   US EPA, Climate Change Division (OAP)
 ### Date Created: 3/15/2023      
-### Last Edited:  8/29/2023
+### Last Edited:  9/21/2023
 ##      Inputs:                                                                       ##
 ##        -damages_mean_NOx_X_momm_rft.parquet                                        ##
 ##        -Final Country Grid Col_Row Index.csv                                       ##
@@ -39,7 +39,7 @@ library(arrow)
 Inputs <- file.path('output',"rft")
 Outputs <- file.path("output",'npd')
 
-PULSEYEAR  = 2020
+PULSEYEAR  = 2040
 PULSE = 275e6 #CH4 pulse of 275 million metric tonnes
 allRFF = 'mean' #(set to 1 if reading in all RFF scenario, otherwise read in mean)
 

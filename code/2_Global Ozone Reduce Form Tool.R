@@ -3,7 +3,7 @@
 ### Created by: Melanie Jackson, IEc 
 ### Adapted by: E. McDuffie (EPA)
 ### Date Created: 3/15/2023      
-### Last Edited: 8/29/2023
+### Last Edited: 9/21/2023
 ##      Inputs:                                                                       ##
 ##        -Country Results Interpolated 2020-2100 by Model.csv                        ##
 ##        -All Trajectory Mortality Ratios_through 2100.rds (parts 1&2)               ##
@@ -49,7 +49,7 @@
   CloudMethPulse_ppbv = CloudMethBase_ppbv+(CloudMethPulse_Mmt*methane_mmt_to_ppbv) # methane pulse (in ppbv) used in BenMAP simulations
   MethaneLifetime     = 11.8 # (years) methane perturbation lifetime  according to the AR6 assessment. 
   BaseYear            = 2020 # year of CH4 pulse used in BenMAP simulations
-  PulseYear           = 2020 # year of user-defined CH4 emissions pulse
+  PulseYear           = 2025 # year of user-defined CH4 emissions pulse
   gdp_2011_to_2020    = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
                       #last access: March 30, 2023
   base_vsl            = 10.05e6 # $2020 VSL from Rennert et al., 2022 (and EPA SC-GHG report) 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
@@ -467,5 +467,5 @@
   ### stop cluster
   parallel::stopCluster(cl = my.cluster)
 
-# Discounting of annual damages done in Code file #3    
+# Code Complete. Discounting of annual damages done in Code file #3    
     
