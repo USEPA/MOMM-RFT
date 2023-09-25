@@ -31,18 +31,25 @@ usa    <- tibble()
 # These results contain the mean associated with the mean RFF-SP scenario (pop & GDP)
 # Results also include the mean when also including the 
 # O3 cessation lag, which relates the time of ozone exposure with the delayed
-# time of impact (e.g., to account for dealyed mortality after exposure). 
+# time of impact (e.g., to account for delayed mortality after exposure). 
 # Following the latest EPA guidance, the results presented in McDuffie et al., 2023
 # do not include the cessation lag and results with the cessation lag are only
 # included as a sensitivity test. 
 # These data also include the valuation using multiple discount rates. 
+# Note that these data also include the npd's accounting for
+# the certainty equivalency adjustment, but this correction is only relevant 
+# if the npd values were calculated from all RFF-SP trials, not the mean scenario
 for (iyear in years ) {
   temp <- read.csv(paste0('./output/npd/npd_global_means_vsl10_NOx_1_MMM_',iyear,'.csv'))
   temp <- temp %>%
     mutate(emissions.year = iyear,
            global_mean_npd = mean_npd,
-           global_mean_npd_wlag = mean_npd_wlag) %>%
-    select(c('emissions.year','discount.rate','global_mean_npd','global_mean_npd_wlag'))
+           global_mean_npd_wlag = mean_npd_wlag,
+           global_mean_npd_cert_eq = mean.npd.cert.eq,
+           global_mean_npd_wlag_cert_eq = mean.npd.wlag.cert.eq) %>%
+    select(c('emissions.year','discount.rate','global_mean_npd',
+             'global_mean_npd_wlag'))#,
+             #'global_mean_npd_cert_eq','global_mean_npd_wlag_cert_eq'))
   global <- rbind(global, temp)
 }
 
@@ -51,14 +58,20 @@ for (iyear in years ) {
 # ozone exposure estimates)
 # These data include the US-specific NPD values with and without the cessation
 # lag for multiple discount rates. Are calculated from the mean of the RFF-SPs
+# Note that these data also include the ability to calculate the npd's accounting for
+# the certainty equivalency adjustment, but this correction is only relevant 
+# if the npd values were calculated from all RFF-SP trials, not the mean scenario
 for (iyear in years ) {
   temp <- read_parquet(paste0('./output/npd/npd_full_streams_vsl10_NOx_1_MMM_840_',iyear,'.parquet'))
   temp <- temp %>%
     filter(ModelYear == iyear) %>%
     mutate(emissions.year = ModelYear,
            usa_mean_npd = npd,
-           usa_mean_npd_wlag = npd_wlag) %>%
-    select(c('emissions.year',"discount.rate","usa_mean_npd","usa_mean_npd_wlag"))
+           usa_mean_npd_cert_eq = npd *certainty.eq.adjustment,
+           usa_mean_npd_wlag = npd_wlag,
+           usa_mean_npd_wlag_cert_eq = npd_wlag * certainty.eq.adjustment.wlag) %>%
+    select(c('emissions.year',"discount.rate","usa_mean_npd","usa_mean_npd_wlag"))#,
+             #"usa_mean_npd_cert_eq","usa_mean_npd_wlag_cert_eq"))
   usa <- rbind(usa, temp)
 }
 
@@ -88,5 +101,5 @@ usa_interp <- usa %>%
 #bind all region data together and write to csv
 #all_region <- bind_rows(global_interp, usa_interp)
 
-global_interp %>% write_csv('./output/npd/MOMM_npd_stats_global_2020_2040.csv')
-usa_interp %>% write_csv('./output/npd/MOMM_npd_stats_usa_2020_2040.csv')
+#global_interp %>% write_csv('./output/npd/MOMM_npd_stats_global_2020_2040.csv')
+#usa_interp %>% write_csv('./output/npd/MOMM_npd_stats_usa_2020_2040.csv')

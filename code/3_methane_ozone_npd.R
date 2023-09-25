@@ -146,10 +146,12 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
                                                        T ~ 1/(1+rho)^(ModelYear-PULSEYEAR)),
                damages.marginal.discounted       = damages.marginal * discount.factor,
                damages.marginal.discounted_wlag  = damages_wlag.marginal * discount.factor_wlag,
-               #damages.marginal.discounted  = case_when(is.na(discount.factor) ~ damages.marginal,
-               #                                           TRUE ~ damages.marginal * discount.factor),
                npd                               = sum(damages.marginal.discounted, na.rm = F),
                npd_wlag                          = sum(damages.marginal.discounted_wlag, na.rm = F)) %>%
+          mutate(certainty.eq.adjustment         = case_when(grepl("Ramsey", rate) ~ (base.ypc^-eta)/mean(base.ypc^-eta, na.rm = T),
+                                                         T ~ 1)) %>%
+          mutate(certainty.eq.adjustment.wlag   = case_when(grepl("Ramsey", rate) ~ (base.ypc_wlag^-eta)/mean(base.ypc_wlag^-eta, na.rm = T),
+                                                          T ~ 1)) %>%
         ungroup()
     )
   
@@ -164,19 +166,22 @@ for (MODEL in c('MMM')) { #},'CESM2','HadGEM','GISS','GFDL','MIROC')) {
  }
 }
   # recover summary statistics across all trials
+  # Note that the stats and certainty equivalent corrections are only relevant when model is run for all trials (not the mean RFF-SP)
   means =
     bind_rows(
       means,
       data %>%
         group_by(Model,LocID,discount.rate) %>% #calculate statistics for each country and discount rate
-        summarise(mean_npd      = mean(npd),
-                  npd_2.5       = quantile(npd, .025, na.rm = T), #these uncertainties are socioeconomic uncertainties (not BenMAP)
-                  npd_97.5      = quantile(npd, .975, na.rm = T),
-                  median        = median(npd, na.rm = T),
-                  mean_npd_wlag = mean(npd_wlag),
-                  npd_2.5_wlag  = quantile(npd_wlag, .025, na.rm = T),
-                  npd_97.5_wlag = quantile(npd_wlag, .975, na.rm = T),
-                  median_wlag   = median(npd_wlag, na.rm = T),
+        summarise(mean_npd         = mean(npd),
+                  mean.npd.cert.eq = mean(npd * certainty.eq.adjustment, na.rm = T),
+                  npd_2.5          = quantile(npd, .025, na.rm = T), #these uncertainties are socioeconomic uncertainties (not BenMAP) - but only when results are run for all RFF-SPs (not just the mean)
+                  npd_97.5         = quantile(npd, .975, na.rm = T),
+                  median           = median(npd, na.rm = T),
+                  mean_npd_wlag    = mean(npd_wlag),
+                  mean.npd.wlag.cert.eq = mean(npd_wlag * certainty.eq.adjustment.wlag, na.rm = T),
+                  npd_2.5_wlag     = quantile(npd_wlag, .025, na.rm = T),
+                  npd_97.5_wlag    = quantile(npd_wlag, .975, na.rm = T),
+                  median_wlag      = median(npd_wlag, na.rm = T),
                 .groups = 'drop')
   )
 
@@ -218,23 +223,27 @@ if (allRFF ==1){
 
 #export global stats
 glob_means = tibble()
-
+# Note that the stats and certainty equivalent corrections are only relevant when model is run for all trials (not the mean RFF-SP)
   glob_means =
       bind_rows(
         glob_means,
         Results_comb %>%
         group_by(discount.rate, trial) %>% #group by rate and trial and then sum across all countries
         summarise(
+          npd.cert.eq = sum(npd * certainty.eq.adjustment, na.rm = T),
+          npd.wlag.cert.eq = sum(npd_wlag * certainty.eq.adjustment.wlag, na.rm = T),
           npd_wlag = sum(npd_wlag),
           npd      = sum(npd),
           .groups = 'keep') %>%
           ungroup() %>%
         group_by(discount.rate) %>%      #next, group by discount rate to calculate stats across all trials
         summarise(mean_npd      = mean(npd),
+                  mean.npd.cert.eq = mean(npd.cert.eq),
                   npd_2.5       = quantile(npd, .025, na.rm = T), #these are the socioeconomic stats (not BenMAP)
                   npd_97.5      = quantile(npd, .975, na.rm = T),
                   median        = median(npd, na.rm = T),
                   mean_npd_wlag = mean(npd_wlag),
+                  mean.npd.wlag.cert.eq = mean(npd.wlag.cert.eq),
                   npd_2.5_wlag  = quantile(npd_wlag, .025, na.rm = T),
                   npd_97.5_wlag = quantile(npd_wlag, .975, na.rm = T),
                   median_wlag   = median(npd_wlag, na.rm = T),
