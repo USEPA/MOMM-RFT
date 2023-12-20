@@ -10,7 +10,7 @@
 ## Outputs: output/npd/momm_npd_stats_global_2020_2040.csv
 ##          output/npd/momm_npd_stats_usa_2020_2040.csv
 ## Written by: US EPA, Office of Atmospheric Protection; August 2023
-## Last updated: 9/22/2023 by E. McDuffie
+## Last updated: 12/20/2023 by E. McDuffie
 ## NOTES: 
 #####
 
@@ -19,7 +19,7 @@ library(tidyverse)
 library(dplyr)
 
 
-years <- c(2020, 2025, 2030, 2035, 2040)
+years <- c(2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065, 2070, 2075, 2080)
 global <- tibble()
 usa    <- tibble()
 
@@ -81,8 +81,8 @@ for (iyear in years ) {
 global_interp <- global %>% 
   group_by(discount.rate) %>% 
   complete(emissions.year = seq(first(emissions.year), last(emissions.year))) %>% 
-  mutate(global_mean_npd = round((na.approx((global_mean_npd))),-2),
-         global_mean_npd_wlag = round((na.approx((global_mean_npd_wlag))),-2),
+  mutate(global_mean_npd = round((na.approx((global_mean_npd))),0), #-2
+         global_mean_npd_wlag = round((na.approx((global_mean_npd_wlag))),0), #-2
          region = 'global') %>%
   select(-c('global_mean_npd_wlag'))
 
@@ -90,8 +90,8 @@ global_interp <- global %>%
 usa_interp <- usa %>% 
   group_by(discount.rate) %>% 
   complete(emissions.year = seq(first(emissions.year), last(emissions.year))) %>% 
-  mutate(usa_mean_npd = round((na.approx((usa_mean_npd))),-1),
-         usa_mean_npd_wlag = round((na.approx((usa_mean_npd_wlag))),-1),
+  mutate(usa_mean_npd = round((na.approx((usa_mean_npd))),0), #-1
+         usa_mean_npd_wlag = round((na.approx((usa_mean_npd_wlag))),0), #-1
          region = 'usa') %>%
   select(-c('usa_mean_npd_wlag'))
 

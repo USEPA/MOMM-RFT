@@ -3,7 +3,7 @@
 ### Created by: Melanie Jackson, IEc 
 ### Adapted by: E. McDuffie (EPA)
 ### Date Created: 3/15/2023      
-### Last Edited: 9/21/2023
+### Last Edited: 12/19/2023
 ##      Inputs:                                                                       ##
 ##        -Country Results Interpolated 2020-2100 by Model.csv                        ##
 ##        -All Trajectory Mortality Ratios_through 2100.rds (parts 1&2)               ##
@@ -49,12 +49,17 @@
   CloudMethPulse_ppbv = CloudMethBase_ppbv+(CloudMethPulse_Mmt*methane_mmt_to_ppbv) # methane pulse (in ppbv) used in BenMAP simulations
   MethaneLifetime     = 11.8 # (years) methane perturbation lifetime  according to the AR6 assessment. 
   BaseYear            = 2020 # year of CH4 pulse used in BenMAP simulations
-  PulseYear           = 2025 # year of user-defined CH4 emissions pulse
+  PulseYear           = 2080 # year of user-defined CH4 emissions pulse
   gdp_2011_to_2020    = 113.784/98.164 # GDP Implicit Price Deflators (https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=13&series=a&first_year=2006&last_year=2020&scale=-99&categories=survey&thetable= )
                       #last access: March 30, 2023
   base_vsl            = 10.05e6 # $2020 VSL from Rennert et al., 2022 (and EPA SC-GHG report) 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
   Elasticity          = 1  # income elasticity
-  Years               <- c(2020:2100) # set simulation years
+                      #if(PulseYear<2020){
+                      #endYear=2100
+                      # } else {
+  endYear             = 2300
+                      # }
+  Years               <- c(2020:endYear) # set simulation years
   lags                = c(6, 2.5, 2.5, 2.5, 2.5, 4/15, 4/15, 4/15, 4/15,4/15, 4/15, 4/15, 4/15, 
                           4/15, 4/15, 4/15, 4/15, 4/15, 4/15, 4/15)/20
                       # These are EPA standard 20 year cessation lags (%) for particulate matter and
@@ -64,12 +69,23 @@
 ########
 ##### Read in Original BenMAP Simulation Data ####
 ########
-    
+
+  
     ## 1) Original BenMAP O3-Methane Mortality 
     CloudResults <- read.csv(file.path(Inputs,"BenMAP","Country Results Interpolated 2020-2100 by Model.csv"))
     CloudResults$LocID  <- CloudResults$column #rename
     # Description: Timeseries of mean and 95th percentile interpolated CH4-O3 mortality 
     #  results from BenMAP for each model (from 'Summarizing Results.R')
+    #Extend to 2300 (keep 2100 values constant)
+    # Note that mortality effects will not be constant past 2100, these 2100 value will just be used to ratio
+    # the actual methane and ozone concentrations against later on in the calculations (because system is linear)
+    CloudResults <- CloudResults %>% 
+      group_by(LocID,Model) %>%
+      complete(ModelYear=min(ModelYear):endYear) %>%
+      mutate(Inverse.PE = approx(x=ModelYear,y=Inverse.PE,xout=2020:endYear, rule =2)$y,
+             Inverse.2_5 = approx(x=ModelYear,y=Inverse.2_5,xout=2020:endYear, rule=2)$y,
+             Inverse.97_5 = approx(x=ModelYear,y=Inverse.97_5,xout=2020:endYear, rule=2)$y)%>%
+      ungroup()
 
     ## Country Index Key ##
     countries <- read.csv(file.path(Inputs,"Final Country Grid Col_Row Index.csv"))[,c(1,3:4,6,8,9)]
@@ -129,9 +145,12 @@
     Usr_MethaneProj               <- data.frame(Years)
     Usr_MethaneProj$PulseMethane  <- case_when(PulseYear > Usr_MethaneProj$Years ~ 0, 
                                                T ~ (Usr_MethPulse_ppbv-Usr_MethBase_ppbv)*exp((PulseYear-Usr_MethaneProj$Years)/MethaneLifetime)) #+Usr_MethBase_ppbv
-    CloudMethaneProj              <- data.frame(Years)
+    #the cloud run was only run through 2100, so hold constant after 2100
+    CloudMethaneProj              <- data.frame(Years=c(2020:2100))
     CloudMethaneProj$CloudMethane <- (CloudMethPulse_ppbv-CloudMethBase_ppbv)*exp((BaseYear-CloudMethaneProj$Years)/MethaneLifetime) #+CloudMethBase_ppbv
-  
+    CloudMethaneProj <- CloudMethaneProj %>% 
+      complete(Years=min(Years):endYear)%>%
+      mutate(CloudMethane = approx(x=Years,y=CloudMethane,xout=2020:endYear, rule =2)$y)
   
   # 4) Read in pre-process mortality ratios
     mort.files <- list.files(file.path(Inputs,"RFF","lookup_tables"),pattern = "All Trajectory Resp Mortality Ratios_AllAges_through 2100_")
@@ -188,18 +207,18 @@
     ###### Set Up Cluster ######
     ### Parallel filter and writing of feather files
     ### Detect cores and get number of cores
-    parallel::detectCores()
-    n.cores    <- parallel::detectCores() - 10
-    n.cores    <- 1
-    n.cores
+#    parallel::detectCores()
+#    n.cores    <- parallel::detectCores() - 10
+#    n.cores    <- 1
+#    n.cores
     
     ### Make cluster
-    my.cluster <- parallel::makeCluster(n.cores, type = "PSOCK")
+#    my.cluster <- parallel::makeCluster(n.cores, type = "PSOCK")
     
     ### Register cluster to be used by %dopar%
     ### Check if cluster is registered (optional)
     ### Check how many workers are available? (optional)
-    doParallel::registerDoParallel(cl = my.cluster); foreach::getDoParRegistered(); foreach::getDoParWorkers()
+#    doParallel::registerDoParallel(cl = my.cluster); foreach::getDoParRegistered(); foreach::getDoParWorkers()
     
     ###### Run RFT ######
     # Start the clock!
@@ -213,7 +232,7 @@
   ####
   #loop through the trajectories (or scenarios)
   Results <- foreach(itrial = startFile:length(Trajectory),.combine=rbind,
-                  .packages=c('purrr','dplyr','utils','arrow','tidyverse')) %dopar% { #dopar takes longer to run than do
+                  .packages=c('purrr','dplyr','utils','arrow','tidyverse')) %do% { #dopar takes longer to run than do
     
     
     # 1) Read in mortality, population, and gdp data for the given trial
@@ -224,12 +243,12 @@
         group_by_at(.vars = c('Year','Country')) %>% #sum across trials for each country
         summarise_at(.vars = c('gdp_per_cap','pop','gdp'), mean) %>%
         ungroup() %>%
-        #interpolate between 5 year intervals
+        #interpolate between 5 year intervals (and hold value constant after 2100)
         group_by(Country) %>%
-        complete(Year=min(Year):max(Year))%>%
-        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:2100)$y,
-               pop = approx(x=Year,y=pop,xout=2020:2100)$y,
-               gdp = approx(x=Year,y=gdp,xout=2020:2100)$y)
+        complete(Year=min(Year):endYear)%>%
+        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:endYear, rule =2)$y,
+               pop = approx(x=Year,y=pop,xout=2020:endYear, rule=2)$y,
+               gdp = approx(x=Year,y=gdp,xout=2020:endYear, rule=2)$y)
       pop_gdp_data <- right_join(countries,pop_gdp_data, by= c("RFF_iso_code"="Country"),multiple='all') %>%
         select(COL,Year,pop,gdp,gdp_per_cap)
       
@@ -241,10 +260,10 @@
         mutate(gdp_per_cap = gdp/pop) %>%
         group_by_at(.vars = c('COL')) %>% 
         #interpolate between 5 year intervals
-        complete(Year=min(Year):max(Year))%>%
-        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:2100)$y,
-              pop = approx(x=Year,y=pop,xout=2020:2100)$y,
-              gdp = approx(x=Year,y=gdp,xout=2020:2100)$y)
+        complete(Year=min(Year):endYear)%>%
+        mutate(gdp_per_cap = approx(x=Year,y=gdp_per_cap,xout=2020:endYear, rule=2)$y,
+              pop = approx(x=Year,y=pop,xout=2020:endYear, rule=2)$y,
+              gdp = approx(x=Year,y=gdp,xout=2020:endYear, rule=2)$y)
     
     }
                     
@@ -266,7 +285,13 @@
    if (RFF_TrajNumber == 'mean') {
      Analysis$MortRatio = 1
      Analysis$PopRatio  = 1 #use the same mortality and population data as used in BenMAP
-    }
+   }
+   #Extend to 2300
+   Analysis <- Analysis %>%
+     group_by(Model, LocID) %>%
+     mutate(MortRatio = approx(x=ModelYear,y=MortRatio,xout=2020:endYear, rule=2)$y,
+            PopRatio = approx(x=ModelYear,y=PopRatio,xout=2020:endYear, rule=2)$y) %>%
+     ungroup()
   
    
    # join with methane delta timeseries data 
@@ -305,6 +330,7 @@
              physical_impacts = Inverse.PE * scalar_PE,
              physical_impacts_2_5 = Inverse.2_5 * scalar_PE,
              physical_impacts_97_5 = Inverse.97_5 * scalar_PE)
+    
     
     #This spreads the annual mortality data across 20 years into the future using
     # EPA standard cessation lags
@@ -465,7 +491,7 @@
   proc.time() - ptm
   ###### Finish #####
   ### stop cluster
-  parallel::stopCluster(cl = my.cluster)
+#  parallel::stopCluster(cl = my.cluster)
 
 # Code Complete. Discounting of annual damages done in Code file #3    
     
