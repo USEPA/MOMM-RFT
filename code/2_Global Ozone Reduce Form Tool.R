@@ -54,11 +54,7 @@
                       #last access: March 30, 2023
   base_vsl            = 10.05e6 # $2020 VSL from Rennert et al., 2022 (and EPA SC-GHG report) 9.33e6  # = USD VSL in 2006$, inflated to 2020$ (from EPA 2010)
   Elasticity          = 1  # income elasticity
-                      #if(PulseYear<2020){
-                      #endYear=2100
-                      # } else {
   endYear             = 2300
-                      # }
   Years               <- c(2020:endYear) # set simulation years
   lags                = c(6, 2.5, 2.5, 2.5, 2.5, 4/15, 4/15, 4/15, 4/15,4/15, 4/15, 4/15, 4/15, 
                           4/15, 4/15, 4/15, 4/15, 4/15, 4/15, 4/15)/20

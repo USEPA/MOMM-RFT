@@ -10,7 +10,7 @@
 ## Outputs: output/npd/momm_npd_stats_global_2020_2040.csv
 ##          output/npd/momm_npd_stats_usa_2020_2040.csv
 ## Written by: US EPA, Office of Atmospheric Protection; August 2023
-## Last updated: 12/20/2023 by E. McDuffie
+## Last updated: 1/2/2024 by E. McDuffie
 ## NOTES: 
 #####
 
@@ -19,7 +19,7 @@ library(tidyverse)
 library(dplyr)
 
 
-years <- c(2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065, 2070, 2075, 2080)
+years <- c(2020, 2030, 2040, 2050, 2060, 2070, 2080)
 global <- tibble()
 usa    <- tibble()
 
